@@ -45,5 +45,5 @@ Ofreciendo gran variedad de FUNKO POPS para todos los gustos, con el mejor servi
 
 ### Wireframes
 
-Pagina de inicio, productos, detalle del producto, carrito de compras, registro login.
+Pagina de inicio, productos, detalle del producto, carrito de compras, registro y login.
 https://www.figma.com/community/file/1045882478658274168
