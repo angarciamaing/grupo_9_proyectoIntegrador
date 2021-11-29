@@ -24,7 +24,7 @@ Ofreciendo gran variedad de FUNKO POPS para todos los gustos, con el mejor servi
 
 ### Integrantes del equipo 🏁
 
-- YASMIN ADRIANA SANCHEZ
+- YASMIN ADRIANA ORJUELA SANCHEZ: Colombiana residente en Bogotá, estudiante de Ingeniería Multimedia.
 - ESTEBAN NAVAS VALENCIA
 - YULIÁN VARGAS
 - ANDERSON GARCIA
@@ -42,3 +42,8 @@ Ofreciendo gran variedad de FUNKO POPS para todos los gustos, con el mejor servi
 7. https://sketchfab.com/store/3d-models/characters-creatures?ref=header Es una página de venta de modelos 3d, pero lo que se desea implementar con esta referencia es la manera en la que el usuario puede ver el producto no solo imágenes sino también que pueda rotarlo y realizar Zoom esto con el fin de que el usuario tenga una mejor experiencia y así pueda ver con más detalle el producto. 
 
 9. https://renaultespace.littleworkshop.fr/ Referencia que ayudara también a implementar la manera en que el usuario puede visualizar el detalle del producto.
+
+### Wireframes
+
+Pagina de inicio, productos, detalle del producto, carrito de compras, registro login.
+https://www.figma.com/community/file/1045882478658274168
