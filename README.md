@@ -1,4 +1,4 @@
-#  !! Bienvenidos a funkoPops.com !!😁
+#  !! Bienvenidos a funkoshop.com !!😁
 
 
 #### ¿Qué productos o servicios brindará nuestro sitio?
