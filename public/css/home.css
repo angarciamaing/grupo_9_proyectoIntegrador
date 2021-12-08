@@ -1,0 +1,25 @@
+
+/* NORMALIZACIÓN */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+/* COLORES */  
+
+
+
+header{
+    background-color: black;
+}
+
+body{
+    background-color: blue;
+}
+
+.hola{
+    color: brown;
+    font-size: 4rem;
+}
