@@ -41,6 +41,7 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
 }
 
 picture.logo {
@@ -60,6 +61,17 @@ picture.logo img{
 
 }
 
+nav.sticky-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    flex-direction: column;
+    background-color: var(--negro);
+   
+}
 nav.sticky-nav ul{
     display: flex;
     flex-direction: row;
@@ -99,7 +111,6 @@ li.search-bar{
 }
 .fa-user:before{
     color: var(--blanco);
-    font-size: var(--text-md);
 }
 
 li.login-bar{
@@ -107,7 +118,9 @@ li.login-bar{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    
 }
+
 a.login-text {
     display: none;
 }
@@ -124,6 +137,7 @@ section article div.gallery-image{
     flex-direction: column;
     width: 100%;
     background-color: var(--gris);
+    padding-top: 9rem;
 }
 picture.order-reverse{
     display: flex;
@@ -193,9 +207,13 @@ div.select-button-pair button:hover{
     transform: scale(1.2);
 }
 
-div.select-button-pair select{
-    border-radius:10% / 40%;
-    border: solid 1px var(--negro);
+div.select-button-pair select {
+    width: 100%;
+    border-radius: 10% / 40%;
+    border: solid 2px var(--negro);
+    text-align: center;
+    font-size: var(--text-md);
+    padding: .2rem 0;
 }
 
 div.select-button-pair select option{
@@ -222,16 +240,17 @@ section.recommendations-section h2{
     margin: .5rem;
 }
 section.recommendations-section div{
-    display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 2rem;
 
 }
-div.container-recommendations{
+div.container-recommendations {
+    display: flex;
+    flex-direction: column;
     background-color: var(--gris);
-    padding: 1.5rem;
+    padding: 3rem 1.5rem;
     margin: 3rem;
+    border-radius: 15% / 3%;
 }
 article.recommendation-product {
     display: flex;
@@ -248,6 +267,10 @@ article.recommendation-product img{
 width: 90%;
 }   
 div.product-price {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     border-top: solid 1px var(--negro);
     width: 95%;
     margin-top: .5rem;
@@ -298,7 +321,7 @@ nav.nav-footer ul{
     display: flex;
     flex-direction: row;
     list-style: none;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
     justify-content: space-evenly;
     font-size: var(--text-md);
@@ -333,6 +356,20 @@ footer div.copy{
         border-radius: 10% / 100%;
         width: 50%;
     }
+
+    nav.sticky-nav ul {
+        justify-content: space-evenly;
+    }
+    /*Recommendations section*/
+
+    div.container-recommendations {
+        border-radius: 10% / 3%;
+    }
+
+    /*Footer*/
+    nav.nav-footer ul li a{
+        font-size: var(--text-lg);
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -344,22 +381,37 @@ footer div.copy{
         flex-direction: row;
         width: 30%;
         justify-content: space-between;
+        margin-top: 0;
     }
     picture.logo img {
-        width: 100%;
+        width: 80%;
+        margin-bottom: 0;
+    }
+    div.nav-bar-header{
+        display: flex;
+        align-items: center;
     }
     nav.sticky-nav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 1rem;
+        width: 100%;
     }
 
     nav.sticky-nav ul{
         width: 100%;
+        margin-bottom: 0;
+        gap: 2rem;
     }
     a.login-text{
         display: flex;
+    }
+    li.search-bar{
+        padding: .7rem;
+    }
+    li.login-bar{
+        gap: .3rem;
     }
 
     /*Product  Detail Section*/
@@ -385,13 +437,149 @@ footer div.copy{
         border: none;
         border-left: solid 1px var(--negro) ;
     }
+    /* Recommendations section*/
 
+    .next, .prev {
+        display: flex;
+        font-size: var(--title-md);
+        padding: 1rem 1.5rem;
+        text-align: center;
+    }
 
-    
+    .next:hover, .prev:hover {
+        transform: scale(1.5);
+    }
+    div.container-recommendations{
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+    }
+    article.recommendation-product{
+        width: 25%;
+        
+    }
 
+    article.small-height button, article.medium-height button{
+        margin-bottom: 2.067rem;
+    }
+
+    div.container-recommendations {
+        border-radius: 5% /10%;
+    }
+
+    /*Footer*/
+    picture.logo-footer img {
+        width: 48%;
+    }    
+}
+@media screen and (min-width: 856px) {
+    article.small-height button{
+        margin-bottom: 4.134rem;
+    }
     
 }
 
-@media screen and (min-width: 1024px) {
+@media screen  and (min-width: 882px ){
+    article.medium-height button{
+        margin-bottom: 0;
+    }
+
+    article.small-height button{
+        margin-bottom: 2.067rem;
+    }
+}
+
+@media screen and (min-width: 988px) {
+    article.medium-height button{
+        margin-bottom: 2.067rem;
+    }
+}
+
+@media screen and (min-width:996px) {
+    article.medium-height button, article.small-height button{
+        margin-bottom: 0;
+    }
+}
+@media screen and (min-width: 1024px)  {
+
+    /*HEADER*/
+
+    picture.logo img {
+        width: 70%;
+    }
+
+    nav.sticky-nav ul{
+        gap: 2rem;
+    }
+    div.nav-bar-header{
+        width: 50%;
+        gap: 1rem;
+    }
+    nav.sticky-nav ul{
+        justify-content: flex-end;
+    }
+
+    li.search-bar{
+        width: 80%;
+    }
+    /* PRODUCT DETAIL*/
+    section.detail-product-section {
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+     section.detail-product-section article {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100vh;
+            padding: 1rem;
+            gap: 1rem;
+
+    }
+
+    picture.order-reverse {
+        width: 25%;
+    }
+
+    picture.main-image-product {
+        width: 80%;
+    }
+    section article div.gallery-image {
+        width: 80%;
+        height: inherit;
+        padding: .5rem;
+    }
+   
+    /*RECOMMENDATIONS SECTION */ 
+    section.recommendations-section h2 {
+        text-align: left;
+    }
+
+    article.recommendation-product{
+        width: 30%;
+    }
+
+    
+    /* Footer*/
+    picture.logo-footer img {
+        width: 50%;
+    }
+ 
+}
+
+@media screen and (min-width:1440px) {
+    /* HEADER*/
+    li.search-bar {
+        border-radius: 5% / 100%;
+    }
+
+    /*FOOTER*/
+    picture.logo-footer img {
+        width: 40%;
+    }
     
 }
