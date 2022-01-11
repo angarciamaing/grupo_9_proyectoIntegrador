@@ -19,7 +19,7 @@ Ofreciendo gran variedad de FUNKO POPS para todos los gustos, con el mejor servi
 - YASMIN ADRIANA ORJUELA SANCHEZ: Colombiana residente en Bogotá, estudiante de Ingeniería Multimedia.
 - ESTEBAN NAVAS VALENCIA
 - YULIÁN VARGAS
-- ANDERSON GARCIA: Consultor SIG, estudiante de desarrollo web full stack
+- ANDERSON GARCIA MARTINEZ: Consultor SIG, estudiante de desarrollo web full stack
 
 ---
 

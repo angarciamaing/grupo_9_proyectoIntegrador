@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <!-- Forma de importar estilos no tan eficiente mejor en el archivo CSS
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> <!--Libreria fontawesome-->
+    <link rel="stylesheet" href="/css/style.css"> <!--Enlazar HTML y CSS-->
+
+</head>
+<body>    
+    <header>
+        <nav class="sticky-nav">
+            <picture class="logo" >
+                <img src="img/logo-blanco.png" alt="logo">
+            </picture>
+            <div class="nav-bar-header">
+                <ul>
+                    <li> <a href="home.html ">Productos</a></li>
+                    <li class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Buscar"> </li>
+                    <li><a href="carrito-compras.html"><i class="fas fa-shopping-cart"></i></a></li>                   
+                    <li class="login-bar"><a href="login.html"><i class="fas fa-user"></i></a><a class="login-text" href="#login">Login</a></li>
+                </ul>   
+            </div>           
+        </nav>
+    </header> <!--FIN HEADER-->
+    <main class="register">
+        <h3>Crear cuenta:</h3>
+        <form method="POST" action="/register">
+            <input type="text" placeholder="Nombre y Apellido" required>
+            <input type="text" placeholder="Nombre de Usuario" required>
+            <input type="email" placeholder="Email" required>
+            <div class="formGroup">
+                <label for="fechaNacimiento" class="labelTitle">Fecha de Nacimiento</label>
+                <input type="date" id="fechaNacimiento" required>
+            </div>
+            <input type="text" placeholder="Domicilio" required>
+            <h4>Perfil de Usuario</h4>
+            <div class="userType">
+                <label for="comprador">
+                <input type="radio" id="comprador" value="Comprador" name="radioOption">
+                Comprador</label>
+                <label for="vendedor">
+                <input type="radio" id="vendedor" value="Vendedor" name="radioOption">
+                Vendedor</label>
+            </div>
+            <h4>Intereses</h4>
+            <div class="intereses">
+                <label for=""><input type="checkbox" id="electro" value="Electro">
+                Electro</label>
+                <label for=""><input type="checkbox" id="moda" value="">
+                Moda</label>
+                <label for="hogar"><input type="checkbox" id="hogar" value="Hogar">
+                Hogar</label>
+                <label for="jugueteria"><input type="checkbox" id="jugueteria" value="Juguetería">
+                Juguetería</label>
+                <label for="vidaSana"><input type="checkbox" id="vidaSana" value="Vida Sana">
+                Vida sana</label>
+            </div>
+            <div class="formGroup">
+                <label for="avatar" class="labelTitle">Selecciona una imagen para tu perfil:</label>
+                <input type="file" name="avatar" accept=".jpg" id="avatar">
+            </div>
+            <input type="password" placeholder="Constraseña" required>
+            <input type="password" placeholder="Repite tu contraseña" required>
+            <div class="buttons">
+                <input type="submit" value="Enviar" class="btn">
+                <input type="reset" value="Resetear Datos" class="btn">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <nav class="nav-footer">
+            <picture class="logo-footer">
+                <img src="img/logo-blanco.png" alt="">
+            </picture>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        </nav>
+        <div class="copy">
+            <i class="far fa-copyright"></i>
+            <p>Estudiantes Digital House Grupo 9</p>
+        </div>
+    </footer>
+</body>
+</html>
