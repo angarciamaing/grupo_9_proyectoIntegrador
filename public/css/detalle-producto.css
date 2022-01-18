@@ -11,9 +11,10 @@
 
 /* VARIABLES */  
 
-html, main{
-    font-size: 12px;
-}
+html {
+    font-size: 62.5%;
+    font-family:var(--roboto);
+  }
 
 :root{
     /* Colores ---- */  
@@ -198,7 +199,7 @@ div.select-button-pair button{
     background-color: var(--negro);
     color: var(--blanco);
     border: none;
-    border-radius: 5% / 20%;
+    border-radius: 1% / 15%;
 }
 div.select-button-pair button:hover{
     background-color: var(--blanco);

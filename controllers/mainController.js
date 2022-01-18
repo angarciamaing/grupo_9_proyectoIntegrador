@@ -17,6 +17,14 @@ module.exports = {
         res.render('shopping-cart');
     },
 
+    login : (req, res) => {
+        res.render('login');
+    },
+
+    edicionproducto : (req, res) => {
+        res.render('edicion-producto');
+    },
+
     register: (req, res) => {
         res.render('register');
     }
