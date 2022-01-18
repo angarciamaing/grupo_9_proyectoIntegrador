@@ -13,5 +13,6 @@ app.listen(4000, () => console.log("Servidor corriendo en el puerto: 4000"));
 app.get("/", (req, res) => res.sendFile(path.resolve(__dirname, './views/home.html')));
 app.get("/detalle-producto", (req, res) => res.sendFile(path.resolve(__dirname, './views/detalle-producto.html')));
 
+app.get('/login', (req,res) => res.sendFile(path.resolve(__dirname, './views/login.html')));
 app.get('/register', (req,res) => res.sendFile(path.resolve(__dirname, './views/register.html')));
 app.get('/shopping-cart', (req,res) => res.sendFile(path.resolve(__dirname, './views/shopping-cart.html')));
