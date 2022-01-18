@@ -4,19 +4,20 @@ const path = require('path');
 
 
 module.exports = {
-    home: (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../views/home.html' ));
+    
+    home: (red, res) => {
+        res.render('home');
     },
 
     detalleProducto: (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../views/detalle-producto.html'));
+        res.render('detalle-producto');
     },
 
-    shoppingCar: (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../views/shopping-cart.html'));
+    shoppingCart: (req, res) => {
+        res.render('shopping-cart');
     },
 
     register: (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../views/register.html'));
+        res.render('register');
     }
 };

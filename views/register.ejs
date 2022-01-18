@@ -15,21 +15,9 @@
 
 </head>
 <body>    
-    <header>
-        <nav class="sticky-nav">
-            <picture class="logo" >
-                <img src="img/logo-blanco.png" alt="logo">
-            </picture>
-            <div class="nav-bar-header">
-                <ul>
-                    <li> <a href="home.html ">Productos</a></li>
-                    <li class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Buscar"> </li>
-                    <li><a href="carrito-compras.html"><i class="fas fa-shopping-cart"></i></a></li>                   
-                    <li class="login-bar"><a href="login.html"><i class="fas fa-user"></i></a><a class="login-text" href="#login">Login</a></li>
-                </ul>   
-            </div>           
-        </nav>
-    </header> <!--FIN HEADER-->
+      <!-- HEADER-->
+  <%- include('partials/header') %>
+
     <main class="register">
         <h3>Crear cuenta:</h3>
         <form method="POST" action="/register">
@@ -48,21 +36,9 @@
             </div>
         </form>
     </main>
-    <footer>
-        <nav class="nav-footer">
-            <picture class="logo-footer">
-                <img src="img/logo-blanco.png" alt="">
-            </picture>
-            <ul>
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            </ul>
-        </nav>
-        <div class="copy">
-            <i class="far fa-copyright"></i>
-            <p>Estudiantes Digital House Grupo 9</p>
-        </div>
-    </footer>
+    
+    <!-- FOOTER-->
+   <%- include('partials/footer') %>
+    
 </body>
 </html>

@@ -8,7 +8,7 @@ const mainRoutes = require('./routes/mainRoutes');
 
 const publicPath = path.resolve(__dirname, "./public");
 
-
+app.set('view engine', 'ejs');
 
 app.use(express.static(publicPath));
 app.use(mainRoutes);

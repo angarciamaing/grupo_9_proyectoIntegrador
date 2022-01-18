@@ -1,34 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-    <!-- Forma de importar estilos no tan eficiente mejor en el archivo CSS
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> <!--Libreria fontawesome-->
-    <link rel="stylesheet" href="/css/shopping-cart.css"> <!--Enlazar HTML y CSS-->
+    <link rel="stylesheet" href="css/detalle-producto.css">
+    <script src="https://kit.fontawesome.com/6fda1860f4.js" crossorigin="anonymous"></script>
+    <title>Bienvenido a Funkoshop</title>
 </head>
 <body>
-    <header>
-        <nav class="sticky-nav">
-            <picture class="logo" >
-                <img src="img/logo-blanco.png" alt="logo">
-            </picture>
-            <div class="nav-bar-header">
-                <ul>
-                    <li> <a href="home.html ">Productos</a></li>
-                    <li class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Buscar"> </li>
-                    <li><a href="carrito-compras.html"><i class="fas fa-shopping-cart"></i></a></li>                   
-                    <li class="login-bar"><a href="login.html"><i class="fas fa-user"></i></a><a class="login-text" href="#login">Login</a></li>
-                </ul>   
-            </div>           
-        </nav>
-    </header>
+
+     <!-- HEADER-->
+  <%- include('partials/header') %>
+
     <main>
         <!-- Detail Product Section-->
         <section class="detail-product-section">
@@ -103,23 +88,9 @@
         </section>
     </main>
 
-    <!-- Footer-->
-    <footer>
-        <nav class="nav-footer">
-            <picture class="logo-footer">
-                <img src="img/logo-blanco.png" alt="">
-            </picture>
-            <ul>
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            </ul>
-        </nav>
-        <div class="copy">
-            <i class="far fa-copyright"></i>
-            <p>Estudiantes Digital House Grupo 9</p>
-        </div>
-    </footer>
+    
+   <!-- FOOTER-->
+   <%- include('partials/footer') %>
     
 </body>
 </html>
