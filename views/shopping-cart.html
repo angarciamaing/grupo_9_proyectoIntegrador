@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>shopping-cart</title>
     <!-- Forma de importar estilos no tan eficiente mejor en el archivo CSS
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,76 +31,45 @@
     </header>
     <main>
         <!-- Detail Product Section-->
-        <section class="detail-product-section">
-            <article>
-                <div class="gallery-image">
-                    <picture class="order-reverse">
-                        <img src="img/deadepool.jpg" alt="Funko Deadpool barista">
-                        <img src="img/caja-deadpool.jpg" alt="Caja Funko Deadppool">
-                    </picture>
-                    <picture class="main-image-product">
-                        <img src="img/deadepool.jpg" alt="Funko Deadpool barista">
-                    </picture>
-                </div>
-                <div class="description-product">
-                    <h1>Funko Pop Marvel: Deadpool Barista</h1>
-                    <p>$60.000</p>
-                    <div class="select-button-pair">
-                        <select>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option><option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                        <button>Comprar Ahora</button>
-                        <button>Agregar al carrito</button>
+        <section class="product-list">
+            <article class="product-1">
+                <img src="img/profesor x.jpg" alt="Profesor X">
+                <div class="product-price">
+                    <h3>Profesor X</h3>
+                    <div class="button-view-details">
+                        <button>+ 1 -</button>
                     </div>
+                    <div class="button-view-details">
+                        <button>borrarIcon</button>
+                    </div>
+                    <p>$60.000</p>
+                    <p>$60.000</p>
                 </div>
             </article>
         </section>
-        <!--Others Products-->
-        <section class="recommendations-section">
-            <h2>Recomendaciones</h2>
-            <div class="container-recommendations">
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <article class="recommendation-product">
-                    <img src="img/capitan-america.jpg" alt="Capitan America">
-                    <div class="product-price">
-                        <h3>Funko Pop Marvel: Capitan America</h3>
-                        <p>$60.000</p>
-                        <div class="button-view-details">
-                            <button > Ver Detalles</button>
-                        </div>
+
+        <section class="summary">
+            <article class="summary-content">
+                    <h2>PRODUCTOS: X</h2>
+                    <p>
+                    Esta semana descuentos entre el 10 - 15% en nuestra seccion de anime <br>
+                    Y muchos descuentos más
+                    </p>
+                    <h2>SUBTOTAL: X $</h2>
+                    <p>
+                    Descuento del 10 % por tu<br>
+                    compra en línea + envío gratis
+                    </p>
+                    <h2>TOTAL: X $</h2>
+                    <div class="button-view-details">
+                        <button>Comprar</button>
                     </div>
-                </article>
-                <article class="recommendation-product medium-height">
-                    <img src="img/profesor x.jpg" alt="Profesor X">
-                    <div class="product-price">
-                        <h3>Funko Pop Marvel: Profesor X</h3>
-                        <p>$60.000</p>
-                        <div class="button-view-details">
-                            <button> Ver Detalles</button>
-                        </div>
-                    </div>
-                </article>
-                <article class="recommendation-product small-height">
-                    <img src="img/thanos.jpg" alt="Thanos">
-                    <div class="product-price">
-                        <h3>Funko Pop Marvel: Thanos</h3>
-                        <p>$60.000</p>
-                        <div class="button-view-details">
-                            <button > Ver Detalles</button>
-                        </div>
-                    </div>
-                </article>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
+                    <p>
+                        Terminos & Condiciones
+                    </p>
+            </article>
         </section>
+        <!--Others Products-->
     </main>
 
     <!-- Footer-->
