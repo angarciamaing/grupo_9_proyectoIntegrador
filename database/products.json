@@ -1,0 +1,110 @@
+[
+    {
+        "id":1,
+        "productName":"Avatar maestro del aire",
+        "decription":"Personaje FunkoPop de la serie Avatar",
+        "image":"Ang Avatar.PNG",
+        "category":"series infantiles",
+        "lanzamiento":"nuevo",
+        "price":35000
+    },
+    {
+        "id":2,
+        "productName":"Ashi samurai",
+        "decription":"Personaje FunkoPop de la serie SamUrai JACK",
+        "image":"Ashi.PNG",
+        "category":"series infantiles",
+        "lanzamiento":"nuevo",
+        "price":32000
+    },
+    {
+        "id":3,
+        "productName":"Donatelo tortugas ninja",
+        "decription":"Personade FunkoPop de la serie las Tortugas Ninjas",
+        "image":"Donatelo.PNG",
+        "category":"series infantiles",
+        "lanzamiento":"nuevo",
+        "price":37000
+    },
+    {
+        "id":4,
+        "productName":"Kramer buen policia",
+        "decription":" Personaje de FunkoPop de la serie Seinfeld ",
+        "image":"Kramer buen policia.PNG",
+        "category":"series adultos",
+        "lanzamiento":"nuevo",
+        "price":35000
+    },
+    {
+        "id":5,
+        "productName":"Wall-e",
+        "decription":"Personaje FunkoPop de la pelicula Wall-e",
+        "image":"Wall-e.PNG",
+        "category":"peliculas",
+        "lanzamiento":"nuevo",
+        "price":35000
+    },
+    {
+        "id":6,
+        "productName":"Dexter",
+        "decription":"Personaje FunkoPop de la serie Dexter",
+        "image":"Dexter.PNG",
+        "category":"series infantiles",
+        "lanzamiento":"nuevo",
+        "price":35000
+    },
+    {
+        "id":7,
+        "productName":"Arthur espada",
+        "decription":"Personaje FunkoPop de la pelicula The Sword in The Stone",
+        "image":"Arthur espada.PNG",
+        "category":"peliculas",
+        "lanzamiento":"nuevo",
+        "price":35000
+    },
+    {
+        "id":8,
+        "productName":"Eve",
+        "decription":"Personaje FunkoPop de la pelicula Wall-E",
+        "image":"Eve.PNG",
+        "category":"peliculas",
+        "lanzamiento":"nuevo",
+        "price":35000
+    },
+    {
+        "id":9,
+        "productName":"Deadpool Barista",
+        "decription":"Personaje FunkoPop de la pelicula Deadpool",
+        "image":"deadepool.jpg",
+        "category":"peliculas",
+        "lanzamiento":"antiguo",
+        "price":60000
+    },
+    {
+        "id":10,
+        "productName":"Capitan America",
+        "decription":"Personaje FunkoPop de la pelicula Capitan America",
+        "image":"capitan-america.jpg",
+        "category":"peliculas",
+        "lanzamiento":"antiguo",
+        "price":60000
+    },
+    {
+        "id":11,
+        "productName":"Profesor X",
+        "decription":"Personaje FunkoPop de las peliculas X-Men",
+        "image":"profesor x.jpg",
+        "category":"peliculas",
+        "lanzamiento":"antiguo",
+        "price":60000
+    },
+    {
+        "id":12,
+        "productName":"Thanos",
+        "decription":"Personje FunkoPop del pelicula The Avengers",
+        "image":"thanos.jpg",
+        "category":"peliculas",
+        "lanzamiento":"antiguo",
+        "price":60000
+    }
+]
