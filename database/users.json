@@ -1,1 +1,12 @@
-[]
+[
+ {
+  "id": 1,
+  "fullname": "YASMIN ADRIANA ORJUELA SANCHEZ",
+  "userName": "yasmin orjuela",
+  "email": "yasminadrianasanchez@gmail.com",
+  "dateOfBirth": "2022-02-15",
+  "password": "yasmin123456",
+  "re-password": "yasmin123456",
+  "profilePicture": "yasmin-orjuela-1645653184031.jpg"
+ }
+]
