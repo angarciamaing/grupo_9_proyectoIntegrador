@@ -21,15 +21,18 @@
     <main class="register">
         <h3>Crear cuenta:</h3>
         <form method="POST" action="/register">
-            <input type="text" placeholder="Nombre y Apellido" required>
-            <input type="text" placeholder="Nombre de Usuario" required>
-            <input type="email" placeholder="Email" required>
+            <input type="text" name='nombreApellido' placeholder="Nombre y Apellido" required>
+
+            <input type="text" name='nombreUsuario' placeholder="Nombre de Usuario" required>
+
+            <input type="email" name='email' placeholder="Email" required>
+
             <div class="formGroup">
                 <label for="fechaNacimiento" class="labelTitle">Fecha de Nacimiento</label>
-                <input type="date" id="fechaNacimiento" required>
+                <input type="date" name='fechaNacimiento' id="fechaNacimiento" required>
             </div>            
-            <input type="password" placeholder="Constraseña" required>
-            <input type="password" placeholder="Repite tu contraseña" required>
+            <input type="password" name='password' placeholder="Constraseña" required>
+            <input type="password" name='repitPassword'  placeholder="Repite tu contraseña" required>
             <div class="buttons">
                 <input type="submit" value="Enviar" class="btn">
                 <input type="reset" value="Resetear Datos" class="btn">
