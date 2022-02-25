@@ -1,14 +1,14 @@
-const path = require('path');
 const multer = require('multer');
+const path = require('path');
 
 const diskStorage = multer.diskStorage({
 	destination: (req, file, cb) => {
 		console.log(file);
-		let profilePicturePath = path.join(__dirname, '../public/img/profilePictures');
-		cb(null, profilePicturePath);
+		let profilePicture = path.join(__dirname, '../public/img/profilePictures');
+		cb(null, profilePicture);
 	},
 	filename: (req, file, cb) => {
-		let userName = req.body.userName.replace(/ /g, '-').toLowerCase();
+		let userName = req.body.username.replace( !/\s/g, '-').toLowerCase();
 		let finalName = userName + '-' + Date.now() + path.extname(file.originalname);
 		cb(null, finalName);
 	}
@@ -23,13 +23,11 @@ const upload = multer({
 		if (extensionIsOk) {
 			cb(null, true);
 		} else {
-	
 			cb(null, false);
 		}
 	}
 });
 
-const uploadFile = multer({ storage: diskStorage });
-//min 32
 
-module.exports = uploadFile
+
+module.exports = upload;

@@ -1,8 +1,3 @@
-// 1. guardar usuario en la DB
-// 2. Buscar al usuario que se quiere loggear por su email
-// 3. buscar a usuario por su ID
-// 4. editar la información de un usuario
-// 5. eliminar a un usuario de la DB
 const fs = require('fs');
 
 const User = {
