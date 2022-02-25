@@ -127,7 +127,27 @@ a.login-text {
 /*MAIN*/
 /* REGISTER */
 
+.feedback { /*ESTILOS PARA QUE IMPRIMAN EN PANTALLA LOS ERRORES DE VALIDACION*/
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  background-color: #C1EDEF;
+  width: 20%;
+  padding: 1rem;
+  margin: .3rem;
+  text-align: center;
+  border-radius: 12px;
+  font-size: var(--text-sm);
+  color: #272727;
+  font-weight: 500;
+
+}
+
 .register {
+  display: flex; /* para que quede centrado los errores de validacion*/
+  flex-direction: column;/* para que quede centrado los errores de validacion*/
+  justify-content: center;/* para que quede centrado los errores de validacion*/
+  align-items: center;/* para que quede centrado los errores de validacion*/
   margin-top: 2%;
   margin-bottom: 2%;
 }
@@ -140,7 +160,7 @@ a.login-text {
 }
 
 .register form {
-  width: 70%;
+  width: 30%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -155,7 +175,6 @@ a.login-text {
 .register form input {
   padding: 10px;
   border-radius: 5px;
-  border: none;
   margin: 2%;
 }
 
@@ -169,6 +188,7 @@ a.login-text {
   font-weight: 500;
   margin-top: 3%;
 }
+
 
 .buttons {
   display: flex;

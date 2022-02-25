@@ -1,22 +1,3 @@
-[
- {
-  "id": 1,
-  "fullname": "esteban",
-  "userName": "estebansas",
-  "email": "arcoesteb@live.com",
-  "dateOfBirth": "2022-02-24",
-  "password": "123456789",
-  "re-password": "123456789",
-  "profilePicture": "estebansas-1645722519527.jpg"
- },
- {
-  "id": 2,
-  "fullname": "daniela",
-  "userName": "danielita",
-  "email": "sandra@hotmail.com",
-  "dateOfBirth": "2022-02-25",
-  "password": "123456789",
-  "re-password": "123456789",
-  "profilePicture": "danielita-1645779928640.jpg"
- }
-]
+
+[]
+
