@@ -1,4 +1,7 @@
+const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const { memoryStorage } = require('multer');
+
 const User = require('../models/User');
 const controller = {
 
@@ -9,16 +12,33 @@ const controller = {
 
         const resultValidation = validationResult(req);
 
-       if(resultValidation.isEmpty()){
-           let user = req.body;
-           user.profilePicture = req.file.filename
+        let userInDB = User.findByField('email', req.body.email);
+       
+        if (userInDB) {
+            res.render('register',{
+                errors: [{ msg: 'Este correo electrónico ya existe'}],
+                old: req.body  
+            })
+        }
 
-           userId = User.create(user);
-
+        if(resultValidation.isEmpty() && !userInDB){
+        let userToCreate = {
+            fullname: req.body.fullname,
+            userName: req.body.username,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password,10),            
+            profilePicture: req.file.filename
+            
+        }        
+        User.create(userToCreate)
            res.redirect('login')
-       } else {
-           res.render(this.register)
+       } else  {
+           res.render('register',{
+               errors: resultValidation.array(),
+               old: req.body
+           })
        }
+       
 
     },
 
