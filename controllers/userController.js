@@ -46,9 +46,36 @@ const controller = {
         return res.render('login')
     },
 
-   // profile: (req,res) => {
-     //   return res.render('profile');
-    //}
+    // Proceso validacion de credenciales login
+    loginProcess:(req, res) => {
+        let userTologin = User.findByField('email', req.body.email);
+        if(userTologin){
+            let isOkthePassword = bcryptjs.compareSync(req.body.password, userTologin.password);
+            if(isOkthePassword){
+                return res.redirect("/");
+            }
+
+            return res.render('login', {
+                errors: {
+                    email: {
+                        msg: 'Las credenciales son invalidas'
+                    }
+                }
+            });
+        }
+
+        return res.render('login', {
+            errors: {
+                email: {
+                    msg: 'No te encuentras registrado'
+                }
+            }
+        });
+    }
+
+//    profile: (req,res) => {
+//        return res.render('profile');
+//     }
 }
 
 module.exports = controller;

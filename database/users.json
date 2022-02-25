@@ -1,3 +1,18 @@
-
-[]
-
+[
+ {
+  "id": 1,
+  "fullname": "esteban",
+  "userName": "Estebannavas",
+  "email": "arcoesteb@live.com",
+  "password": "$2a$10$Pvx9ZJKQqcvJLYv1RJFGh.7QHAzq2NBNaJAFTqX3Qu8d7qnhxBeGy",
+  "profilePicture": "estebannavas-1645817440460.jpg"
+ },
+ {
+  "id": 2,
+  "fullname": "Guillermo navas",
+  "userName": "guinacor",
+  "email": "guillermonavascortesmemin@hotmail.com",
+  "password": "$2a$10$eXEQQcJolWnYO7pq2IS5D.hBLYuQqdLdgKAl3I8Hra/wHlBNnozqW",
+  "profilePicture": "guinacor-1645817903196.jpg"
+ }
+]

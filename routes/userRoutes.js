@@ -18,4 +18,7 @@ router.post('/register',uploadFile.single('profilePicture'), validations.registe
 //Formulario del login
 router.get('/login', userController.login);
 
+// Proceso formulario del login
+router.post('/login', userController.loginProcess);
+
 module.exports = router;

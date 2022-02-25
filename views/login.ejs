@@ -32,9 +32,15 @@
     </header> <!--FIN HEADER-->
     <main class="login">
         <h3>Ingresa tus datos:</h3>
-        <form action="/" method="POST">
+        <form action="/user/login" method="POST">
             <input type="email" name="email" placeholder="Correo electronico">
-            <input type="password" name="password" placeholder="Ingresa tu contraseña">
+            <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+    
+                    <%= errors.email.msg %>
+                </div>
+                <% } %>
+          <input type="password" name="password" placeholder="Ingresa tu contraseña">
             <input class="btn" type="submit" value="Enviar">
         </form>
     </main>
