@@ -235,10 +235,13 @@ section.recommendations-section{
     padding: 1rem;
 }
 
-section.recommendations-section h2{
+div.col-12 h2{
     font-size: var(--title-md);
     padding: 1rem;
     margin: .5rem;
+    text-transform: uppercase;
+    padding-top: 2em;
+    font-family: var(--roboto);
 }
 section.recommendations-section div{
     align-items: center;
@@ -248,17 +251,22 @@ section.recommendations-section div{
 div.container-recommendations {
     display: flex;
     flex-direction: column;
-    padding: 3rem 1.5rem;
-    margin: 3rem;
+    padding: 3rem .5rem;
     border-radius: 15% / 3%;
 }
 article.recommendation-product {
     display: flex;
+    width: 280px;
     flex-direction: column;
     align-items: center;
     padding: .5rem;
     padding: 1.5rem 0;
-    border-radius: 3% / 3%;
+    border-radius: 20px;
+    border: 3px solid var(--gris-medio);
+    
+}
+
+article.recommendation-product:hover {
     box-shadow: 5px 5px 10px  var(--gris-oscuro)
 }
 
@@ -269,14 +277,16 @@ div.product-price {
     
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
-    border-top: solid 1px var(--negro);
+    border-top: solid 1px var(--gris-oscuro);
     width: 95%;
     margin-top: .5rem;
 }
 article.recommendation-product div h3 {
     font-size: var(--text-lg);
     padding: 1rem;
+    text-transform: uppercase;
     
 }
 
@@ -290,19 +300,50 @@ div.button-view-details{
 
 div.button-view-details button{
     background-color: var(--negro);
-    color: var(--blanco);
     padding: 1rem;
-    border-radius: 20% / 50%;
+    color: var(--blanco);
+    border-radius: 20px;
     border: none;
 }
 
+div.button-view-details button a{
+    text-decoration: none;
+    color: var(--blanco);
+}
 div.button-view-details button:hover{
     background-color: var(--blanco);
     color: var(--negro);
     border:solid 1px var(--negro) ;
     transform: scale(.9);
 }
+div.button-view-details button a:hover{
+    color: var(--negro);
+}
 
+div.row .container-recommendations{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    gap: 2em;
+}
+
+
+button.carousel-control-next,button.carousel-control-prev {
+    background-color: #000000;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+
+
+
+/*ENDS RECOMMENDATIONS*/
 /* Footer*/
 footer{
     background-color: var(--negro);
@@ -453,17 +494,21 @@ footer div.copy{
         justify-content: center;
         align-items: stretch;
     }
-    article.recommendation-product{
-        width: 25%;
-        
-    }
 
-    article.small-height button, article.medium-height button{
-        margin-bottom: 2.067rem;
-    }
 
     div.container-recommendations {
         border-radius: 5% /10%;
+    }
+
+    button.carousel-control-next,button.carousel-control-prev {
+        background-color: #000000;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        margin-top: 250px
     }
 
     /*Footer*/
@@ -558,10 +603,6 @@ footer div.copy{
         text-align: left;
     }
 
-    article.recommendation-product{
-        width: 30%;
-    }
-
     
     /* Footer*/
     picture.logo-footer img {
@@ -575,7 +616,10 @@ footer div.copy{
     li.search-bar {
         border-radius: 5% / 100%;
     }
-
+    /*RECOMMENDATIONS SECTION*/
+    .container{
+        max-width: 1070px;
+    }
     /*FOOTER*/
     picture.logo-footer img {
         width: 40%;

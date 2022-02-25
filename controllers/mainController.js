@@ -3,18 +3,32 @@ const path = require('path');
 const fs = require('fs');
 const {validationResult} = require('express-validator');
 
- const usersFilepath = path.join(__dirname,'../database/users.json');
- const users = JSON.parse(fs.readFileSync(usersFilepath, 'utf-8'));
+
+
+
+
+const productsFilePath = path.join(__dirname,'../database/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath,'utf-8'));
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const nuevoLanzamiento = products.filter((producto)=> producto.lanzamiento ==='nuevo');
+const peliculas = products.filter((producto) => producto.category ==="peliculas" );
 
 
 module.exports = {
     
     home: (red, res) => {
-        res.render('home');
+        res.render('home',{
+            toThousand,
+            nuevoLanzamiento
+    
+        });
     },
 
     detalleProducto: (req, res) => {
-        res.render('detalle-producto');
+        res.render('detalle-producto',{
+            toThousand,
+            peliculas
+        });
     },
 
     shoppingCart: (req, res) => {
@@ -25,23 +39,6 @@ module.exports = {
         res.render('edicion-producto');
     },
    
-    store: (req, res) => {
-          let usuarios = users
-          let newUser = {
-              id: usuarios[usuarios.length -1].id + 1,
-              ... req.body
-              
-          };
-          usuarios.push(newUser);
-          fs.writeFileSync(usersFilepath, JSON.stringify(usuarios, null, ' ' ));
-          res.redirect('register');
-          
-          
-    
-          let errors = validationResult(req);
-          res.send(errors);
-         
-      }
 };
 
 
