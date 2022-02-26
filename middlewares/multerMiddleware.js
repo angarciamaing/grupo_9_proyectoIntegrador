@@ -21,6 +21,7 @@ const upload = multer({
 		let fileExtension = path.extname(file.originalname);
 		let extensionIsOk = acceptedExtensions.includes(fileExtension);
 		if (extensionIsOk) {
+			this.diskStorage;
 			cb(null, true);
 		} else {
 			cb(null, false);

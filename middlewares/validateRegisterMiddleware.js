@@ -31,7 +31,21 @@ const validations = {
 			.exists()
 			.custom((value, { req }) => req.body.password.length < 8 || value === req.body.password),
 
-		body('profilePicture', 'sube una foto de perfil en formato JPG, JPEG o PNG').custom((value, { req })=> req.body.profilePicture === "undefined"),
+		body('profilePicture', 'sube una foto de perfil en formato JPG, JPEG o PNG').custom((value, { req }) => {
+
+
+			let acceptedExtensions = ['.jpg', '.jpeg', '.png'];
+			if (typeof req.file == 'undefined') {
+				throw new Error('Elegí una imagen de perfil');
+			} else if (req.file.originalname) {
+				let fileExtension = path.extname(req.file.originalname);
+				let extensionIsOk = acceptedExtensions.includes(fileExtension);
+				if (!extensionIsOk) {
+					throw new Error('Los formatos válidos son JPG, JPEG y PNG');
+				}
+			}
+			return true;
+		}),
 
 	]
 						
