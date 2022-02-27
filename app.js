@@ -19,6 +19,7 @@ app.use(userLoggedMiddleware);
 //Rutas
 const mainRoutes = require('./routes/mainRoutes');
 const userRoutes = require('./routes/userRoutes');
+const productsRoutes = require('./routes/productsRoutes')
 
 const publicPath = path.resolve(__dirname, "./public");
 
@@ -29,7 +30,7 @@ app.use(express.urlencoded({ extended: false }));//permite procesar formularios
 app.use(express.static(publicPath));
 app.use(mainRoutes);
 app.use('/user', userRoutes);
-
+app.use('/products', productsRoutes);
 
  app.listen(4000, () => console.log("Servidor corriendo en el puerto: 4000"));
 
