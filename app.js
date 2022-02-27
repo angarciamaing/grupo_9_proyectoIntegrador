@@ -10,9 +10,15 @@ app.use(session({
     saveUninitialized: false
 }));
 
+//Middleware login
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+
+app.use(userLoggedMiddleware);
+
+
 //Rutas
 const mainRoutes = require('./routes/mainRoutes');
-const userRoutes = require('./routes/userRoutes');//errror
+const userRoutes = require('./routes/userRoutes');
 
 const publicPath = path.resolve(__dirname, "./public");
 
@@ -24,14 +30,6 @@ app.use(express.static(publicPath));
 app.use(mainRoutes);
 app.use('/user', userRoutes);
 
-
-// app.get('/prueba', (req, res) => {
-//     req.session.usuario = 'juan perez',
-//     req.session.rol = 'admin',
-//     req.session.visitas = req.session.visitas ? ++req.session.visitas : 1;
-//     console.log(req.session);
-//     res.send('el usuario' + req.session.usuario + ' con rol ' + req.session.rol + ' avisistado esta pagina ' + req.session.visitas)
-// })
 
  app.listen(4000, () => console.log("Servidor corriendo en el puerto: 4000"));
 

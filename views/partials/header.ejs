@@ -1,16 +1,29 @@
-
 <header>
     <nav class="sticky-nav sticky-top">
+        
+       
         <picture class="logo" >
-            <img src="img/logo-blanco.png" alt="logo">
+            <a href="/"><img src="/img/logo-blanco.png" alt="logo"></a>
         </picture>
         <div class="nav-bar-header">
             <ul>
-                <li> <a href="home.html ">Productos</a></li>
+                <li> <a href="/">Productos</a></li>
+                <!-- <li> <a href="/">Productos</a></li> -->
                 <li class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Buscar"> </li>
-                <li><a href="carrito-compras.html"><i class="fas fa-shopping-cart"></i></a></li>                   
-                <li class="login-bar"><a href="login.html"><i class="fas fa-user"></i></a><a class="login-text" href="#login">Login</a></li>
+                <li><a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a></li>
+                <% if(locals.isLogged){%>
+                <ul>
+                    <li> <a href="/user/profile">Mi perfil</a></li>
+                    <li> <a href="/user/logout">Cerrar cesión</a></li>
+                   
+                    
+                </ul>
+                <% }else { %>
+                <li><a href="/user/register">Regístrate</a></li>                   
+                <li class="login-bar"><a href="/user/login"><i class="fas fa-user"></i></a><a class="login-text" href="/user/login">login</a></li>
+                <% } %>
             </ul>   
         </div>           
     </nav>
 </header>
+

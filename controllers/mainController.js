@@ -25,10 +25,23 @@ module.exports = {
     },
 
     detalleProducto: (req, res) => {
-        res.render('detalle-producto',{
-            toThousand,
-            peliculas
-        });
+        
+        const id = req.params.id;
+        const product = products.find((funko) => funko.id == id);
+        const related = products.filter((funko) => funko.category == product.category && funko.id != product.id);
+        
+        return res.render('detalle-producto',
+            {
+                pageTitle: product.productName,
+                product,
+                toThousand,
+                carousel: {
+                    condition: "related",
+                    funkos: related,
+                }
+            }
+        )
+        
     },
 
     shoppingCart: (req, res) => {

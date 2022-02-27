@@ -9,7 +9,8 @@ const mainController = require('../controllers/mainController');
 router.get('/', mainController.home);
 
 // detalle de producto
-router.get('/detalle-producto', mainController.detalleProducto);
+
+router. get("/product-detail/:id",mainController.detalleProducto);
 
 // carrito de compras
 router.get('/shopping-cart', mainController.shoppingCart);
