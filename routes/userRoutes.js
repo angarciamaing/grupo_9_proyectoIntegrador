@@ -21,4 +21,6 @@ router.get('/login', userController.login);
 // Proceso formulario del login
 router.post('/login', userController.loginProcess);
 
+router.get('/profile/', userController.profile);
+
 module.exports = router;

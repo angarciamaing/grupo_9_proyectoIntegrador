@@ -14,5 +14,13 @@
   "email": "guillermonavascortesmemin@hotmail.com",
   "password": "$2a$10$eXEQQcJolWnYO7pq2IS5D.hBLYuQqdLdgKAl3I8Hra/wHlBNnozqW",
   "profilePicture": "guinacor-1645817903196.jpg"
+ },
+ {
+  "id": 3,
+  "fullname": "german",
+  "userName": "germancho",
+  "email": "german@live.com",
+  "password": "$2a$10$PjG3Pq6AXfLDqCE4wF7mp.sakZXEamB3d0ZABLp91K6y22LpBrNu.",
+  "profilePicture": "germancho-1645909118131.jpg"
  }
 ]

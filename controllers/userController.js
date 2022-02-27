@@ -43,16 +43,21 @@ const controller = {
     },
 
     login: (req,res) => {
+        console.log(req.session);
         return res.render('login')
     },
 
     // Proceso validacion de credenciales login
     loginProcess:(req, res) => {
         let userTologin = User.findByField('email', req.body.email);
+
         if(userTologin){
             let isOkthePassword = bcryptjs.compareSync(req.body.password, userTologin.password);
             if(isOkthePassword){
-                return res.redirect("/");
+                delete userTologin.password;
+                req.session.userLogged = userTologin;
+                return res.redirect("profile");
+
             }
 
             return res.render('login', {
@@ -71,11 +76,13 @@ const controller = {
                 }
             }
         });
-    }
+    },
 
-//    profile: (req,res) => {
-//        return res.render('profile');
-//     }
+   profile: (req,res) => {
+       console.log('estas en profile');
+       console.log(req.session);
+       return res.render('profile');
+    }
 }
 
 module.exports = controller;
