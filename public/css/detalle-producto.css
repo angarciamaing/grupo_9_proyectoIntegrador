@@ -45,7 +45,7 @@ header{
     position: absolute;
 }
 
-picture.logo {
+picture.logo a{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,7 +68,7 @@ nav.sticky-nav{
     align-items: center;
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: vw;
     flex-direction: column;
     background-color: var(--negro);
    
@@ -125,6 +125,8 @@ li.login-bar{
 a.login-text {
     display: none;
 }
+
+/*ENDS HEADER*/
 
 /*Detail product section*/
 section.detail-product-section{
@@ -199,7 +201,7 @@ div.select-button-pair button{
     background-color: var(--negro);
     color: var(--blanco);
     border: none;
-    border-radius: 1% / 15%;
+    border-radius: 12px;
 }
 div.select-button-pair button:hover{
     background-color: var(--blanco);
@@ -226,6 +228,26 @@ div.select-button-pair select option{
 
 .prev, .next {
     display: none;
+}
+
+.slider-products{
+    display: flex;
+    flex-direction:column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%
+}
+.slider-products li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.slider-products li article{
+    display: flex;
+
 }
 
 section.recommendations-section{
@@ -296,28 +318,23 @@ article.recommendation-product div p{
 
 div.button-view-details{
     padding-bottom: .5rem;
+    margin-top: 1.5rem;
 }
 
-div.button-view-details button{
-    background-color: var(--negro);
-    padding: 1rem;
-    color: var(--blanco);
-    border-radius: 20px;
-    border: none;
-}
 
-div.button-view-details button a{
+div.button-view-details a{
     text-decoration: none;
     color: var(--blanco);
+    background-color: var(--negro);
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 12px;
 }
-div.button-view-details button:hover{
+
+div.button-view-details  a:hover{
+    color: var(--negro);
     background-color: var(--blanco);
-    color: var(--negro);
-    border:solid 1px var(--negro) ;
-    transform: scale(.9);
-}
-div.button-view-details button a:hover{
-    color: var(--negro);
+    border: var(--negro) 2px solid;
 }
 
 div.row .container-recommendations{
@@ -339,9 +356,6 @@ button.carousel-control-next,button.carousel-control-prev {
     justify-content: center;
     border-radius: 10px;
 }
-
-
-
 
 /*ENDS RECOMMENDATIONS*/
 /* Footer*/
@@ -489,6 +503,15 @@ footer div.copy{
     .next:hover, .prev:hover {
         transform: scale(1.5);
     }
+
+    .slider-products{
+        display: flex;
+        flex-direction:row;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        width: 100%
+    }
     div.container-recommendations{
         flex-direction: row;
         justify-content: center;
@@ -571,14 +594,14 @@ footer div.copy{
         flex-direction: row;
         width: 100%;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
     }
 
      section.detail-product-section article {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 100%;
+            width: 80%;
             height: 100vh;
             padding: 1rem;
             gap: 1rem;
@@ -593,9 +616,13 @@ footer div.copy{
         width: 80%;
     }
     section article div.gallery-image {
-        width: 80%;
-        height: inherit;
-        padding: .5rem;
+        width: 50%;
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+
+    section article div.description-product {
+        width: 50%;
     }
    
     /*RECOMMENDATIONS SECTION */ 

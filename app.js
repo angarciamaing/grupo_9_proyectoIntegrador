@@ -4,7 +4,7 @@ const path = require("path");
 
 //Rutas
 const mainRoutes = require('./routes/mainRoutes');
-const userRoutes = require('./routes/userRoutes');//errror
+const userRoutes = require('./routes/userRoutes');
 
 const publicPath = path.resolve(__dirname, "./public");
 

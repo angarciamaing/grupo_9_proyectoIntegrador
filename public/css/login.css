@@ -38,41 +38,45 @@ main {
 }
 
 /* HEADER*/
-header {
+header{
   background-color: var(--negro);
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
 }
 
-picture.logo {
+picture.logo a{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0.5rem;
+  margin-top: .5rem;
 }
 
-picture.logo img {
+picture.logo img{
   display: flex;
   flex-direction: row;
   width: 50%;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+
 }
 
-nav.sticky-nav {
+nav.sticky-nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
   top: 0;
-  width: 100vw;
+  width: vw;
   flex-direction: column;
   background-color: var(--negro);
+ 
 }
-nav.sticky-nav ul {
+nav.sticky-nav ul{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -80,7 +84,7 @@ nav.sticky-nav ul {
   gap: 1.2rem;
   margin-bottom: 1rem;
   list-style: none;
-  padding: 0.5rem;
+  padding: .5rem  ;
 }
 nav.sticky-nav ul li a {
   text-decoration: none;
@@ -88,41 +92,44 @@ nav.sticky-nav ul li a {
   font-size: var(--text-md);
   font-family: var(--roboto);
 }
-nav.sticky-nav ul li i {
+nav.sticky-nav ul li i{
   text-decoration: none;
   color: var(--white);
-  margin-right: 0.5rem;
+  margin-right: .5rem;
 }
-nav.sticky-nav ul li input {
+nav.sticky-nav ul li input{
   border: none;
-  padding-left: 0.5rem;
+  padding-left:.5rem ;
   width: 100%;
 }
 
-li.search-bar {
+li.search-bar{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
   background-color: var(--blanco);
   padding: 1rem;
   border-radius: 20% / 100%;
   width: 50%;
 }
-.fa-user:before {
+.fa-user:before{
   color: var(--blanco);
 }
 
-li.login-bar {
+li.login-bar{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  
 }
 
 a.login-text {
   display: none;
 }
+
+/*ENDS HEADER*/
 
 /*MAIN*/
 /* LOGIN */

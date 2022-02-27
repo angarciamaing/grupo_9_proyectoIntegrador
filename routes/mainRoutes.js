@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 router.get('/', mainController.home);
-router.get('/detalle-producto', mainController.detalleProducto);
+router. get("/product-detail/:id",mainController.detalleProducto);
 router.get('/shopping-cart', mainController.shoppingCart);
 //router.get('/register', mainController.register);
 //router.get('/login', mainController.login);

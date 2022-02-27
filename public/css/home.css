@@ -45,7 +45,7 @@ header{
     position: absolute;
 }
 
-picture.logo {
+picture.logo a{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -207,27 +207,23 @@ article.recommendation-product div p{
 
 div.button-view-details{
     padding-bottom: .5rem;
+    margin-top: 1.5rem;
 }
 
-div.button-view-details button{
-    background-color: var(--negro);
-    padding: 1rem;
-    border-radius: 20px;
-    border: none;
-}
 
-div.button-view-details button a{
+div.button-view-details a{
     text-decoration: none;
     color: var(--blanco);
+    background-color: var(--negro);
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 12px;
 }
-div.button-view-details button:hover{
+
+div.button-view-details  a:hover{
+    color: var(--negro);
     background-color: var(--blanco);
-    color: var(--negro);
-    border:solid 1px var(--negro) ;
-    transform: scale(.9);
-}
-div.button-view-details button a:hover{
-    color: var(--negro);
+    border: var(--negro) 2px solid;
 }
 
 /*ENDS RECOMMENDATIONS*/
