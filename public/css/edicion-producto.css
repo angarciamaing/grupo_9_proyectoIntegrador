@@ -153,15 +153,6 @@ footer div.copy{
 
 /*MEDIA QUERIES*/
 @media screen and (min-width: 460px) {
-    /*HEADER*/
-    li.search-bar{
-        border-radius: 10% / 100%;
-        width: 50%;
-    }
-
-    nav.sticky-nav ul {
-        justify-content: space-evenly;
-    }
 
     /*Footer*/
     nav.nav-footer ul li a{
