@@ -68,7 +68,7 @@ nav.sticky-nav{
     align-items: center;
     position: fixed;
     top: 0;
-    width: vw;
+    width: 100%;
     flex-direction: column;
     background-color: var(--negro);
    
