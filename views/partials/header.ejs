@@ -9,11 +9,12 @@
         <picture class="logo" >
             <a href="/"><img src="/img/logo-blanco.png" alt="logo"></a>
         </picture>
+                <div class="search-bar-container">
+                    <li class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Buscar"> </li>
+                </div>
         <div class="nav-bar-header">
-            <ul>
-                <li> <a href="/">Productos</a></li>
-                <!-- <li> <a href="/">Productos</a></li> -->
-                <li class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Buscar"> </li>
+            <ul class="links-container">
+                    <li> <a href="/">Productos</a></li>                
                 <li><a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a></li>
                 <% if(locals.isLogged){%>
                 <ul>
@@ -23,7 +24,7 @@
                             Hola <%=locals.userLogged.userName%>
                         </a>
                     </li>
-                    <li> <a href="/user/logout">Cerrar cesión</a></li>
+                    <li> <a href="/user/logout">Cerrar sesión</a></li>
                    
                     
                 </ul>
@@ -31,8 +32,9 @@
                 <li><a href="/user/register">Regístrate</a></li>                   
                 <li class="login-bar"><a href="/user/login"><i class="fas fa-user"></i></a><a class="login-text" href="/user/login">login</a></li>
                 <% } %>
-            </ul>   
-        </div>           
+                          
+                
+            </ul>            
     </nav>
 </header>
 
