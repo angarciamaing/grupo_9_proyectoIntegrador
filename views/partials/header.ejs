@@ -1,3 +1,7 @@
+<head>
+   <link rel="stylesheet" href="/css/partials/header.css">
+</head>
+
 <header>
     <nav class="sticky-nav sticky-top">
         
@@ -14,9 +18,9 @@
                 <% if(locals.isLogged){%>
                 <ul>
                     <li> 
-                        <a id="profilePicture" href="/user/profile"> 
-                            <img src="/img/profilePictures/<%= locals.userLogged.profilePicture%> "> 
-                            hola <%=locals.userLogged.userName%>
+                        <a  href="/user/profile"> 
+                            <img id="profilePicture" src="/img/profilePictures/<%= locals.userLogged.profilePicture%> "> 
+                            Hola <%=locals.userLogged.userName%>
                         </a>
                     </li>
                     <li> <a href="/user/logout">Cerrar cesión</a></li>
