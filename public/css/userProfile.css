@@ -55,6 +55,7 @@ section div.user-information-container{
     margin-top: 3rem;
     background-color: var(--gris);
     margin-top: 150px;
+    margin-bottom: 4rem;
     border-radius: 20px;
     padding: 1rem 0;
 }
