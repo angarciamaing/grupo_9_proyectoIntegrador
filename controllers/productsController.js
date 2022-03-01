@@ -36,7 +36,7 @@ module.exports = {
     },
     
     create: (req, res) => {
-		res.render('product-create-form');
+		res.render('product-create-form.ejs');
 	},
 
     createPost: (req, res) => {

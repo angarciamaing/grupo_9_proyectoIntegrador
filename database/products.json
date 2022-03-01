@@ -1,5 +1,3 @@
-
-
 [
  {
   "id": 1,
@@ -108,7 +106,14 @@
   "category": "peliculas",
   "lanzamiento": "antiguo",
   "price": 60000
+ },
+ {
+  "id": 13,
+  "name": "prueba",
+  "price": "45",
+  "discount": "15",
+  "category": "in-sale",
+  "description": "scsadaas",
+  "image": "default-img.png"
  }
-
 ]
-

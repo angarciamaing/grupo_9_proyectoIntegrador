@@ -13,6 +13,10 @@ html {
   font-size: 62.5%;
   font-family: var(--roboto);
 }
+
+body {
+  margin-top: 80px;
+}
 main {
   background-color: var(--blanco);
 }
