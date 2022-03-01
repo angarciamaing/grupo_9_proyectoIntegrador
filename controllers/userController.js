@@ -6,6 +6,7 @@ const User = require('../models/User');
 const controller = {
 
     register: (req, res) => {
+       
         return res.render('register');
     },
     processRegister: (req,res) =>{
@@ -43,12 +44,13 @@ const controller = {
     },
 
     login: (req,res) => {
-        // console.log(req.session);
+
         return res.render('login')
     },
 
     // Proceso validacion de credenciales login
     loginProcess:(req, res) => {
+
         let userTologin = User.findByField('email', req.body.email);
 
         if(userTologin){
@@ -56,6 +58,11 @@ const controller = {
             if(isOkthePassword){
                 delete userTologin.password;
                 req.session.userLogged = userTologin;
+
+                if(req.body.remember_user) {
+                    res.cookie('email', req.body.email, { maxAge: (1000 * 60 ) * 2});
+                }
+
                 return res.redirect("/user/profile");
 
             }
@@ -85,8 +92,8 @@ const controller = {
     },
 
     logout: (req, res) =>{
+        res.clearCookie('email');
         req.session.destroy();
-        console.log(req.session);
         return res.redirect('/');
     }
 }

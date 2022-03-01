@@ -19,17 +19,27 @@
     <%- include('partials/header') %>
 
     <main class="login">
-        <h3>Ingresa tus datos:</h3>
+        
         <form action="/user/login" method="POST">
-            <input type="email" name="email" placeholder="Correo electronico">
+            <h3>Iniciar Sesión </h3>
+            <label for="email">Correo electrónico
+                <input type="email" name="email" id="email" placeholder="Correo electronico">
             <% if (locals.errors && errors.email) { %>
                 <div class="text-danger">
     
                     <%= errors.email.msg %>
                 </div>
                 <% } %>
-          <input type="password" name="password" placeholder="Ingresa tu contraseña">
-            <input class="btn" type="submit" value="Enviar">
+            </label>         
+           
+            <label for="password"> Contraseña
+                <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
+            </label>
+            <label for="remember_user"> Recordar Usuario
+                <input type="checkbox" name="remember_user" id="remember_user"> 
+            </label>            
+            <input class="btn" type="submit" value="Ingresar">
+
         </form>
     </main>
     <!--FOOTER-->

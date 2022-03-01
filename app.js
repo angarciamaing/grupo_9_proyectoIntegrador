@@ -1,5 +1,6 @@
 const express = require("express");
 const session = require("express-session");
+const cookies = require('cookie-parser');
 const req = require("express/lib/request");
 const app = express();
 const path = require("path");
@@ -13,6 +14,7 @@ app.use(session({
 //Middleware login
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
+app.use(cookies());
 app.use(userLoggedMiddleware);
 
 
