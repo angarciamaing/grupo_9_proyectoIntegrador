@@ -146,7 +146,7 @@ ul.links-container ul{
 .fa-user:before{
     color: var(--blanco);
 }
-#profilePicture{
+img#profilePicture{
     width: 30px;
     height: 30px;
     border-radius: 50%;

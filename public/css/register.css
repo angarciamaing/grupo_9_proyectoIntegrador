@@ -58,87 +58,111 @@ main {
 
 }
 
-.register {
+main.register {
   display: flex; /* para que quede centrado los errores de validacion*/
   flex-direction: column;/* para que quede centrado los errores de validacion*/
   justify-content: center;/* para que quede centrado los errores de validacion*/
   align-items: center;/* para que quede centrado los errores de validacion*/
-  margin-top: 2%;
-  margin-bottom: 2%;
+  background-color: var(--gris-medio);
 }
 
-.register h3 {
-  font-size: var(--title-md);
+main.register form h1 {
+  font-size: var(--text-lg);
   font-weight: 500;
-  padding: 1%;
+  padding: 1rem;
   text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
-.register form {
-  width: 30%;
-  margin: 0 auto;
+
+
+main.register form {
+  margin-top: 130px;
+  margin-bottom: 40px;
+  width: 90%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blanco);
+  padding:1rem ;
+  border-radius: 12px;
+  box-shadow: 5px 5px 3px #aaaaaa62;
 }
 
-.register form h4 {
-  margin-top: 3%;
-  font-size: var(--text-md);
-  font-weight: 500;
-}
-
-.register form input {
-  padding: 10px;
-  border-radius: 5px;
-  margin: 2%;
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
-}
-
-.labelTitle {
-  font-size: var(--text-md);
-  font-weight: 500;
-  margin-top: 3%;
-}
-
-
-.buttons {
+main.register form label{
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 90%;
+  gap: .5rem;
+}
+
+
+.file-upload {
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:1rem;
+  cursor: pointer;
+  width: 80%;
+  margin: 1rem;
+  
+  
+}
+
+.file-upload  p{
+  text-align: center;
+  font-weight: 500;
+  
+}
+
+input[type="file"] {
+  display: none;
+}
+
+
+main.register form input {
+  padding: 10px;
+  border-radius: 5px;
+  margin: .7rem;
+  width: 80%;
+  border: 1px solid var(--gris-oscuro);
+  
+}
+
+
+.buttons input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   gap: 30%;
 }
 
-
-
-@media screen and (min-width: 856px) {
-  article.small-height button {
-    margin-bottom: 4.134rem;
+@media screen and (min-width: 425px) {
+  main.register form {
+    width: 80%;
   }
 }
 
-@media screen and (min-width: 882px) {
-  article.medium-height button {
-    margin-bottom: 0;
-  }
-
-  article.small-height button {
-    margin-bottom: 2.067rem;
+@media screen and (min-width: 768px) {
+  main.register form {
+    width: 50%;
   }
 }
 
-@media screen and (min-width: 988px) {
-  article.medium-height button {
-    margin-bottom: 2.067rem;
+@media screen and (min-width: 1024px ) {
+  main.register form {
+    width: 40%;
   }
 }
 
-@media screen and (min-width: 996px) {
-  article.medium-height button,
-  article.small-height button {
-    margin-bottom: 0;
+@media screen and (min-width: 1440px) {
+  main.register form {
+    width: 30%;
   }
 }

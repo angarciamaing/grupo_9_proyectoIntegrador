@@ -88,12 +88,16 @@ div.image-container img{
   border-radius: 5px;
   border: none;
   margin: .26rem;
-  width: 90%;
+  width: 80%;
   border: var(--gris-oscuro) solid 1px;
 }
 
 .login form label {
-  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: .5rem;
  
 }
 

@@ -5,22 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <!-- Forma de importar estilos no tan eficiente mejor en el archivo CSS
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    -->
     <link rel="icon" type="image/x-icon" href="/img/logoFace.svg">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> <!--Libreria fontawesome-->
     <link rel="stylesheet" href="/css/register.css"> <!--Enlazar HTML y CSS-->
-
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
 </head>
 <body>    
       <!-- HEADER-->
   <%- include('partials/header') %>
 
     <main class="register">
-        <h3>Crear cuenta</h3>
+        
         <% if(locals.errors) { %>
             <% errors.forEach(error => { %>
                 
@@ -33,18 +28,32 @@
          %> 
         
         <form method="POST" action="/user/register" enctype="multipart/form-data">
-            <label for=""></label>
-
-            <input type="text" placeholder="Nombre completo"  name="fullname" value="<%=locals.old && old.fullname ? old.fullname :'' %>">
-            <input type="text" placeholder="Nombre de Usuario"  name="username" value="<%=locals.old && old.username ? old.username:'' %>">            
-            <input type="email" placeholder="Email"  name="email" value="<%= locals.old && old.email ? old.email : '' %> ">
-            <label for="profilePicture">Imagen perfil</label>
-            <input  type="file" name="profilePicture" id="profilePicture" accept=".jpg" >        
-            <input type="password" placeholder="Constraseña"  name="password">
-            <input type="password" placeholder="Repite tu contraseña"  name="re_password">
+            <h1>Crear cuenta</h1>
+            <label for="fullname"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span>
+                <input type="text" placeholder="Nombre completo"  name="fullname" id="fullname" value="<%=locals.old && old.fullname ? old.fullname :'' %>">
+            </label>
+            <label for="userName"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span>
+                <input type="text" placeholder="Nombre de Usuario"  name="username" id="userName" value="<%=locals.old && old.username ? old.username:'' %>">
+            </label>
+            <label for="email"><span class="iconify" data-icon="cib:mail-ru" data-width="20" data-height="20"></span>
+                <input type="email" placeholder="Email"  name="email" id="userName" value="<%= locals.old && old.email ? old.email : '' %> ">
+            </label>  
+            <label for="profilePicture"><span class="iconify" data-icon="jam:picture" data-width="25" data-height="25"></span>
+                <div  class="file-upload"> 
+                    <p>Sube tu imagen de perfil</p>
+                    <input  type="file" name="profilePicture" id="profilePicture" accept=".jpg" > 
+                </div>
+                
+            </label>
+            <label for="password"><span class="iconify" data-icon="bxs:lock" data-width="20" data-height="20"></span>
+                <input type="password" placeholder="Constraseña"  name="password" id="password">
+            </label>
+            <label for="re_password"><span class="iconify" data-icon="bxs:lock" data-width="20" data-height="20"></span>
+                <input type="password" placeholder="Repite tu contraseña"  name="re_password">
+            </label>       
+            
             <div class="buttons">
-                <input type="submit" value="Enviar" class="btn">
-                <input type="reset" value="Resetear Datos" class="btn">
+                <input type="submit" value="Registrarse" class="btn">
             </div>
         </form>
     </main>
