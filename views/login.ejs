@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- Forma de importar estilos no tan eficiente mejor en el archivo CSS
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    -->
+    <link rel="icon" type="image/x-icon" href="/img/logoFace.svg">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> <!--Libreria fontawesome-->
-    <link rel="stylesheet" href="/css/login.css"> <!--Enlazar HTML y CSS-->
-
+    <link rel="stylesheet" href="/css/login.css">    
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <title>Login</title>
 </head>
 <body>
 
@@ -21,8 +17,13 @@
     <main class="login">
         
         <form action="/user/login" method="POST">
+            <div class="image-container">
+                <img src="/img/logoFace.png" alt="">
+            </div>
+            
             <h3>Iniciar Sesión </h3>
-            <label for="email">Correo electrónico
+            
+            <label for="email"><span class="iconify" data-icon="cib:mail-ru"></span>
                 <input type="email" name="email" id="email" placeholder="Correo electronico">
             <% if (locals.errors && errors.email) { %>
                 <div class="text-danger">
@@ -30,12 +31,12 @@
                     <%= errors.email.msg %>
                 </div>
                 <% } %>
-            </label>         
+            </label>   
            
-            <label for="password"> Contraseña
+            <label for="password"><span class="iconify" data-icon="bxs:lock"></span>
                 <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
             </label>
-            <label for="remember_user"> Recordar Usuario
+            <label class="remember_me" for="remember_user"> Recuerdame
                 <input type="checkbox" name="remember_user" id="remember_user"> 
             </label>            
             <input class="btn" type="submit" value="Ingresar">
