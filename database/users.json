@@ -30,5 +30,13 @@
   "email": "yasminadrianasanchez@gmail.com",
   "password": "$2a$10$iZ7Z2cBaPK.hBS7NCL0vCOMchXIzl7ibbdJ/ig.iiCLfEwg5k.4lu",
   "profilePicture": "yasmin-1646080647779.jpg"
+ },
+ {
+  "id": 5,
+  "fullname": "pepe",
+  "userName": "pepito",
+  "email": "pepito@hotmail.com",
+  "password": "$2a$10$SF6ntrh5Gfk9kUzNSHYltODNDisQg3RPL/poX1gU0tU4xzS.L86Ua",
+  "profilePicture": "pepito-1646146927232.jpg"
  }
 ]

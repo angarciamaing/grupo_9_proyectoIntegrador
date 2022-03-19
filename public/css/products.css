@@ -16,6 +16,9 @@ html {
 main {
   background-color: var(--blanco);
 }
+body {
+  margin-top: 80px;
+}
 :root {
   /* Colores ---- */
   --negro: #000000;
