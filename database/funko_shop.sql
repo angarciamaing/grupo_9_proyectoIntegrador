@@ -100,15 +100,12 @@ DROP TABLE IF EXISTS `shopping_car`;
 CREATE TABLE `shopping_car` (
   `id` int NOT NULL AUTO_INCREMENT,
   `quantity` int NOT NULL,
-  `unit_price` double NOT NULL,
-  `total_price` double NOT NULL,
-  `user_id` int NOT NULL,
-  `product_id` int NOT NULL,
+  `unit_price` int NOT NULL,
+  `total_price` int NOT NULL,
+  `product_user_id` int NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_shopping_car_user_id_idx` (`product_id`),
-  KEY `FK_shopping_car_user_id` (`user_id`),
-  CONSTRAINT `FK_shopping_car_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  CONSTRAINT `FK_shopping_car_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `FK_product_user_id_idx` (`product_user_id`),
+  CONSTRAINT `FK_product_user_id` FOREIGN KEY (`product_user_id`) REFERENCES `user_product` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -189,4 +186,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-18 20:53:29
+-- Dump completed on 2022-03-18 23:33:59
