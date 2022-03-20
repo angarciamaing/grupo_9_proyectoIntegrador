@@ -16,9 +16,7 @@ html {
 main {
   background-color: var(--blanco);
 }
-body {
-  margin-top: 80px;
-}
+
 :root {
   /* Colores ---- */
   --negro: #000000;
@@ -37,68 +35,46 @@ body {
   --roboto: "roboto";
 }
 
-/* CREATE and EDIT fornm */
-section.product-edit {
+/*MAIN*/
+main.create {
+  background-color: var(--gris-medio);
+  height: 75vh;
   display: flex;
-  flex-direction: column;
-  padding-top: 100px;
+  justify-content: center;
+  width: 100vw;
   align-items: center;
-  gap: 2em;
-  margin: 2em;
-  background-color: var(--blanco);
-  padding-bottom: 2em;
 }
 
-section.product-edit h1 {
-  font-size: var(--title-md);
+.create form {
+  background-color: var(--blanco);
+  width: 85%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  box-shadow: 5px 5px 3px #aaaaaa62;
+  border-radius: 12px;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+div.image-container {
+  padding-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.image-container img {
+  width: 50px;
+}
+
+.create h2 {
+  padding: 10px;
   text-align: center;
-}
-form.form-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 1em;
-  font-size: var(--title-md);
-}
-div.data {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5em;
-}
-div.data input,
-textarea {
-  width: 100%;
-  padding: 1em;
-  border: 1px solid;
-  border-radius: 10px;
-}
-div.data input#imagen-producto {
-  border: none;
-}
-
-div.buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5em;
-}
-
-div.buttons input {
-  padding: 0.5em;
-  width: 80%;
-  background-color: var(--negro);
-  color: var(--blanco);
-  border: none;
-  border-radius: 1% / 15%;
-}
-div.buttons input:hover {
-  background-color: var(--blanco);
-  color: var(--negro);
-  border: 1px solid var(--negro);
-  transform: scale(1.2);
+  font-size: var(--text-lg);
+  font-weight: 500;
 }
 
 /*MEDIA QUERIES*/
@@ -106,46 +82,6 @@ div.buttons input:hover {
 }
 
 @media screen and (min-width: 768px) {
-  /*CREATE and EDIT FORM*/
-  section.product-edit {
-    padding-top: 60px;
-  }
-  form.form-container {
-    width: 90%;
-  }
-  div.data {
-    flex-direction: row;
-  }
-  div.data label {
-    width: 50%;
-  }
-
-  div.buttons {
-    flex-direction: row;
-    gap: 2em;
-  }
-
-  div.buttons input {
-    width: 30%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  /* CREATE and EDIT FORM*/
-  form.form-container {
-    width: 50%;
-  }
-  div.data textarea {
-    padding: 1em;
-    height: 100px;
-  }
-  div.buttons input {
-    width: 20%;
-  }
-  div.data input,
-  textarea {
-    padding: 1.5em;
-  }
 }
 
 @media screen and (min-width: 1440px) {
