@@ -1,47 +1,34 @@
 
-const path = require('path');
-const fs = require('fs');
-const {validationResult} = require('express-validator');
-
-
-
-
-
-const productsFilePath = path.join(__dirname,'../database/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath,'utf-8'));
+//const path = require('path');
+//const fs = require('fs');
+//const {validationResult} = require('express-validator');
+//const productsFilePath = path.join(__dirname,'../database/products.json');
+//const products = JSON.parse(fs.readFileSync(productsFilePath,'utf-8'));
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const nuevoLanzamiento = products.filter((producto)=> producto.lanzamiento ==='nuevo');
-const peliculas = products.filter((producto) => producto.category ==="peliculas" );
-
+//const nuevoLanzamiento = products.filter((producto)=> producto.lanzamiento ==='nuevo');
+//const peliculas = products.filter((producto) => producto.category ==="peliculas" );
+const db = require('../database/models');
+const sequelize = db.sequelize
+const {Op} = require('sequelize')
 
 module.exports = {
     
     home: (red, res) => {
-        res.render('home',{
-            toThousand,
-            nuevoLanzamiento
-    
-        });
+        db.Product.findAll({
+            limit: 8
+        })
+        .then((products) => {
+            res.render('home',{products,toThousand})
+        })
     },
 
     detalleProducto: (req, res) => {
-        
-        const id = req.params.id;
-        const product = products.find((funko) => funko.id == id);
-        const related = products.filter((funko) => funko.category == product.category && funko.id != product.id);
-        
-        return res.render('detalle-producto',
-            {
-                pageTitle: product.productName,
-                product,
-                toThousand,
-                carousel: {
-                    condition: "related",
-                    funkos: related,
-                }
-            }
-        )
-        
+          const productId = req.params.id
+          
+          db.Product.findByPk(productId)
+          .then((product) =>{
+              res.render('detalle-producto',{product, toThousand})
+          })
     },
 
     shoppingCart: (req, res) => {

@@ -44,14 +44,14 @@ module.exports = (sequelize , dataTypes) => {
     const Product = sequelize.define(alias, cols, config);
 
     Product.associate = models =>{
-        Product.belognsTo(models.CategoryProduct, {
+        Product.belongsTo(models.CategoryProduct, {
             as:"productCategory",
             foreignKey: "category_id"
         })
     }
 
     Product.associate = models => {
-        Product.belognsToMany(models.User, {
+        Product.belongsToMany(models.User, {
             as:"user",
             through: "user_product",
             foreignKey:"product_id",

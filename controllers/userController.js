@@ -2,6 +2,8 @@ const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const { memoryStorage } = require('multer');
 
+// const db = require('../database/models')
+
 const User = require('../models/User');
 const controller = {
 
@@ -30,8 +32,10 @@ const controller = {
             password: bcryptjs.hashSync(req.body.password,10),            
             profilePicture: req.file.filename
             
-        }        
-        User.create(userToCreate)
+        } 
+        
+        
+         User.create(userToCreate)
            res.redirect('login')
        } else  {
            res.render('register',{

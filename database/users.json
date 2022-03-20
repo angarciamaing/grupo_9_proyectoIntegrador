@@ -38,5 +38,21 @@
   "email": "pepito@hotmail.com",
   "password": "$2a$10$SF6ntrh5Gfk9kUzNSHYltODNDisQg3RPL/poX1gU0tU4xzS.L86Ua",
   "profilePicture": "pepito-1646146927232.jpg"
+ },
+ {
+  "id": 6,
+  "fullname": "pepito perez",
+  "userName": "pepito",
+  "email": "pepito2@hotmail.com",
+  "password": "$2a$10$9BmpTufYUFmltUJbrIbu4OETpAnFbyWAqoSRJPY.U/t1rgKpWko8a",
+  "profilePicture": "pepito-1647724874528.jpg"
+ },
+ {
+  "id": 7,
+  "fullname": "carlos",
+  "userName": "carlos",
+  "email": "carlos@hotmail.com",
+  "password": "$2a$10$GVCpsKZITNLc5MZgmXlob.EJYr2hNBammg7k1Hcdu4cl58zezi4rO",
+  "profilePicture": "carlos-1647759629350.jpg"
  }
 ]

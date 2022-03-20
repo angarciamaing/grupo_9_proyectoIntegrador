@@ -35,7 +35,7 @@ module.exports = (sequelize , dataTypes) => {
     const ShoppingCar = sequelize.define(alias, cols, config);
 
     ShoppingCar.associate = models =>{
-        ShoppingCar.belognsTo(models.UserProduct, {
+        ShoppingCar.belongsTo(models.UserProduct, {
             as:"UserProducts",
             foreignKey: "product_user_id"
         })

@@ -115,5 +115,22 @@
   "category": "in-sale",
   "description": "scsadaas",
   "image": "default-img.png"
+ },
+ {
+  "id": 14,
+  "name": "prueba",
+  "price": "50000",
+  "discount": "20",
+  "category": "in-sale",
+  "description": "prueba",
+  "image": "default-img.png"
+ },
+ {
+  "id": 15,
+  "name": "prueba multer",
+  "description": "prueba multer",
+  "category": "in-sale",
+  "price": "50000",
+  "image": "default-img.png"
  }
 ]

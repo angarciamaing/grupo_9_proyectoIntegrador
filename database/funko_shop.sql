@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `category_product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `category_product` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name_category` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,6 +35,7 @@ CREATE TABLE `category_product` (
 
 LOCK TABLES `category_product` WRITE;
 /*!40000 ALTER TABLE `category_product` DISABLE KEYS */;
+INSERT INTO `category_product` VALUES (1,'series infantiles'),(2,'series adultos'),(3,'peliculas');
 /*!40000 ALTER TABLE `category_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -49,7 +50,7 @@ CREATE TABLE `category_user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `profile_category` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -58,6 +59,7 @@ CREATE TABLE `category_user` (
 
 LOCK TABLES `category_user` WRITE;
 /*!40000 ALTER TABLE `category_user` DISABLE KEYS */;
+INSERT INTO `category_user` VALUES (1,'Administrador'),(2,'usuario');
 /*!40000 ALTER TABLE `category_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,7 +80,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `FK_category_product_id_idx` (`category_id`),
   CONSTRAINT `FK_category_product_id` FOREIGN KEY (`category_id`) REFERENCES `category_product` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,6 +89,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Avatar maestro del aire','Personaje FunkoPop de la serie Avatar','Ang Avatar.PNG',1,35000),(2,'Ashi samurai','Personaje FunkoPop de la serie SamUrai JACK','Ashi.PNG',1,32000),(3,'Donatelo tortugas ninja','Personade FunkoPop de la serie las Tortugas Ninjas','Donatelo.PNG',1,37000),(4,'Kramer buen policia','Personaje de FunkoPop de la serie Seinfeld','Kramer buen policia.PNG',2,35000),(5,'Wall-e','Personaje FunkoPop de la pelicula Wall-e','Wall-e.PNG',3,35000),(6,'Dexter','Personaje FunkoPop de la serie Dexter','Dexter.PNG',2,35000),(7,'Arthur espada','Personaje FunkoPop de la pelicula The Sword in The Stone','Arthur espada.PNG',3,35000),(8,'Eve','Personaje FunkoPop de la pelicula Wall-E','Eve.PNG',3,35000),(9,'Deadpool Barista','Personaje FunkoPop de la pelicula Deadpool','deadepool.jpg',3,60000),(10,'Capitan America','Personaje FunkoPop de la pelicula Capitan America','capitan-america.jpg',3,60000),(11,'Profesor X','Personaje FunkoPop de las peliculas X-Men','profesor x.jpg',3,60000),(12,'Thanos','Personje FunkoPop del pelicula The Avengers','thanos.jpg',3,60000);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -186,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-18 23:33:59
+-- Dump completed on 2022-03-19 20:41:59
