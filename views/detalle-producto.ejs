@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/css/detalle-producto.css" type="text/css">
         <script src="https://kit.fontawesome.com/6fda1860f4.js" crossorigin="anonymous"></script>
        
-        <title><%= product.productName%> </title>
+        <title><%= product.product_name%> </title>
     </head>
 <body>
 
@@ -22,15 +22,15 @@
             <article>
                 <div class="gallery-image">
                     <picture class="order-reverse">
-                        <img src="/img/productsImages/<%= product.image%>" alt="<%= product.productName %> ">
+                        <img src="/img/productsImages/<%= product.image%>" alt="<%= product.product_name %> ">
                         <img src="/img/caja-deadpool.jpg" alt="<%= product.productName%>">
                     </picture>
                     <picture class="main-image-product">
-                        <img src="/img/productsImages/<%= product.image%>" alt="<%= product.productName %> ">
+                        <img src="/img/productsImages/<%= product.image%>" alt="<%= product.product_name %> ">
                     </picture>
                 </div>
                 <div class="description-product">
-                    <h1><%=product.productName%></h1>
+                    <h1><%=product.product_name%></h1>
 
                     <p>$<%=toThousand(product.price)%></p>
                     <p><%= product.decription%> </p>
@@ -54,7 +54,6 @@
         </section>
         
         <!--Recomendation section-->
-        <% const { funkos, condition}= carousel %> 
         <section recommendations-section>      
             <div class="container">
                 <h1>Recomendados</h1>
@@ -82,6 +81,7 @@
             </div>       
       
         </section>
+        
         
              
     </main>
