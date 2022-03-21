@@ -44,11 +44,11 @@ module.exports = {
 	},
 
     createPost: (req, res) => {
-		console.log(req.body);
+		let image = req.file ? req.file.filename : 'default-img.png'
 		let newProduct = {
 			id: products[products.length - 1].id + 1,
 			...req.body,
-			image: 'default-img.png'
+			image: image
 		};
 
 		products.push(newProduct);
