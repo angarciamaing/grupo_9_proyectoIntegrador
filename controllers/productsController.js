@@ -62,18 +62,21 @@ module.exports = {
 		let productToEdit = products.find(product => product.id == id);
 
 		res.render('product-edit-form', { productToEdit });
+
 	},
 
     update: (req, res) => {
 		let id = req.params.id;
 		let productToEdit = products.find(product => product.id == id);
 
+		let image = req.file ? req.file.filename : productToEdit.image;
+		
 		productToEdit = {
 			id: productToEdit.id,
 			...req.body,
-			image: productToEdit.image
+			image: image
 		};
-
+		
 		let newProducts = products.map(product => {
 			// product.id == productToEdit.id ? product = {...productToEdit} : product;
 			if (product.id == productToEdit.id) {

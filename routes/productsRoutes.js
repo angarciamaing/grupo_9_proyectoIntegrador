@@ -28,7 +28,7 @@ router.post('/', upload.single('image'), productsController.createPost);
 router. get("/product-detail/:id", productsController.detalleProducto);
 
 router.get('/edit/:id', productsController.edit); 
-router.patch('/edit/:id', productsController.update); 
+router.patch('/edit/:id', upload.single('image'), productsController.update); 
 
 router.delete('/delete/:id', productsController.delete); 
 
