@@ -1,21 +1,21 @@
 [
  {
-   "id":1,
-   "productName":"Avatar maestro del aire",
-   "decription":"Personaje FunkoPop de la serie Avatar",
-   "image":"Ang Avatar.PNG",
-   "category":"series infantiles",
-   "lanzamiento":"nuevo",
-   "price":35000
+  "id": 1,
+  "productName": "Avatar maestro del aire",
+  "decription": "Personaje FunkoPop de la serie Avatar",
+  "image": "Ang Avatar.PNG",
+  "category": "series infantiles",
+  "lanzamiento": "nuevo",
+  "price": 35000
  },
  {
-   "id":2,
-   "productName":"Ashi samurai",
-   "decription":"Personaje FunkoPop de la serie SamUrai JACK",
-   "image":"Ashi.PNG",
-   "category":"series infantiles",
-   "lanzamiento":"nuevo",
-   "price":32000
+  "id": 2,
+  "productName": "Ashi samurai",
+  "decription": "Personaje FunkoPop de la serie SamUrai JACK",
+  "image": "Ashi.PNG",
+  "category": "series infantiles",
+  "lanzamiento": "nuevo",
+  "price": 32000
  },
  {
   "id": 3,
@@ -99,12 +99,12 @@
   "price": 60000
  },
  {
-    "id":12,
-    "productName":"Thanos",
-    "decription":"Personje FunkoPop del pelicula The Avengers",
-    "image":"thanos.jpg",
-    "category":"peliculas",
-    "lanzamiento":"antiguo",
-    "price":60000
+  "id": 12,
+  "productName": "Thanos",
+  "decription": "Personje FunkoPop del pelicula The Avengers",
+  "image": "thanos.jpg",
+  "category": "peliculas",
+  "lanzamiento": "antiguo",
+  "price": 60000
  }
 ]

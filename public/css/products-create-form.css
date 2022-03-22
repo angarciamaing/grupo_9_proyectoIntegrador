@@ -14,7 +14,7 @@ html {
   font-family: var(--roboto);
 }
 main {
-  background-color: var(--blanco);
+  font-size: 12px;
 }
 
 :root {
@@ -37,27 +37,45 @@ main {
 
 /*MAIN*/
 main.create {
+  display: flex; /* para que quede centrado los errores de validacion*/
+  flex-direction: column; /* para que quede centrado los errores de validacion*/
+  justify-content: center; /* para que quede centrado los errores de validacion*/
+  align-items: center; /* para que quede centrado los errores de validacion*/
   background-color: var(--gris-medio);
-  height: 75vh;
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  align-items: center;
 }
 
-.create form {
-  background-color: var(--blanco);
-  width: 85%;
-  margin-top: 50px;
+main.create form h1 {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+main.create form {
+  margin-top: 130px;
+  margin-bottom: 40px;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding-bottom: 10px;
-  box-shadow: 5px 5px 3px #aaaaaa62;
-  border-radius: 12px;
+  justify-content: center;
+  background-color: var(--blanco);
   padding: 1rem;
-  gap: 2rem;
+  border-radius: 12px;
+  box-shadow: 5px 5px 3px #aaaaaa62;
+}
+
+main.create label input,
+textarea {
+  font-family: var(--roboto);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0.7rem;
+  width: 80%;
+  height: 38px;
+  border: 1px solid var(--gris-oscuro);
 }
 
 div.image-container {
@@ -66,15 +84,59 @@ div.image-container {
   align-items: center;
   justify-content: center;
 }
+
 div.image-container img {
   width: 50px;
 }
 
-.create h2 {
-  padding: 10px;
+main.create form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  gap: 0.5rem;
+}
+
+.file-upload {
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+  width: 80%;
+  margin: 1rem;
+}
+
+.file-upload p {
   text-align: center;
-  font-size: var(--text-lg);
   font-weight: 500;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+select#category.form-input {
+  width: 72%;
+  height: 38px;
+}
+
+main.create form input {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0.7rem;
+  width: 80%;
+  border: 1px solid var(--gris-oscuro);
+}
+
+.buttons input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 30%;
 }
 
 /*MEDIA QUERIES*/

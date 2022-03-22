@@ -37,32 +37,31 @@ main {
   --roboto: "roboto";
 }
 
-
 /*ENDS HEADER*/
 /*MAIN*/
 /* REGISTER */
 
-.feedback { /*ESTILOS PARA QUE IMPRIMAN EN PANTALLA LOS ERRORES DE VALIDACION*/
+.feedback {
+  /*ESTILOS PARA QUE IMPRIMAN EN PANTALLA LOS ERRORES DE VALIDACION*/
   display: flex;
   justify-content: center;
-  align-items: center;  
-  background-color: #C1EDEF;
+  align-items: center;
+  background-color: #c1edef;
   width: 20%;
   padding: 1rem;
-  margin: .3rem;
+  margin: 0.3rem;
   text-align: center;
   border-radius: 12px;
   font-size: var(--text-sm);
   color: #272727;
   font-weight: 500;
-
 }
 
 main.register {
   display: flex; /* para que quede centrado los errores de validacion*/
-  flex-direction: column;/* para que quede centrado los errores de validacion*/
-  justify-content: center;/* para que quede centrado los errores de validacion*/
-  align-items: center;/* para que quede centrado los errores de validacion*/
+  flex-direction: column; /* para que quede centrado los errores de validacion*/
+  justify-content: center; /* para que quede centrado los errores de validacion*/
+  align-items: center; /* para que quede centrado los errores de validacion*/
   background-color: var(--gris-medio);
 }
 
@@ -75,8 +74,6 @@ main.register form h1 {
   margin-bottom: 3rem;
 }
 
-
-
 main.register form {
   margin-top: 130px;
   margin-bottom: 40px;
@@ -86,19 +83,18 @@ main.register form {
   align-items: center;
   justify-content: center;
   background-color: var(--blanco);
-  padding:1rem ;
+  padding: 1rem;
   border-radius: 12px;
   box-shadow: 5px 5px 3px #aaaaaa62;
 }
 
-main.register form label{
+main.register form label {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 90%;
-  gap: .5rem;
+  gap: 0.5rem;
 }
-
 
 .file-upload {
   border: 1px solid var(--gris-oscuro);
@@ -106,36 +102,30 @@ main.register form label{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding:1rem;
+  padding: 1rem;
   cursor: pointer;
   width: 80%;
   margin: 1rem;
-  
-  
 }
 
-.file-upload  p{
+.file-upload p {
   text-align: center;
   font-weight: 500;
-  
 }
 
 input[type="file"] {
   display: none;
 }
 
-
 main.register form input {
   padding: 10px;
   border-radius: 5px;
-  margin: .7rem;
+  margin: 0.7rem;
   width: 80%;
   border: 1px solid var(--gris-oscuro);
-  
 }
 
-
-.buttons input{
+.buttons input {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +145,7 @@ main.register form input {
   }
 }
 
-@media screen and (min-width: 1024px ) {
+@media screen and (min-width: 1024px) {
   main.register form {
     width: 40%;
   }

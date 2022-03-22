@@ -10,6 +10,9 @@
 	
         <link rel="stylesheet" href="/css/products-create-form.css">
         <script src="https://kit.fontawesome.com/6fda1860f4.js" crossorigin="anonymous"></script>
+
+		<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+
         <title>Bienvenido a Funkoshop</title>
     </head>
 <body>
@@ -21,40 +24,35 @@
 			<div class="image-container">
 				<img src="/img/logoFace.png" alt="">
 			</div>
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Crear producto</h2>
-				</div>
-			</div>
-			<div class="row product-detail">
-				<div class="col-12 col-md-6">
-					<label for="name" class="form-label">Nombre del producto:</label>
-					<input type="text" id="name" name="name" placeholder="Ej: Monkey D. Luffy" class="form-input">
-				</div>
-				<div class="col-12">
-					<label for="description" class="form-label">Descipción:</label>
+			<h1 class="products-title">Crear producto</h1>			
+			<label for="name">
+				<input type="text" id="name" name="name" placeholder="Nombre del producto" class="form-input">
+			</label>
+			<label for="description">
 					<textarea name="description" id="description" placeholder="Descipción del producto" class="form-input"></textarea>
-				</div>
+			</label>
+			<!--<div  class="file-upload"> 
+				<label>Imagen del producto:</label>
+				<input  type="file" name="image" id="image" accept=".jpg" >
+			</div>-->
+			<label for="image">
 				<div  class="file-upload"> 
-					<label>Imagen del producto:</label>
-					<input  type="file" name="image" id="image" accept=".jpg" >
-				</div>
-				<div class="col-12 col-md-6">
-					<label for="category" class="form-label">Categoría:</label>
-					<select name="category" id="category" class="form-input">
-						<option value="">Elegí</option>
-						<option value="in-sale">En oferta</option>
-						<option value="visited">Últimos agregados</option>
-					</select>
-				</div>
-				<div class="col-12 col-md-6">
-					<label for="price" class="form-label">Precio del producto:</label>
-					<input type="text" id="price" name="price" placeholder="Ej: $45.000" class="form-input">
+					<p>Imagen del producto</p>
+					<input  type="file" name="image" id="image" accept=".jpg" > 
 				</div>					
-				<div class="col-12">
-					<button type="submit" class="buy-now-button">Guardar producto</button>
-				</div>
-			</div>
+			</label>
+			<label for="category"></label>
+				<select name="category" id="category" class="form-input">
+					<option value="">Elegí una categoria</option>
+					<option value="in-sale">En oferta</option>
+					<option value="visited">Últimos agregados</option>
+				</select>
+			<label for="price">
+				<input type="text" id="price" name="price" placeholder="Precio del producto" class="form-input">
+			</label>					
+			<div class="buttons">
+                <input type="submit" value="Crear producto" class="btn">
+            </div>
 		</form>
 	</main>
 		
