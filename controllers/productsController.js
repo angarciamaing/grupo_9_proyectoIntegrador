@@ -16,26 +16,6 @@ module.exports = {
             toThousand
         });
     },
-
-    detalleProducto: (req, res) => {
-        
-        const id = req.params.id;
-        const product = products.find((funko) => funko.id == id);
-        const related = products.filter((funko) => funko.category == product.category && funko.id != product.id);
-        
-        return res.render('product-detail',
-            {
-                pageTitle: product.productName,
-                product,
-                toThousand,
-                carousel: {
-                    condition: "related",
-                    funkos: related,
-                }
-            }
-        )
-        
-    },
     
     create: (req, res) => {
 
@@ -56,6 +36,26 @@ module.exports = {
 
 		res.redirect('/products');
 	},
+
+	productDetail: (req, res) => {
+        
+        const id = req.params.id;
+        const product = products.find((funko) => funko.id == id);
+        const related = products.filter((funko) => funko.category == product.category && funko.id != product.id);
+        
+        return res.render('product-detail',
+            {
+                pageTitle: product.productName,
+                product,
+                toThousand,
+                carousel: {
+                    condition: "related",
+                    funkos: related,
+                }
+            }
+        )
+        
+    },
 
     edit: (req, res) => {
 		let id = req.params.id;

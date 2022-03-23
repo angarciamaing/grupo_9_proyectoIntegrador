@@ -8,17 +8,8 @@ const mainController = require('../controllers/mainController');
 //home
 router.get('/', mainController.home);
 
-// detalle de producto
-
-router. get("/product-detail/:id",mainController.detalleProducto);
-
 // carrito de compras
 router.get('/shopping-cart', mainController.shoppingCart);
-
-//edicion de producto
-
-router.get('/edicion-producto', mainController.edicionproducto);
-
 
 
 module.exports = router;
