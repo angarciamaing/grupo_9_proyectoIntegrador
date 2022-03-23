@@ -22,26 +22,25 @@
 
 	<!-- todos los productos -->
 	<main>
-		<section class="product-section">
-			<h1 class="products-title">Todos los productos</h1>
+		<h1 class="products-title">Todos los productos</h1>
+		<section class="products-section">			
 			<% products.forEach(product => { 
 				let finalPrice = (product.price * ((100 - product.discount) / 100)).toFixed(0);
 			%>
-			<section class="product-box">
-				<a href="/product-detail/<%= product.id%>">
+			<section class="product-container">
+
 					<img src="/img/productsImages/<%= product.image%>" alt="imagen de producto">
 					<h3><%=product.productName%></h3>
 					<p>$<%=toThousand(product.price)%></p>
 					<!-- <span><%= product.discount%>% OFF</span> -->
-					<div class="button-view-details">
-						<a href="/product-detail/<%= product.id%>">VER DETALLES</a>
-					</div>
-					<button>Comprar Ahora</button>
-                    <button>Agregar al carrito</button>
-				</a>
+					<a href="/products/product-detail/<%= product.id%>" class="view-detail">VER DETALLES</a>				
+					<button class="select-button">Comprar Ahora</button>
+                    <button class="select-button">Agregar al carrito</button>
 			</section>
+			<% }); %>
 		</section>
-		<% }); %>
+		
+
 	</main>
 	<!-- todos los productos -->
 
