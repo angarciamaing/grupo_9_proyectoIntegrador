@@ -4,8 +4,6 @@ const path = require('path');
 const productsFilePath = path.join(__dirname,'../database/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath,'utf-8'));
 
-
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
@@ -61,11 +59,11 @@ module.exports = {
 		let id = req.params.id;
 		let productToEdit = products.find(product => product.id == id);
 
-		res.render('product-edit-form', { productToEdit });
+		res.render('product-edit-form', {productToEdit});
 
 	},
 
-    update: (req, res) => {
+    editPatch: (req, res) => {
 		let id = req.params.id;
 		let productToEdit = products.find(product => product.id == id);
 
@@ -78,7 +76,7 @@ module.exports = {
 		};
 		
 		let newProducts = products.map(product => {
-			// product.id == productToEdit.id ? product = {...productToEdit} : product;
+			//product.id == productToEdit.id ? product = {...productToEdit} : product; Corregir ternario
 			if (product.id == productToEdit.id) {
 				return product = {...productToEdit}
 			}
@@ -86,7 +84,8 @@ module.exports = {
 		});
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-		res.redirect('/');
+		//res.redirect('/');
+		res.redirect('/products');
 
 	},
 
@@ -95,7 +94,8 @@ module.exports = {
 		let finalProducts = products.filter(product => product.id != id);
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-		res.redirect('/');
+		//res.redirect('/');
+		res.redirect('/products');
 
 	}
 

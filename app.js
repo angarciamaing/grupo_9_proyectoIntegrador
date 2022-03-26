@@ -5,6 +5,8 @@ const req = require("express/lib/request");
 const app = express();
 const path = require("path");
 
+const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+
 app.use(session({
     secret: 'secreto!!',
     resave: false,
@@ -17,6 +19,7 @@ const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 app.use(cookies());
 app.use(userLoggedMiddleware);
 
+app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 
 //Rutas
 const mainRoutes = require('./routes/mainRoutes');

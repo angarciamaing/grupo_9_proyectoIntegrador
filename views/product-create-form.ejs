@@ -13,7 +13,7 @@
 
 		<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
 
-        <title>Edición de producto</title>
+        <title>Creación de productos</title>
     </head>
 <body>
 	<!-- Header -->
@@ -25,8 +25,8 @@
 				<img src="/img/logoFace.png" alt="">
 			</div>
 			<h1 class="products-title">Crear producto</h1>			
-			<label for="name">
-				<input type="text" id="name" name="name" placeholder="Nombre del producto" class="form-input">
+			<label for="productName">
+				<input type="text" id="productName" name="productName" placeholder="Nombre del producto" class="form-input">
 			</label>
 			<label for="description">
 					<textarea name="description" id="description" placeholder="Descipción del producto" class="form-input"></textarea>
@@ -44,8 +44,10 @@
 			<label for="category"></label>
 				<select name="category" id="category" class="form-input">
 					<option value="">Elegí una categoria</option>
-					<option value="in-sale">En oferta</option>
-					<option value="visited">Últimos agregados</option>
+					<option value="series infantiles">series infantiles</option>
+					<option value="series adultos">series adultos</option>
+					<option value="peliculas">peliculas</option>
+					<option value="anime">Anime</option>
 				</select>
 			<label for="price">
 				<input type="text" id="price" name="price" placeholder="Precio del producto" class="form-input">
