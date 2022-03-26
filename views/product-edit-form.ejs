@@ -13,7 +13,7 @@
 
 		<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
 
-        <title>Bienvenido a Funkoshop</title>
+        <title>Edición de productos</title>
     </head>
 <body>
 	<!-- Header -->
@@ -49,6 +49,12 @@
                 <input type="submit" value="Editar producto" class="btn">
             </div>
 
+		</form>
+		
+		<form action="/products/delete/<%=productToEdit.id%>?_method=delete" method="POST" enctype="multipart/form-data">
+			<div class="buttons">
+                <input type="submit" value="Eliminar producto" class="btn">
+            </div>			
 		</form>
 		
 	</main>
