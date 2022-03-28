@@ -5,10 +5,10 @@ module.exports = (sequelize , dataTypes) => {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true    
-        },
+        },  
         name_category : {
         type: dataTypes.STRING(255),
-        allowNull: false
+        // allowNull: false
     }
 
     }

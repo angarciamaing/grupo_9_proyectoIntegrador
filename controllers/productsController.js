@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { brotliDecompress } = require('zlib');
+// const { brotliDecompress } = require('zlib');
 // const { BLOB } = require('sequelize/types');
 // const { brotliDecompress } = require('zlib');
 
@@ -8,6 +8,9 @@ const { brotliDecompress } = require('zlib');
 // const products = JSON.parse(fs.readFileSync(productsFilePath,'utf-8'));
 
 const db = require('../database/models')
+
+const Product = db.Product
+const CategoryProduct = db.CategoryProduct
 
 
 
@@ -21,7 +24,7 @@ module.exports = {
         //     toThousand
         // });
 
-		db.Product.findAll()
+		const product = Product.findAll()
 		.then( (products) =>{
 			res.render('products', {products, toThousand})
 		})
@@ -47,13 +50,32 @@ module.exports = {
         
     // },
     
-    create: (req, res) => {
-
-		res.render('product-create-form.ejs');
+    create: async (req, res) => {
+		const allProduct = await CategoryProduct.findAll();
+		res.render('product-create-form.ejs', {allProduct});
 
 	},
 
-    createPost: (req, res) => {
+    createPost: async (req, res) => {
+		try {
+
+			let image = req.file ? req.file.filename : 'default-img.png'
+			await db.Product.create({
+				product_name: req.body.name,
+				product_description: req.body.description,
+				image: image,
+				category_id: req.body.category,
+				price: req.body.price
+			})
+	
+			res.redirect('/products')
+			
+		} catch (error) {
+			return res.send(error)
+		}
+
+	
+
 		// console.log(req.body);
 		// let newProduct = {
 		// 	id: products[products.length - 1].id + 1,
@@ -66,15 +88,37 @@ module.exports = {
 
 		// res.redirect('/products');
 
-		db.Product.create({
-			product_name: req.body.name,
-			product_description: req.body.description,
-			image: req.body.image,
-			category_id: req.body.category,
-			price: req.body.price
-		})
+		// try {
+		// 	let image = req.file ? req.file.filename : 'default-img.png'
+			
+		// 	db.Product.create({
+		// 		product_name: req.body.name,
+		// 		product_description: req.body.description,
+		// 		image: image,
+		// 		category_id: req.body.category,
+		// 		price: req.body.price
+		// 	})
+		// } catch (error) {
+			
+			
+		// }
 
-		res.redirect('/products');
+		// .then(() =>{
+			// 	res.redirect('/products');	
+			// })
+
+		
+		// let newProduct = {
+		// 	id: products[products.length - 1].id + 1,
+		// 	...req.body,
+		// 	image: image
+		// };
+
+		// products.push(newProduct);
+		// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+
+
+		
 
 		
 	},
@@ -86,18 +130,21 @@ module.exports = {
 		let productToEdit = products.find(product => product.id == id);
 
 		res.render('product-edit-form', { productToEdit });
+
 	},
 
     update: (req, res) => {
 		let id = req.params.id;
 		let productToEdit = products.find(product => product.id == id);
 
+		let image = req.file ? req.file.filename : productToEdit.image;
+		
 		productToEdit = {
 			id: productToEdit.id,
 			...req.body,
-			image: productToEdit.image
+			image: image
 		};
-
+		
 		let newProducts = products.map(product => {
 			// product.id == productToEdit.id ? product = {...productToEdit} : product;
 			if (product.id == productToEdit.id) {

@@ -109,28 +109,10 @@
  },
  {
   "id": 13,
-  "name": "prueba",
-  "price": "45",
-  "discount": "15",
-  "category": "in-sale",
-  "description": "scsadaas",
-  "image": "default-img.png"
- },
- {
-  "id": 14,
-  "name": "prueba",
-  "price": "50000",
-  "discount": "20",
-  "category": "in-sale",
+  "name": "prueba 1000",
   "description": "prueba",
-  "image": "default-img.png"
- },
- {
-  "id": 15,
-  "name": "prueba multer",
-  "description": "prueba multer",
   "category": "in-sale",
-  "price": "50000",
-  "image": "default-img.png"
+  "price": "75000",
+  "image": "imagen-1647968324000.jpg"
  }
 ]
