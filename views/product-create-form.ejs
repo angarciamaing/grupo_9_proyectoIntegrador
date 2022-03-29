@@ -43,9 +43,9 @@
 			</label>
 			<label for="category"></label>
 			<select name="category" id="category" class="form-input">
-					<% allProduct.forEach (CategoryProduct => { %>
-					<option value="<%=CategoryProduct.id %>">
-					<% allProduct.name_category %></option>
+				<% allProduct.forEach (productCategory => { %>
+					<option value="<%=productCategory.id %>">
+					<%= productCategory.name_category %></option>
 					<!-- <option value="in-sale">En oferta</option>
 					<option value="visited">Últimos agregados</option> -->	
 			<% }); %>			

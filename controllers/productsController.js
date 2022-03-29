@@ -55,6 +55,7 @@ module.exports = {
 		res.render('product-create-form.ejs', {allProduct});
 
 	},
+	
 
     createPost: async (req, res) => {
 		try {
@@ -125,11 +126,27 @@ module.exports = {
 
 
 
-    edit: (req, res) => {
-		let id = req.params.id;
-		let productToEdit = products.find(product => product.id == id);
+    listado: (req, res) => {
 
-		res.render('product-edit-form', { productToEdit });
+		db.Product.findAll()
+			.then(function(products){
+				res.render('product-edit-form', {products: products});
+			})
+		// let id = req.params.id;
+		// let productToEdit = products.find(product => product.id == id);
+
+		// res.render('product-edit-form', { productToEdit });
+
+	},
+
+
+	detalleProducto: (req, res) => {
+		db.Product.findByPk(req.params.id, {
+			include: [{association: "productCategory"}]
+		})
+			.then( function(producto){
+				res.render('deatalle-producto', {producto: producto});
+			})
 
 	},
 

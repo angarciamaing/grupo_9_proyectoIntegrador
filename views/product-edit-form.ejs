@@ -13,41 +13,31 @@
 
 		<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
 
-        <title>Bienvenido a Funkoshop</title>
+        <title>Edición de productos</title>
     </head>
 <body>
 	<!-- Header -->
 	<%- include('partials/header') %>
 	<!-- /Header -->
 	<main class="edit">
-		<form action="/products/edit/<%= productToEdit.id%>?_method=PATCH" method="POST" enctype="multipart/form-data">
-			<div class="image-container">
-				<img src="/img/logoFace.png" alt="">
-			</div>
-			<h1 class="products-title">Estás editando a <i><%=productToEdit.productName%></i></h1>
-			<label for="name" class="form-label">
-				<input type="text" id="name" name="name" class="form-input" value="<%= productToEdit.productName%>">
-			</label>
-			<label for="description" class="form-label">
-				<textarea name="description" id="description" class="form-input"> <%=productToEdit.decription%> </textarea>
-			</label>
-			<label>Imagen del producto:
-				<input  type="file" name="image" id="image" accept=".jpg" value="<%= productToEdit.image%>" >
-			</label>
-			<label for="category" class="form-label"></label>
-				<select name="category" id="category" class="form-input" value="<%= productToEdit.category%>">
-					<option value="">Elegí una categoria</option>
-					<option value="in-sale">En oferta</option>
-					<option value="visited" >Últimos agregados</option>
-				</select>
-			<label for="price" class="form-label">
-				<input type="text" id="price" name="price" value="<%= productToEdit.price%>" class="form-input">
-			</label>
-			<div class="buttons">
-                <input type="submit" value="Editar producto" class="btn">
-            </div>
 
-		</form>
+		<h1>Listado de Productos</h1>
+		<ul>
+			<% for (let i = 0; i < products.length; i++){ %>
+				<li>
+					<a href="/products/<%= products[i].id %>">
+					<%= products[i].product_name %>
+					</a>
+				</li>
+				
+			<% }; %>
+			
+			
+		
+				
+					
+		</ul>
+		
 		
 	</main>
 	<!-- /todos los productos -->

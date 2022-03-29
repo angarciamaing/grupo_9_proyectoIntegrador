@@ -22,21 +22,8 @@ module.exports = {
         })
     },
 
-    detalleProducto: (req, res) => {
-          const productId = req.params.id
-          
-          db.Product.findByPk(productId)
-          .then((product) =>{
-              res.render('detalle-producto',{product, toThousand})
-          })
-    },
-
     shoppingCart: (req, res) => {
         res.render('shopping-cart');
-    },
-
-    edicionproducto : (req, res) => {
-        res.render('edicion-producto');
     },
    
 };
