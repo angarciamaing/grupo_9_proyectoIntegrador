@@ -147,7 +147,7 @@ const userController = {
                     res.cookie(userTologin, { maxAge: (1000 * 60 ) * 2});
                 }
 
-                return res.render("profile");
+                 return res.redirect("/user/profile")
 
             }
 
