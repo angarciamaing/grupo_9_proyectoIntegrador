@@ -2,45 +2,60 @@ const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const { memoryStorage } = require('multer');
 
-// const db = require('../database/models')
+const db = require('../database/models')
+const sequelize = db.sequelize
+const {Op} = require('sequelize')
 
-const User = require('../models/User');
-const controller = {
+const User = db.User
+const CategoryUser = db.CategoryUser
 
-    register: (req, res) => {
+const userController = {
+
+    register: async (req, res) => {
+        const users = await CategoryUser.findAll()
        
-        return res.render('register');
+        return res.render('register',{users});
     },
-    processRegister: (req,res) =>{
+    processRegister: async (req,res) =>{
+
+        const users = await CategoryUser.findAll()
 
         const resultValidation = validationResult(req);
+        let emailExits = req.body.email
 
-        let userInDB = User.findByField('email', req.body.email);
+        let userInDB = await User.findOne({where:{
+            email:emailExits
+            }
+        });
        
         if (userInDB) {
             res.render('register',{
                 errors: [{ msg: 'Este correo electrónico ya existe'}],
-                old: req.body  
+                old: req.body,
+                users  
             })
         }
 
         if(resultValidation.isEmpty() && !userInDB){
         let userToCreate = {
-            fullname: req.body.fullname,
-            userName: req.body.username,
+            full_name: req.body.full_name,
+            user_name: req.body.user_name,
             email: req.body.email,
             password: bcryptjs.hashSync(req.body.password,10),            
-            profilePicture: req.file.filename
+            profile_picture: req.file.filename,
+            category_user_id:req.body.category_user_id
             
         } 
         
         
-         User.create(userToCreate)
-           res.redirect('login')
+         await User.create(userToCreate)
+          return  res.redirect('/user/login')
        } else  {
+        const users = await CategoryUser.findAll()
            res.render('register',{
                errors: resultValidation.array(),
-               old: req.body
+               old: req.body,
+               users
            })
        }
        
@@ -53,9 +68,17 @@ const controller = {
     },
 
     // Proceso validacion de credenciales login
-    loginProcess:(req, res) => {
+    loginProcess: async (req, res) => {
 
-        let userTologin = User.findByField('email', req.body.email);
+        let emailExits = req.body.email
+
+        
+
+        let userTologin = await  User.User.findAll({where:{
+            email: {
+                [Op.like]:emailExits
+            }
+        }});
 
         if(userTologin){
             let isOkthePassword = bcryptjs.compareSync(req.body.password, userTologin.password);
@@ -102,4 +125,4 @@ const controller = {
     }
 }
 
-module.exports = controller;
+module.exports = userController;

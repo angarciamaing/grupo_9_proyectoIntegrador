@@ -12,7 +12,7 @@
 
         <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
        
-       <title><%= product.productName%> </title>
+       <title><%= product.product_name%> </title>
     </head>
 <body>
 
@@ -25,15 +25,15 @@
             <article>
                 <div class="gallery-image">
                     <picture class="order-reverse">
-                        <img src="/img/productsImages/<%= product.image%>" alt="<%= product.productName %> ">
+                        <img src="/img/productsImages/<%= product.image%>" alt="<%= product.product_name %> ">
                         <img src="/img/caja-deadpool.jpg" alt="<%= product.productName%>">
                     </picture>
                     <picture class="main-image-product">
-                        <img src="/img/productsImages/<%= product.image%>" alt="<%= product.productName %> ">
+                        <img src="/img/productsImages/<%= product.image%>" alt="<%= product.product_ame %> ">
                     </picture>
                 </div>
                 <div class="description-product">
-                    <h1><%=product.productName%></h1>
+                    <h1><%=product.product_name%></h1>
 
                     <p>$<%=toThousand(product.price)%></p>
                     <p><%= product.decription%> </p>
@@ -68,9 +68,9 @@
                         <li class="card">
                             <article class="recommendation-product">
                         
-                                <img src="/img/productsImages/<%= product.image%>"  alt="<%= product.productName %> ">
+                                <img src="/img/productsImages/<%= product.image%>"  alt="<%= product.product_name %> ">
                                 <div class="product-price">
-                                    <h3><%=product.productName%></h3>
+                                    <h3><%=product.product_name%></h3>
                                     <p>$<%=toThousand(product.price)%></p>
                                     <div class="button-view-details">
                                       <a href="/product-detail/<%= product.id%>">VER DETALLES</a>

@@ -22,6 +22,9 @@ module.exports = {
         })
     },
 
+    
+
+
     shoppingCart: (req, res) => {
         res.render('shopping-cart');
     },

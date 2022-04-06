@@ -5,9 +5,9 @@ const validations = {
 	register: [
 
 		// Nombre completo y nombre de usuario
-		body('fullname').notEmpty().withMessage('Ingresa tu nombre completo'),
+		body('full_name').notEmpty().withMessage('Ingresa tu nombre completo'),
 
-		body('username').notEmpty().withMessage('Debe contener un nombre de usuario')
+		body('user_name').notEmpty().withMessage('Debe contener un nombre de usuario')
 						.isAlphanumeric().withMessage('El usuario debe ser alfanumerico')
 						.isLength({min: 6}).withMessage('Debe contener Minimo 6 caracteres')
 						.trim()
@@ -31,7 +31,7 @@ const validations = {
 			.exists()
 			.custom((value, { req }) => req.body.password.length < 8 || value === req.body.password),
 
-		body('profilePicture', 'sube una foto de perfil en formato JPG, JPEG o PNG').custom((value, { req }) => {
+		body('profile_picture', 'sube una foto de perfil en formato JPG, JPEG o PNG').custom((value, { req }) => {
 
 
 			let acceptedExtensions = ['.jpg', '.jpeg', '.png'];

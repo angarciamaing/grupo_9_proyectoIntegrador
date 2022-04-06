@@ -29,21 +29,29 @@
         
         <form method="POST" action="/user/register" enctype="multipart/form-data">
             <h1>Crear cuenta</h1>
-            <label for="fullname"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span>
-                <input type="text" placeholder="Nombre completo"  name="fullname" id="fullname" value="<%=locals.old && old.fullname ? old.fullname :'' %>">
+            <label for="full_name"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span> 
+                <input type="text" placeholder="Nombre completo"  name="full_name" id="full_name" value="<%= locals.old && old.full_name ? old.full_name : '' %> ">
             </label>
-            <label for="userName"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span>
-                <input type="text" placeholder="Nombre de Usuario"  name="username" id="userName" value="<%=locals.old && old.username ? old.username:'' %>">
+            <label for="user_name"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span>
+                <input type="text" placeholder="Nombre de Usuario"  name="user_name" id="user_name" value="<%= locals.old && old.user_name ? old.user_name : '' %> ">
             </label>
             <label for="email"><span class="iconify" data-icon="cib:mail-ru" data-width="20" data-height="20"></span>
-                <input type="email" placeholder="Email"  name="email" id="userName" value="<%= locals.old && old.email ? old.email : '' %> ">
+                <input type="email" placeholder="Email"  name="email" id="email" value="<%= locals.old && old.email ? old.email : '' %> ">
             </label>  
             <label for="profilePicture"><span class="iconify" data-icon="jam:picture" data-width="25" data-height="25"></span>
                 <div  class="file-upload"> 
                     <p>Sube tu imagen de perfil</p>
-                    <input  type="file" name="profilePicture" id="profilePicture" accept=".jpg" > 
+                    <input  type="file" name="profile_picture" id="profilePicture" accept=".jpg" > 
                 </div>
                 
+            </label>
+            <label for="category_user_id">
+                <select name="category_user_id">
+                    <% users.forEach( category => {%>
+                        <option value="<%=category.id %>"><%= category.profile_category%></option>
+                    <%}) %> 
+                </select>
+
             </label>
             <label for="password"><span class="iconify" data-icon="bxs:lock" data-width="20" data-height="20"></span>
                 <input type="password" placeholder="Constraseña"  name="password" id="password">

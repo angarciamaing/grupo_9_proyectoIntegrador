@@ -8,8 +8,8 @@ const diskStorage = multer.diskStorage({
 		cb(null, profilePicture);
 	},
 	filename: (req, file, cb) => {
-		let userName = req.body.username.replace( !/\s/g, '-').toLowerCase();
-		let finalName = userName + '-' + Date.now() + path.extname(file.originalname);
+		
+		let finalName =  '-user' + Date.now() + path.extname(file.originalname);
 		cb(null, finalName);
 	}
 });
