@@ -20,8 +20,8 @@
                 <ul>
                     <li> 
                         <a  href="/user/profile"> 
-                            <img id="profilePicture" src="/img/profilePictures/<%= locals.userLogged.profilePicture%> "> 
-                            Hola <%=locals.userLogged.userName%>
+                            <img id="profilePicture" src="/img/profilePictures/<%= user.profile_picture%> "> 
+                            Hola <%=user.userLogged.userName%>
                         </a>
                     </li>
                     <li> <a href="/user/logout">Cerrar sesión</a></li>

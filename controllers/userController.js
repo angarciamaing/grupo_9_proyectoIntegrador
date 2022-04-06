@@ -97,16 +97,22 @@ const userController = {
 
         try {
             const id = req.params.id
-            const {full_name,email,user_name, profile_picture}=req.body
+
+            const userImage = await User.findByPk(id)
+
+            let image = req.file ?  req.file.filename : userImage.profile_picture;
+            const {full_name,email,user_name}=req.body
+
+            
 
             await User.update({
                 full_name,
                 user_name,
-                profile_picture,
+                profile_picture:image,
                 email
             },{where: {id:id}})
             
-       return res.redirect('/')
+       return res.redirect("/user/profile")
             
         } catch (error) {
             console.log(error);
@@ -124,15 +130,12 @@ const userController = {
     // Proceso validacion de credenciales login
     loginProcess: async (req, res) => {
 
-        let emailExits = req.body.email
+        let email= req.body.email
 
-        
-
-        let userTologin = await  User.User.findAll({where:{
-            email: {
-                [Op.like]:emailExits
+        let userTologin = await  User.findOne({where:{
+            email:email
             }
-        }});
+        });
 
         if(userTologin){
             let isOkthePassword = bcryptjs.compareSync(req.body.password, userTologin.password);
@@ -141,10 +144,10 @@ const userController = {
                 req.session.userLogged = userTologin;
 
                 if(req.body.remember_user) {
-                    res.cookie('email', req.body.email, { maxAge: (1000 * 60 ) * 2});
+                    res.cookie(userTologin, { maxAge: (1000 * 60 ) * 2});
                 }
 
-                return res.redirect("/user/profile");
+                return res.render("profile");
 
             }
 
@@ -173,7 +176,8 @@ const userController = {
     },
 
     logout: (req, res) =>{
-        res.clearCookie('email');
+        let email= req.body.email
+        res.clearCookie(email);
         req.session.destroy();
         return res.redirect('/');
     }
