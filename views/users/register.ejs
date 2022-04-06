@@ -12,7 +12,7 @@
 </head>
 <body>    
       <!-- HEADER-->
-  <%- include('partials/header') %>
+  <%- include('../partials/header') %>
 
     <main class="register">
         
@@ -30,13 +30,13 @@
         <form method="POST" action="/user/register" enctype="multipart/form-data">
             <h1>Crear cuenta</h1>
             <label for="full_name"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span> 
-                <input type="text" placeholder="Nombre completo"  name="full_name" id="full_name" value="<%= locals.old && old.full_name ? old.full_name : '' %> ">
+                <input type="text" placeholder="Nombre completo"  name="full_name" id="full_name" value="<%= locals.old && old.full_name ? old.full_name : '' %>">
             </label>
             <label for="user_name"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span>
-                <input type="text" placeholder="Nombre de Usuario"  name="user_name" id="user_name" value="<%= locals.old && old.user_name ? old.user_name : '' %> ">
+                <input type="text" placeholder="Nombre de Usuario"  name="user_name" id="user_name" value="<%= locals.old && old.user_name ? old.user_name : '' %>">
             </label>
             <label for="email"><span class="iconify" data-icon="cib:mail-ru" data-width="20" data-height="20"></span>
-                <input type="email" placeholder="Email"  name="email" id="email" value="<%= locals.old && old.email ? old.email : '' %> ">
+                <input type="email" placeholder="Email"  name="email" id="email" value="<%= locals.old && old.email ? old.email : '' %>">
             </label>  
             <label for="profilePicture"><span class="iconify" data-icon="jam:picture" data-width="25" data-height="25"></span>
                 <div  class="file-upload"> 
@@ -67,7 +67,7 @@
     </main>
     
     <!-- FOOTER-->
-   <%- include('partials/footer') %>
+   <%- include('../partials/footer') %>
     
 </body>
 </html>

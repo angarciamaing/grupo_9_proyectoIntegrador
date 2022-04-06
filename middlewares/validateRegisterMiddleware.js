@@ -31,23 +31,54 @@ const validations = {
 			.exists()
 			.custom((value, { req }) => req.body.password.length < 8 || value === req.body.password),
 
-		body('profile_picture', 'sube una foto de perfil en formato JPG, JPEG o PNG').custom((value, { req }) => {
-
-
-			let acceptedExtensions = ['.jpg', '.jpeg', '.png'];
-			if (typeof req.file == 'undefined') {
-				throw new Error('Elegí una imagen de perfil');
-			} else if (req.file.originalname) {
-				let fileExtension = path.extname(req.file.originalname);
-				let extensionIsOk = acceptedExtensions.includes(fileExtension);
-				if (!extensionIsOk) {
-					throw new Error('Los formatos válidos son JPG, JPEG y PNG');
+			body('profile_picture').custom((value, { req }) => {
+				let file = req.file;
+				let acceptedExtensions = ['.jpg', '.png', '.gif'];
+		
+				if (!file) {
+					throw new Error('Tienes que subir una imagen');
+				} else {
+					let fileExtension = path.extname(file.originalname);
+					if (!acceptedExtensions.includes(fileExtension)) {
+						throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+					}
 				}
-			}
-			return true;
-		}),
+		
+				return true;
+			})
+
+	],
+
+	userEdition:[
+		// Nombre completo y nombre de usuario
+		body('full_name').notEmpty().withMessage('Ingresa tu nombre completo'),
+
+		body('user_name').notEmpty().withMessage('Debe contener un nombre de usuario')
+						.isAlphanumeric().withMessage('El usuario debe ser alfanumerico')
+						.isLength({min: 6}).withMessage('Debe contener Minimo 6 caracteres')
+						.trim()
+						.withMessage('El nombre de usuario no debe contener espacios, ni caracteres especiales y debe contener minimo 6 caracteres'),
+		
+			
+
+			body('profile_picture').custom((value, { req }) => {
+				let file = req.file;
+				let acceptedExtensions = ['.jpg', '.png', '.gif'];
+		
+				if (!file) {
+					throw new Error('Tienes que subir una imagen');
+				} else {
+					let fileExtension = path.extname(file.originalname);
+					if (!acceptedExtensions.includes(fileExtension)) {
+						throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+					}
+				}
+		
+				return true;
+			})
 
 	]
+	
 						
 
 }

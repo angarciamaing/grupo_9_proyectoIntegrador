@@ -10,11 +10,21 @@ const validations = require('../middlewares/validateRegisterMiddleware');
 const guesMiddleware = require('../middlewares/guesMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
-//Formulario de registro
+//CRUD Usuarios
+//Listar usuarios <Read>
+router.get('/list-users',userController.listUser)
+
+//Formulario de registro <Create>
 router.get('/register', guesMiddleware, userController.register);
 
-//Processar el registro
+//Processar el registro <Create>
 router.post('/register',uploadFile.single('profile_picture'), validations.register, userController.processRegister)
+
+//Formulario de edicion <Uptade>
+router.get('/edit/:id', userController.editUser)
+
+router.post('/edit/:id',uploadFile.single('profile_picture'), validations.userEdition, userController.saveEdition)
+
 
 //Formulario del login
 router.get('/login', guesMiddleware, userController.login);

@@ -11,10 +11,27 @@ const CategoryUser = db.CategoryUser
 
 const userController = {
 
+        //Lista de usuarios
+        'listUser' : async (req,res) =>{
+
+            try {
+
+                const users = await User.findAll()
+                return res.render('./users/listUsers',{users})
+                
+            } catch (error) {
+                console.log(error);
+            }
+
+        },
+
+
+
+// CRUD USUAROOS
     register: async (req, res) => {
         const users = await CategoryUser.findAll()
        
-        return res.render('register',{users});
+        return res.render('./users/register',{users});
     },
     processRegister: async (req,res) =>{
 
@@ -29,7 +46,7 @@ const userController = {
         });
        
         if (userInDB) {
-            res.render('register',{
+            res.render('./users/register',{
                 errors: [{ msg: 'Este correo electrónico ya existe'}],
                 old: req.body,
                 users  
@@ -52,7 +69,7 @@ const userController = {
           return  res.redirect('/user/login')
        } else  {
         const users = await CategoryUser.findAll()
-           res.render('register',{
+           res.render('./users/register',{
                errors: resultValidation.array(),
                old: req.body,
                users
@@ -61,6 +78,43 @@ const userController = {
        
 
     },
+
+    editUser: async (req,res) =>{
+        try {
+            const id = req.params.id;
+        
+        const user = await User.findByPk(id)
+
+        res.render('./users/editUsers',{user})
+            
+        } catch (error) {
+            console.log(error);
+        }
+        
+
+    },
+    saveEdition: async (req,res) =>{
+
+        try {
+            const id = req.params.id
+            const {full_name,email,user_name, profile_picture}=req.body
+
+            await User.update({
+                full_name,
+                user_name,
+                profile_picture,
+                email
+            },{where: {id:id}})
+            
+       return res.redirect('/')
+            
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+
+    //LOGIN USER
 
     login: (req,res) => {
 
