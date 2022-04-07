@@ -65,10 +65,13 @@ const userController = {
        
     },
 
+    adminProfile: (req,res) => {
+    
+        return res.render('./users/admin-profile',{userLogged: req.session.userId});
+     },
 
 
-
-// CRUD USUARIOS
+// CRUD USUARIOS-CUSTOMERS
     register:  (req, res) => {
         //permite guardar la informacion del usuario logueado para mostrarla en la barra de navegacion
         let userLogged = req.session.userId
@@ -178,19 +181,74 @@ const userController = {
         let userLogged = req.session.userId
         let email= req.body.email
 
-        let userTologin = await  User.findOne({where:{
-            email:email
+        let adminTologin = await  User.findOne({where:{
+            email:email,
+            category_user_id:1
             }
         });
 
-        if(userTologin){
-            let isOkthePassword = bcryptjs.compareSync(req.body.password, userTologin.password);
+        if(adminTologin){
+            let isOkthePassword = bcryptjs.compareSync(req.body.password, adminTologin.password);
             if(isOkthePassword){
-                delete userTologin.password;
-                req.session.userId = userTologin;
+                delete adminTologin.password;
+                req.session.userId = adminTologin;
 
                 if(req.body.remember_user) {
-                    res.cookie(userTologin, { maxAge: (1000 * 60 ) * 2});
+                    res.cookie(adminTologin, { maxAge: (1000 * 60 ) * 2});
+                }
+
+                 return res.redirect("/user/admin-profile")
+
+            }
+
+            return res.render('login', {
+                errors: {
+                    email: {
+                        msg: 'Las credenciales son invalidas'
+                    }
+                },
+                userLogged
+            });
+        }
+
+        let customerTologin = await  User.findOne({where:{
+            email:email,
+            category_user_id:2
+            }
+        });
+
+        if(customerTologin){
+            let isOkthePassword = bcryptjs.compareSync(req.body.password, customerTologin.password);
+            if(isOkthePassword){
+                delete customerTologin.password;
+                req.session.userId = customerTologin;
+
+                if(req.body.remember_user) {
+                    res.cookie(customerTologin, { maxAge: (1000 * 60 ) * 2});
+                }
+
+                 return res.redirect("/user/profile")
+
+            }
+
+            return res.render('login', {
+                errors: {
+                    email: {
+                        msg: 'Las credenciales son invalidas'
+                    }
+                },
+                userLogged
+            });
+        }
+
+        if(adminTologin){
+            let isOkthePassword = bcryptjs.compareSync(req.body.password, adminTologin.password);
+            if(isOkthePassword){
+                delete adminTologin.password;
+                req.session.userId = adminTologin;
+
+                if(req.body.remember_user) {
+                    res.cookie(adminTologin, { maxAge: (1000 * 60 ) * 2});
                 }
 
                  return res.redirect("/user/profile")

@@ -12,10 +12,11 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 
 
+
 //ADMIN REGISTER
 router.get('/admin-register', guesMiddleware, userController.adminRegister);
 router.post('/admin-register',uploadFile.single('profile_picture'),validations.register, userController.saveAdminRegister)
-
+router.get('/admin-profile', authMiddleware, userController.adminProfile);
 
 //CRUD Usuarios
 

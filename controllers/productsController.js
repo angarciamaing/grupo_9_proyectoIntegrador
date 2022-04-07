@@ -19,14 +19,11 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 module.exports = {
     
     products : (req, res) => {
-        // res.render('products', {
-        //     products,
-        //     toThousand
-        // });
-
+       //permite guardar la informacion del usuario logueado para mostrarla en la barra de navegacion
+	   let userLogged = req.session.userId
 		const product = Product.findAll()
 		.then( (products) =>{
-			res.render('products', {products, toThousand})
+			res.render('products', {products, toThousand,userLogged})
 		})
     },
 
@@ -51,8 +48,10 @@ module.exports = {
     // },
     
     create: async (req, res) => {
+		//permite guardar la informacion del usuario logueado para mostrarla en la barra de navegacion
+        let userLogged = req.session.userId
 		const allProduct = await CategoryProduct.findAll();
-		res.render('product-create-form.ejs', {allProduct});
+		res.render('product-create-form.ejs', {allProduct,userLogged});
 
 	},
 	
@@ -127,10 +126,11 @@ module.exports = {
 
 
     listado: (req, res) => {
-
+		//permite guardar la informacion del usuario logueado para mostrarla en la barra de navegacion
+        let userLogged = req.session.userId
 		db.Product.findAll()
 			.then(function(products){
-				res.render('product-edit-form', {products: products});
+				res.render('product-edit-form', {products: products,userLogged});
 			})
 		// let id = req.params.id;
 		// let productToEdit = products.find(product => product.id == id);
@@ -141,16 +141,19 @@ module.exports = {
 
 
 	detalleProducto: (req, res) => {
+		//permite guardar la informacion del usuario logueado para mostrarla en la barra de navegacion
+        let userLogged = req.session.userId
 		db.Product.findByPk(req.params.id, {
 			include: [{association: "productCategory"}]
 		})
 			.then( function(producto){
-				res.render('deatalle-producto', {producto: producto});
+				res.render('detalle-producto', {producto: producto,userLogged});
 			})
 
 	},
 
     update: (req, res) => {
+		
 		let id = req.params.id;
 		let productToEdit = products.find(product => product.id == id);
 
