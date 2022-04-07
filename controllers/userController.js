@@ -15,9 +15,10 @@ const userController = {
 
 // CRUD USUARIOS
     register: async (req, res) => {
+        let userLogged = req.session.userId
         const users = await CategoryUser.findAll()
        
-        return res.render('./users/register',{users});
+        return res.render('./users/register',{users,userLogged});
     },
     processRegister: async (req,res) =>{
 
@@ -33,7 +34,7 @@ const userController = {
        
         if (userInDB) {
             res.render('./users/register',{
-                errors: [{ msg: 'Este correo electrónico ya existe'}],
+                errors: [{ email :{msg: 'Este correo electrónico ya existe'}}],
                 old: req.body,
                 users  
             })
@@ -67,11 +68,12 @@ const userController = {
 
     editUser: async (req,res) =>{
         try {
+            let userLogged = req.session.userId
             const id = req.params.id;
         
         const user = await User.findByPk(id)
 
-        res.render('./users/editUsers',{user})
+        res.render('./users/editUsers',{user,userLogged})
             
         } catch (error) {
             console.log(error);
@@ -109,13 +111,15 @@ const userController = {
     //LOGIN USER
 
     login: (req,res) => {
+        let userLogged = req.session.userId
 
-        return res.render('login')
+        return res.render('login',{userLogged})
     },
 
     // Proceso validacion de credenciales login
     loginProcess: async (req, res) => {
 
+        let userLogged = req.session.userId
         let email= req.body.email
 
         let userTologin = await  User.findOne({where:{
@@ -127,7 +131,7 @@ const userController = {
             let isOkthePassword = bcryptjs.compareSync(req.body.password, userTologin.password);
             if(isOkthePassword){
                 delete userTologin.password;
-                req.session.userLogged = userTologin;
+                req.session.userId = userTologin;
 
                 if(req.body.remember_user) {
                     res.cookie(userTologin, { maxAge: (1000 * 60 ) * 2});
@@ -151,14 +155,15 @@ const userController = {
                 email: {
                     msg: 'No te encuentras registrado'
                 }
-            }
+            },
+            userLogged
         });
     },
 
    profile: (req,res) => {
-       return res.render('./users/profile', {
-           user: req.session.userLogged
-       });
+    
+
+       return res.render('./users/profile',{userLogged: req.session.userId});
     },
 
     logout: (req, res) =>{

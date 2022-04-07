@@ -5,13 +5,13 @@ const User = db.User
 const userLoggedMiddleware = async(req, res, next)=> {
 
     try {
-        res.locals.isLogged = false;
+    res.locals.isLogged = false;
 
-    let emailInCookie = req.cookies.email;
-    let userFromCookie = await User.findOne({where:{email:emailInCookie}});
+    let id = req.cookies.id;
+    let user= await User.findByPk({where:{id:id}});
 
-    if(userFromCookie) {
-        req.session.userLogged = userFromCookie;
+    if(user) {
+        req.session.userId = user.id;
         
     }
 

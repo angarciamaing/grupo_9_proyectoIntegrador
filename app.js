@@ -7,16 +7,17 @@ const path = require("path");
 
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 
+
+
+//Middlewares
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+
+app.use(cookies());
 app.use(session({
     secret: 'secreto!!',
     resave: false,
     saveUninitialized: false
 }));
-
-//Middleware login
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
-
-app.use(cookies());
 app.use(userLoggedMiddleware);
 
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE

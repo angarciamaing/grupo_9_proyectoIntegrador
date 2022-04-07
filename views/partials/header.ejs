@@ -16,12 +16,12 @@
             <ul class="links-container">
                     <li> <a href="/">Productos</a></li>                
                 <li><a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a></li>
-                <% if(locals.isLogged){%>
+                <% if(userLogged){%>
                 <ul>
                     <li> 
                         <a  href="/user/profile"> 
-                            <img id="profilePicture" src="/img/profilePictures/<%= user.profile_picture%> "> 
-                            Hola <%=user.userLogged.userName%>
+                            <img id="profilePicture" src="/img/profilePictures/<%= userLogged.profile_picture%> "> 
+                            Hola <%=userLogged.user_name%>
                         </a>
                     </li>
                     <li> <a href="/user/logout">Cerrar sesión</a></li>
@@ -31,10 +31,7 @@
                 <% }else { %>
                 <li><a href="/user/register">Regístrate</a></li>                   
                 <li class="login-bar"><a href="/user/login"><i class="fas fa-user"></i></a><a class="login-text" href="/user/login">login</a></li>
-                <% } %>
-
-                <li> <a href="/user/logout">Cerrar sesión</a></li> <!--Provisional para cerrar sesion mientras se soluciona lo de sessions cuando se el usuario ingresa-->
-                          
+                <% } %>                         
                 
             </ul>            
     </nav>

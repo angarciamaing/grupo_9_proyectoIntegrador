@@ -13,12 +13,13 @@ const {Op} = require('sequelize')
 
 module.exports = {
     
-    home: (red, res) => {
+    home: (req, res) => {
+        let userLogged = req.session.userId
         db.Product.findAll({
             limit: 8
         })
         .then((products) => {
-            res.render('home',{products,toThousand})
+            res.render('home',{products,toThousand,userLogged})
         })
     },
 
@@ -26,7 +27,8 @@ module.exports = {
 
 
     shoppingCart: (req, res) => {
-        res.render('shopping-cart');
+        let userLogged = req.session.userId
+        res.render('shopping-cart',{userLogged});
     },
    
 };

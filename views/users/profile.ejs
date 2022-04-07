@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Hola <%=user.user_name%></title>
+    <title> Hola <%=userLogged.user_name%></title>
     <!-- Forma de importar estilos no tan eficiente mejor en el archivo CSS
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,23 +24,23 @@
 
         <h1>Perfil de Usuario</h1>
         <div class="image-container">
-            <img src="/img/profilePictures/<%= user.profile_picture%> ">
+            <img src="/img/profilePictures/<%= userLogged.profile_picture%> ">
          </div>
          
          <div class="user-info">
              <div class="user-info-text">
                  <h2>Nombre completo</h2>
-                 <p> <%= user.full_name %> </p>
+                 <p> <%= userLogged.full_name %> </p>
              </div>
              <div class="user-info-text">
                  <h2>Nombre de usuario</h2>
-                 <p> <%= user.user_name %> </p>
+                 <p> <%= userLogged.user_name %> </p>
              </div>
              <div class="user-info-text">
                  <h2>Email</h2>
-                 <p><%= user.email %>  </p>
+                 <p><%= userLogged.email %>  </p>
              </div> 
-             <a href="/user/edit/<%= user.id%> ">Editar</a>    
+             <a href="/user/edit/<%= userLogged.id%> ">Editar</a>    
          </div>
       </div> 
    
