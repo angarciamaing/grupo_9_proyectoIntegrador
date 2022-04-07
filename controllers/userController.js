@@ -11,23 +11,9 @@ const CategoryUser = db.CategoryUser
 
 const userController = {
 
-        //Lista de usuarios
-        'listUser' : async (req,res) =>{
+        
 
-            try {
-
-                const users = await User.findAll()
-                return res.render('./users/listUsers',{users})
-                
-            } catch (error) {
-                console.log(error);
-            }
-
-        },
-
-
-
-// CRUD USUAROOS
+// CRUD USUARIOS
     register: async (req, res) => {
         const users = await CategoryUser.findAll()
        
@@ -170,7 +156,7 @@ const userController = {
     },
 
    profile: (req,res) => {
-       return res.render('profile', {
+       return res.render('./users/profile', {
            user: req.session.userLogged
        });
     },

@@ -11,8 +11,6 @@ const guesMiddleware = require('../middlewares/guesMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
 //CRUD Usuarios
-//Listar usuarios <Read>
-router.get('/list-users',userController.listUser)
 
 //Formulario de registro <Create>
 router.get('/register', guesMiddleware, userController.register);
