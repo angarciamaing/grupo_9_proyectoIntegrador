@@ -14,6 +14,7 @@ const {Op} = require('sequelize')
 module.exports = {
     
     home: (req, res) => {
+        //permite guardar la informacion del usuario logueado para mostrarla en la barra de navegacion
         let userLogged = req.session.userId
         db.Product.findAll({
             limit: 8
@@ -27,6 +28,7 @@ module.exports = {
 
 
     shoppingCart: (req, res) => {
+        //permite guardar la informacion del usuario logueado para mostrarla en la barra de navegacion
         let userLogged = req.session.userId
         res.render('shopping-cart',{userLogged});
     },

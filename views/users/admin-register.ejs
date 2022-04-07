@@ -27,8 +27,8 @@
             }
          %> 
         
-        <form method="POST" action="/user/register" enctype="multipart/form-data">
-            <h1>Crear cuenta</h1>
+        <form method="POST" action="/user/admin-register" enctype="multipart/form-data">
+            <h1>Crear Cuenta Admin</h1>
             <label for="full_name"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span> 
                 <input type="text" placeholder="Nombre completo"  name="full_name" id="full_name" value="<%= locals.old && old.full_name ? old.full_name : '' %>">
             </label>

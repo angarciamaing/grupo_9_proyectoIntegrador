@@ -10,6 +10,13 @@ const validations = require('../middlewares/validateRegisterMiddleware');
 const guesMiddleware = require('../middlewares/guesMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
+
+
+//ADMIN REGISTER
+router.get('/admin-register', guesMiddleware, userController.adminRegister);
+router.post('/admin-register',uploadFile.single('profile_picture'),validations.register, userController.saveAdminRegister)
+
+
 //CRUD Usuarios
 
 //Formulario de registro <Create>
@@ -19,7 +26,7 @@ router.get('/register', guesMiddleware, userController.register);
 router.post('/register',uploadFile.single('profile_picture'), validations.register, userController.processRegister)
 
 //Formulario de edicion <Uptade>
-router.get('/edit/:id', userController.editUser)
+router.get('/edit/:id',authMiddleware, userController.editUser)
 
 router.post('/edit/:id',uploadFile.single('profile_picture'), validations.userEdition, userController.saveEdition)
 

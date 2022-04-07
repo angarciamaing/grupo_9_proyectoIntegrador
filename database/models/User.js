@@ -30,6 +30,7 @@ module.exports = (sequelize , dataTypes) => {
         },
         category_user_id : {
             type: dataTypes.INTEGER,
+            defaultValue:2,
             foreignKey: true
         },
         

@@ -5,16 +5,20 @@ const validations = {
 	register: [
 
 		// Nombre completo y nombre de usuario
-		body('full_name').notEmpty().withMessage('Ingresa tu nombre completo'),
-
+		body('full_name').notEmpty().withMessage('Ingresa tu nombre completo')
+						.isLength({min:6}).withMessage('El nombre debe contener minimo 6 caracteres'),
 		body('user_name').notEmpty().withMessage('Debe contener un nombre de usuario')
 						.isAlphanumeric().withMessage('El usuario debe ser alfanumerico')
 						.isLength({min: 6}).withMessage('Debe contener Minimo 6 caracteres')
 						.trim()
 						.withMessage('El nombre de usuario no debe contener espacios, ni caracteres especiales y debe contener minimo 6 caracteres'),
 		//Email en formato correcto
-		body('email').notEmpty().withMessage('Debes ingresar un email')
-					 .isEmail().withMessage('No es un email, ingrese el formato correcto'),
+		body('user_name').notEmpty().withMessage('Debe contener un nombre de usuario')
+						.isAlphanumeric().withMessage('El usuario debe ser alfanumerico')
+						.isLength({min: 6,max:10}).withMessage('Debe contener Minimo 6 caracteres y Maximo 10')
+						.trim()
+						.withMessage('El nombre de usuario no debe contener espacios, ni caracteres especiales y debe contener minimo 6 caracteres'),
+		
 
 		//password con mas de 8 caracteres
 		body('password').notEmpty().withMessage('Ingrese una contraseña').bail()
@@ -51,11 +55,12 @@ const validations = {
 
 	userEdition:[
 		// Nombre completo y nombre de usuario
-		body('full_name').notEmpty().withMessage('Ingresa tu nombre completo'),
+		body('full_name').notEmpty().withMessage('Ingresa tu nombre completo')
+						.isLength({min:6}).withMessage('El nombre debe contener minimo 6 caracteres'),
 
 		body('user_name').notEmpty().withMessage('Debe contener un nombre de usuario')
 						.isAlphanumeric().withMessage('El usuario debe ser alfanumerico')
-						.isLength({min: 6}).withMessage('Debe contener Minimo 6 caracteres')
+						.isLength({min: 6,max:10}).withMessage('Debe contener Minimo 6 caracteres y Maximo 10')
 						.trim()
 						.withMessage('El nombre de usuario no debe contener espacios, ni caracteres especiales y debe contener minimo 6 caracteres'),
 		
