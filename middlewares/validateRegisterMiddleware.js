@@ -5,16 +5,16 @@ const validations = {
 	register: [
 
 		// Nombre completo y nombre de usuario
-		body('fullname').notEmpty().withMessage('Ingresa tu nombre completo'),
-
+		body('fullname').notEmpty().withMessage('Ingresa tu nombre completo')
+						.isLength({min: 6}).withMessage('Debe contener minimo 2 caracteres'),
 		body('username').notEmpty().withMessage('Debe contener un nombre de usuario')
 						.isAlphanumeric().withMessage('El usuario debe ser alfanumerico')
 						.isLength({min: 6}).withMessage('Debe contener Minimo 6 caracteres')
 						.trim()
 						.withMessage('El nombre de usuario no debe contener espacios, ni caracteres especiales y debe contener minimo 6 caracteres'),
 		//Email en formato correcto
-		body('email').notEmpty().withMessage('Debes ingresar un email')
-					 .isEmail().withMessage('No es un email, ingrese el formato correcto'),
+		body('email').notEmpty().withMessage('Debes ingresar un email').bail()
+					 .isEmail().withMessage('Debes escribir un formato de correo válido'),
 
 		//password con mas de 8 caracteres
 		body('password').notEmpty().withMessage('Ingrese una contraseña').bail()
@@ -32,7 +32,6 @@ const validations = {
 			.custom((value, { req }) => req.body.password.length < 8 || value === req.body.password),
 
 		body('profilePicture', 'sube una foto de perfil en formato JPG, JPEG o PNG').custom((value, { req }) => {
-
 
 			let acceptedExtensions = ['.jpg', '.jpeg', '.png'];
 			if (typeof req.file == 'undefined') {

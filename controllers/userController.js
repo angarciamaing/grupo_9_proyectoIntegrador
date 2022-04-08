@@ -15,6 +15,13 @@ const controller = {
 
         const resultValidation = validationResult(req);
 
+        if (resultValidation.errors.length > 0) {
+			return res.render('register', {
+				errors: resultValidation.mapped(),
+				old: req.body
+			});
+		}
+
         let userInDB = User.findByField('email', req.body.email);
        
         if (userInDB) {
