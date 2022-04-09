@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator');
 
 const productsFilePath = path.join(__dirname,'../database/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath,'utf-8'));
@@ -17,11 +18,21 @@ module.exports = {
     
     create: (req, res) => {
 
-		res.render('product-create-form.ejs');
+		res.render('product-create-form');
 
 	},
 
     createPost: (req, res) => {
+
+		const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+			return res.render('product-create-form', {
+				errors: resultValidation.mapped(),
+				old: req.body
+			});
+		};
+
 		let image = req.file ? req.file.filename : 'default-img.png'
 		let newProduct = {
 			id: products[products.length - 1].id + 1,

@@ -15,10 +15,12 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
+const validationsProducts = require('../middlewares/validateProductsMiddleware');
+
 router.get('/', productsController.products);
 
 router.get('/create/', productsController.create); 
-router.post('/', upload.single('image'), productsController.createPost); 
+router.post('/', upload.single('image'), validationsProducts.create, productsController.createPost); 
 
 router. get("/product-detail/:id", productsController.productDetail);
 
