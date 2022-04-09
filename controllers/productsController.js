@@ -75,6 +75,16 @@ module.exports = {
 	},
 
     editPatch: (req, res) => {
+
+		const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+			return res.render('product-create-form', {
+				errors: resultValidation.mapped(),
+				old: req.body
+			});
+		};
+
 		let id = req.params.id;
 		let productToEdit = products.find(product => product.id == id);
 

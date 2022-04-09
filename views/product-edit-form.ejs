@@ -27,12 +27,27 @@
 			<h1 class="products-title">Estás editando a <i><%=productToEdit.productName%></i></h1>
 			<label for="productName" class="form-label">
 				<input type="text" id="productName" name="productName" class="form-input" value="<%=productToEdit.productName%>">
+				<% if (locals.errors && errors.productName) { %>
+                    <div class="text-danger">
+                        <%= errors.productName.msg %> 
+                    </div>
+                <% } %>
 			</label>
 			<label for="description" class="form-label">
 				<textarea name="description" id="description" class="form-input"><%=productToEdit.description%></textarea>
+				<% if (locals.errors && errors.description) { %>
+					<div class="text-danger">
+						<%= errors.description.msg %> 
+					</div>
+				<% } %>
 			</label>
 			<label>Imagen del producto
 				<input  type="file" name="image" id="image" accept=".jpg" value="<%=productToEdit.image%>" >
+				<% if (locals.errors && errors.image) { %>
+                    <div class="text-danger">
+                        <%= errors.image.msg %> 
+                    </div>
+                <% } %>
 			</label>
 			<label for="category" class="form-label"></label>
 				<select name="category" id="category" class="form-input" value="<%=productToEdit.category%>">
@@ -44,6 +59,11 @@
 				</select>
 			<label for="price" class="form-label">
 				<input type="text" id="price" name="price" value="<%=productToEdit.price%>" class="form-input">
+				<% if (locals.errors && errors.price) { %>
+                    <div class="text-danger">
+                        <%= errors.price.msg %> 
+                    </div>
+                <% } %>
 			</label>
 			<div class="buttons">
                 <input type="submit" value="Editar producto" class="btn">
