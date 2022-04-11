@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 
+
+
 /* NORMALIZACIÓN */
 * {
   margin: 0;
@@ -36,6 +38,11 @@ main {
 }
 
 /*MAIN*/
+
+.is-invalid {
+  border-radius: 10px red solid;
+}
+
 main.create {
   display: flex; /* para que quede centrado los errores de validacion*/
   flex-direction: column; /* para que quede centrado los errores de validacion*/
@@ -142,6 +149,9 @@ main.create form input {
   gap: 30%;
 }
 
+.is-invalid {
+  border: 20px red solid;
+}
 /*MEDIA QUERIES*/
 @media screen and (min-width: 460px) {
 }
