@@ -35,7 +35,7 @@ router.get("/:id", productsController.detalleProducto);
 
 // EDICION PRODUCTO
 router.get("/edit/:id", productsController.edit);
-router.post("/edit/:id", productsController.actualizar);
+router.post("/edit/:id",upload.single('image'), productsController.actualizar);
 
 //DELETE
 router.post("/delete/:id", productsController.delete)

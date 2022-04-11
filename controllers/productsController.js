@@ -108,7 +108,7 @@ module.exports = {
 				}
 			});
 
-			res.redirect("/products/" + req.params.id)
+			res.redirect("/products")
 	
 	},
 
