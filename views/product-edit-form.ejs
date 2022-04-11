@@ -41,22 +41,36 @@
 					</div>
 				<% } %>
 			</label>
-			<label>Imagen del producto
-				<input  type="file" name="image" id="image" accept=".jpg" value="<%=productToEdit.image%>" >
+			<label for="image">
+				<div  class="file-upload"> 
+					<p>Imagen del producto</p>
+					<input  type="file" name="image" id="image" accept=".jpg" > 
+				</div>	
 				<% if (locals.errors && errors.image) { %>
                     <div class="text-danger">
                         <%= errors.image.msg %> 
                     </div>
-                <% } %>
-			</label>
-			<label for="category" class="form-label"></label>
-				<select name="category" id="category" class="form-input" value="<%=productToEdit.category%>">
-					<option value="">Elegí una categoria</option>
-					<option value="series infantiles">series infantiles</option>
-					<option value="series adultos">series adultos</option>
-					<option value="peliculas">peliculas</option>
-					<option value="anime">Anime</option>
+                <% } %>				
+			</label>			
+			<label for="category">
+				<select name="category" id="category" class="form-input">
+				<option value="">Elegí una categoría</option>
+				<%  
+					let categories = ['series infantiles', 'series adultos', 'peliculas', 'Anime'];
+				%>
+				<% for (const oneCategory of categories) { %>
+					<option 
+						value="<%= oneCategory %>"
+						<%= locals.oldData && (oneCountry === old.category) ? 'selected' : null %> 
+					> <%= oneCategory %> </option>
+				<% } %>
 				</select>
+				<% if (locals.errors && errors.category) { %>
+					<div class="text-danger">
+						<%= errors.category.msg %>
+					</div>
+				<% } %>
+			</label>
 			<label for="price" class="form-label">
 				<input type="text" id="price" name="price" value="<%=productToEdit.price%>" class="form-input">
 				<% if (locals.errors && errors.price) { %>
