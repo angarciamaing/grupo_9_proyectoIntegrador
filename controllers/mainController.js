@@ -13,17 +13,24 @@ const {Op} = require('sequelize')
 
 module.exports = {
     
-    home: (red, res) => {
+    home: (req, res) => {
+        //permite guardar la informacion del usuario logueado para mostrarla en la barra de navegacion
+        let userLogged = req.session.userId
         db.Product.findAll({
             limit: 8
         })
         .then((products) => {
-            res.render('home',{products,toThousand})
+            res.render('home',{products,toThousand,userLogged})
         })
     },
 
+    
+
+
     shoppingCart: (req, res) => {
-        res.render('shopping-cart');
+        //permite guardar la informacion del usuario logueado para mostrarla en la barra de navegacion
+        let userLogged = req.session.userId
+        res.render('shopping-cart',{userLogged});
     },
    
 };

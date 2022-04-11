@@ -8,7 +8,7 @@ module.exports = (sequelize , dataTypes) => {
         },  
         name_category : {
         type: dataTypes.STRING(255),
-        allowNull: false
+        allowNull: true
     }
 
     }

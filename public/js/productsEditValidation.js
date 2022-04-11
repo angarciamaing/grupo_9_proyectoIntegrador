@@ -8,7 +8,7 @@ window.onload = () => {
 
     console.log('hola');
 
-    const form = document.getElementById('createProductForm');
+    const form = document.getElementById('editProductForm');
     form.onsubmit = (e) => {
        
         if(name.value === "" && name.value <= 4){

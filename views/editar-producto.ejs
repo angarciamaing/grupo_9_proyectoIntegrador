@@ -20,7 +20,7 @@
 	<%- include('partials/header') %>
 	<!-- /Header -->
 	<main class="create">
-		<form action="/products/edit/<%= product.id %>" method="POST" enctype="multipart/form-data">
+		<form action="/products/edit/<%= product.id %>" method="POST" enctype="multipart/form-data" id="editProductForm">
             <div class="image-container">
 				<img src="/img/logoFace.png" alt="">
 			</div>
@@ -73,5 +73,6 @@
 	<!-- footer -->
 	<%- include('partials/footer') %>
 	<!-- /footer -->
+	<script src="/js/productsEditValidation.js"></script>
 </body>	
 </html>

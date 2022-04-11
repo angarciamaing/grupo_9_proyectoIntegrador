@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Hola <%=user.userName%></title>
+    <title> Hola <%=userLogged.user_name%></title>
     <!-- Forma de importar estilos no tan eficiente mejor en el archivo CSS
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,29 +17,30 @@
 </head>
 <body>    
       <!-- HEADER-->
-  <%- include('partials/header') %>
+  <%- include('../partials/header') %>
 
   <section class="user-information">
       <div class="user-information-container">
 
-        <h1>Perfil de Usuario</h1>
+        <h1>Perfil de Usuario administrador</h1>
         <div class="image-container">
-            <img src="/img/profilePictures/<%= user.profilePicture%> ">
+            <img src="/img/profilePictures/<%= userLogged.profile_picture%> ">
          </div>
          
          <div class="user-info">
              <div class="user-info-text">
                  <h2>Nombre completo</h2>
-                 <p> <%= user.fullname %> </p>
+                 <p> <%= userLogged.full_name %> </p>
              </div>
              <div class="user-info-text">
                  <h2>Nombre de usuario</h2>
-                 <p> <%= user.userName %> </p>
+                 <p> <%= userLogged.user_name %> </p>
              </div>
              <div class="user-info-text">
                  <h2>Email</h2>
-                 <p><%= user.email %>  </p>
-             </div>         
+                 <p><%= userLogged.email %>  </p>
+             </div> 
+             <a href="/user/edit/<%= userLogged.id%> ">Editar</a>    
          </div>
       </div> 
    
@@ -48,7 +49,7 @@
  
  <!--FOOTER-->
  
-<%- include('partials/footer') %> 
+<%- include('../partials/footer') %> 
  
     
 </body>

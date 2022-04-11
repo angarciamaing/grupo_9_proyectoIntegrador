@@ -10,7 +10,7 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 app.use(session({
     secret: 'secreto!!',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true
 }));
 
 //Middleware login

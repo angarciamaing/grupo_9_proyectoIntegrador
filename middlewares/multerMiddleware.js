@@ -1,6 +1,8 @@
 const multer = require('multer');
 const path = require('path');
 
+const { validationResult } = require('express-validator');
+
 const diskStorage = multer.diskStorage({
 	destination: (req, file, cb) => {
 		console.log(file);
@@ -8,8 +10,8 @@ const diskStorage = multer.diskStorage({
 		cb(null, profilePicture);
 	},
 	filename: (req, file, cb) => {
-		let userName = req.body.username.replace( !/\s/g, '-').toLowerCase();
-		let finalName = userName + '-' + Date.now() + path.extname(file.originalname);
+		
+		let finalName =  '-user' + Date.now() + path.extname(file.originalname);
 		cb(null, finalName);
 	}
 });

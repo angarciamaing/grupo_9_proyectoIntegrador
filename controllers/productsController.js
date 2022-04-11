@@ -20,18 +20,19 @@ module.exports = {
     
     products : (req, res) => {
     
-
+		let userLogged = req.session.userId
 		const product = Product.findAll()
 		.then( (products) =>{
-			res.render('products', {products, toThousand})
+			res.render('products', {products, toThousand, userLogged})
 		})
     },
 
   
     
     create: async (req, res) => {
+		let userLogged = req.session.userId
 		const allProduct = await CategoryProduct.findAll();
-		res.render('product-create-form.ejs', {allProduct});
+		res.render('product-create-form.ejs', {allProduct, userLogged});
 
 	},
 	
@@ -59,10 +60,10 @@ module.exports = {
 
 
     listado: (req, res) => {
-
+		let userLogged = req.session.userId
 		db.Product.findAll()
 			.then(function(products){
-				res.render('product-edit-form', {products: products});
+				res.render('product-edit-form', {products: products, userLogged});
 			})
 		
 
@@ -71,17 +72,18 @@ module.exports = {
 
 	detalleProducto: async (req, res) => {
 		
-		
+		let userLogged = req.session.userId
 		db.Product.findByPk(req.params.id)
 			.then( function(products){
-				res.render('detalle-producto.ejs', {products: products});
+				res.render('detalle-producto.ejs', {products: products, userLogged});
 			})
 
 	},
 
 	edit: (req, res) => {
 
-		
+		let userLogged = req.session.userId
+
 		let pedidoProducto = db.Product.findByPk(req.params.id);
 
 		let pedidoCategoria = db.CategoryProduct.findAll();
@@ -89,7 +91,7 @@ module.exports = {
 		
 		Promise.all([pedidoProducto,pedidoCategoria,])
 		.then(function([product, category]){
-			res.render("editar-producto", {product:product, category:category});
+			res.render("editar-producto", {product:product, category:category, userLogged});
 		})
 		
 	},
@@ -108,7 +110,7 @@ module.exports = {
 				}
 			});
 
-			res.redirect("/products")
+			res.redirect("/products/" + req.params.id)
 	
 	},
 
