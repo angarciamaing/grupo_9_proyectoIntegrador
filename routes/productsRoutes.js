@@ -15,10 +15,12 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
-router.get('/', productsController.products);
+router.get('/totalProducts', productsController.products);
 
-router.get('/create/', productsController.create); 
-router.post('/', upload.single('image'), productsController.createPost); 
+router.get('/create', productsController.create); 
+
+// router.post('/create', productsController.createPost); 
+router.post('/create', upload.single('image'), productsController.createPost); 
 
 
 // router. get("/product-detail/:id", productsController.detalleProducto);
@@ -26,14 +28,23 @@ router.post('/', upload.single('image'), productsController.createPost);
 // router. get("/product-detail/:id", productsController.productDetail);
 
 // LISTADO PRODUCTOS
-router.get('/edit/', productsController.listado); 
+router.get('/', productsController.listado); 
 
 // DETALLE PRODUCTOS
-router. get("/edit/:id", productsController.detalleProducto);
+router.get("/:id", productsController.detalleProducto);
 
-router.post('/edit/', upload.single('image'), productsController.update); 
+// EDICION PRODUCTO
+router.get("/edit/:id", productsController.edit);
+router.post("/edit/:id",upload.single('image'), productsController.actualizar);
 
-router.delete('/delete/:id', productsController.delete); 
+//DELETE
+router.post("/delete/:id", productsController.delete)
+
+
+
+//  router.post('/edit/', upload.single('image'), productsController.update); 
+
+// router.delete('/delete/:id', productsController.delete); 
 
 module.exports = router;
 

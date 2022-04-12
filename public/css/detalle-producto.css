@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+/* NORMALIZACIÓN */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIABLES */
+
+html {
+  font-size: 62.5%;
+  font-family: var(--roboto);
+}
+
+html,
+main {
+  font-size: 12px;
+}
+
+:root {
+  /* Colores ---- */
+  --negro: #000000;
+  --blanco: #ffffff;
+  --gris: #f4f4f4;
+  --gris-medio: #e7e7e7;
+  --gris-oscuro: #aaaaaa;
+
+  /* Tamaños de fuentes ---- */
+  --text-sm: 1.2em;
+  --text-md: 1.6em;
+  --text-lg: 1.8em;
+  --title-md: 2.4em;
+
+  /* Familias de fuentes ---- */
+  --roboto: "roboto";
+}
+
+
+ h1 {
+    display: block;
+    padding-top: 70px;
+    text-decoration: none;
+    color:black;  
+}
+
+
+@media screen and (min-width: 425px) {
+  main.register form {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main.register form {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main.register form {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main.register form {
+    width: 30%;
+  }
+}
