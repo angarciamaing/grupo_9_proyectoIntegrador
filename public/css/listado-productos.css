@@ -13,8 +13,6 @@ html {
   font-size: 62.5%;
   font-family: var(--roboto);
 }
-
-html,
 main {
   font-size: 12px;
 }
@@ -37,60 +35,29 @@ main {
   --roboto: "roboto";
 }
 
+/*MAIN*/
 
- h1 {
-    display: block;
-    padding-top: 100px;
-    text-decoration: none;
-    color:black;  
-    text-align: center;
-}
-
- .detalle{
-  text-align:justify;
+.contain-product {
+  padding: 50px;
   margin: 50px;
-  font-size: var(--text-sm);
 }
 
-.detalle ul li {
+h1 {
+  text-align: center;
+}
+
+main ul li {
   margin: 5px;
-  list-style: none;
-}
-
-.botones{
-  display: flex;
-  text-align:center ;
-  margin: 10px 0px;
-}
-
-.botones button {
-margin: 10px;
-font-size: 17px;
-width: 78px;
+  font-size: var(--text-md);
 }
 
 
-
-@media screen and (min-width: 425px) {
-  main.register form {
-    width: 80%;
-  }
+/*MEDIA QUERIES*/
+@media screen and (min-width: 460px) {
 }
 
 @media screen and (min-width: 768px) {
-  main.register form {
-    width: 50%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  main.register form {
-    width: 40%;
-  }
 }
 
 @media screen and (min-width: 1440px) {
-  main.register form {
-    width: 30%;
-  }
 }

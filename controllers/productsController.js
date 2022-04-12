@@ -63,7 +63,7 @@ module.exports = {
 		let userLogged = req.session.userId
 		db.Product.findAll()
 			.then(function(products){
-				res.render('product-edit-form', {products: products, userLogged});
+				res.render('listado-productos', {products: products, userLogged});
 			})
 		
 

@@ -19,9 +19,9 @@
 	<!-- Header -->
 	<%- include('partials/header') %>
 	<!-- /Header -->
-	<main>
+	<main class="contain-detalle">
         <h1><%= products.product_name %></h1>
-
+        <div class="detalle">
         <ul>
             <li>
                 Description: <%= products.product_description %>
@@ -42,14 +42,15 @@
                 Imagen: <%= products.image %>
             </li>
         </ul>
-        <a href="/products/edit/<%= products.id %>">
-		<button>Editar</button>
-        </a>
-        <form action="/products/delete/<%= products.id %>" method="POST">
+            <div class="botones">
+            <a href="/products/edit/<%= products.id %>">
+		    <button>Editar</button>
+            </a>
+            <form action="/products/delete/<%= products.id %>" method="POST">
             <button type="submit">Borrar</button>
-        </form>
-		
-		
+            </form>
+            </div>
+	    </div>	
 	</main>
 	
 
