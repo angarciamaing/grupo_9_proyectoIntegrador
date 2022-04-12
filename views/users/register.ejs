@@ -9,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> <!--Libreria fontawesome-->
     <link rel="stylesheet" href="/css/register.css"> <!--Enlazar HTML y CSS-->
     <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    
 </head>
 <body>    
       <!-- HEADER-->
@@ -16,44 +17,81 @@
 
     <main class="register">
         
-        <% if(locals.errors) { %>
-            <% errors.forEach(error => { %>
-                
-                <i class="fa-regular fa-circle-x"></i><p class="feedback"><%= error.msg%> </p>
-                
-        <%})%>
-
-        <%
-            }
-         %> 
+       
         
-        <form method="POST" action="/user/register" enctype="multipart/form-data">
+        <form id="form-register" method="POST" action="/user/register" enctype="multipart/form-data">
+           
             <h1>Crear cuenta</h1>
-            <label for="full_name"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span> 
-                <input type="text" placeholder="Nombre completo"  name="full_name" id="full_name" value="<%= locals.old && old.full_name ? old.full_name : '' %>">
-            </label>
-            <label for="user_name"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span>
-                <input type="text" placeholder="Nombre de Usuario"  name="user_name" id="user_name" value="<%= locals.old && old.user_name ? old.user_name : '' %>">
-            </label>
-            <label for="email"><span class="iconify" data-icon="cib:mail-ru" data-width="20" data-height="20"></span>
-                <input type="email" placeholder="Email"  name="email" id="email" value="<%= locals.old && old.email ? old.email : '' %>">
-            </label>  
-            <label for="profilePicture"><span class="iconify" data-icon="jam:picture" data-width="25" data-height="25"></span>
-                <div  class="file-upload"> 
-                    <p>Sube tu imagen de perfil</p>
-                    <input  type="file" name="profile_picture" id="profilePicture" accept=".jpg" > 
-                </div>
-                
-            </label>
             
+            <% if(locals.errors ) { %>
+                <% errors.forEach(error => { %>
+                    
+                    <div class="container-errors">
+                        <ul id="errores">
+                            <li> <%= error.msg%></li>
+                            <li> <%= error.email.msg%> </li>
+                        </ul>
+                    </div>
+                    
+                    
+            <%})%>
+            
+    
+            <%}%>  
 
-            </label>
-            <label for="password"><span class="iconify" data-icon="bxs:lock" data-width="20" data-height="20"></span>
-                <input type="password" placeholder="Constraseña"  name="password" id="password">
-            </label>
-            <label for="re_password"><span class="iconify" data-icon="bxs:lock" data-width="20" data-height="20"></span>
-                <input type="password" placeholder="Repite tu contraseña"  name="re_password">
-            </label>       
+            <div class="container-errors">
+                <ul id="errores">
+                    
+                </ul>
+            </div>
+
+            <div class="form-control">
+                <label for="full_name"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span> 
+                    <input type="text" placeholder="Nombre completo"  name="full_name" id="full_name" value="<%= locals.old && old.full_name ? old.full_name : '' %>" >
+                </label>
+                
+            </div>            
+
+            <div class="form-control">
+                <label for="user_name"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span>
+                    <input type="text" placeholder="Nombre de Usuario"  name="user_name" id="user_name" value="<%= locals.old && old.user_name ? old.user_name : '' %>" >
+                </label>
+                
+            </div>            
+
+            <div class="form-control">
+                <label for="email"><span class="iconify" data-icon="cib:mail-ru" data-width="20" data-height="20"></span>
+                    <input type="email" placeholder="Email"  name="email" id="email" value="<%= locals.old && old.email ? old.email : '' %>" >
+                </label>
+                
+            </div>
+             
+            
+            <div class="form-control ">
+                <label for="profilePicture"><span class="iconify" data-icon="jam:picture" data-width="25" data-height="25"></span>
+                    <div  class="file-upload"> 
+                        <p>Sube tu imagen de perfil</p>
+                        <input  type="file" name="profile_picture" id="profilePicture" accept=".jpg" onchange="validateFileType()" > 
+                    </div>                                   
+                </label>
+                 
+                 
+            </div>            
+
+
+            <div class="form-control ">
+                <label for="password"><span class="iconify" data-icon="bxs:lock" data-width="20" data-height="20"></span>
+                    <input type="password" placeholder="Constraseña"  name="password" id="password" >
+                </label>
+                
+            </div>          
+            
+            <div class="form-control">
+                <label for="re_password"><span class="iconify" data-icon="bxs:lock" data-width="20" data-height="20"></span>
+                    <input type="password" placeholder="Repite tu contraseña"  name="re_password" id="password2" >
+                </label>
+                
+            </div>     
             
             <div class="buttons">
                 <input type="submit" value="Registrarse" class="btn">
@@ -63,6 +101,6 @@
     
     <!-- FOOTER-->
    <%- include('../partials/footer') %>
-    
+    <script src="/js/scriptUsers.js"></script>
 </body>
 </html>

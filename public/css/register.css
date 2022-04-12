@@ -41,21 +41,20 @@ main {
 /*MAIN*/
 /* REGISTER */
 
-.feedback {
-  /*ESTILOS PARA QUE IMPRIMAN EN PANTALLA LOS ERRORES DE VALIDACION*/
+div.container-errors{
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #c1edef;
-  width: 20%;
-  padding: 1rem;
-  margin: 0.3rem;
-  text-align: center;
-  border-radius: 12px;
-  font-size: var(--text-sm);
-  color: #272727;
-  font-weight: 500;
+  margin-bottom: 2%;
+  color: #e74c3c;
+  width: 80%;
 }
+#errores{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: .5em;
+}
+
 
 main.register {
   display: flex; /* para que quede centrado los errores de validacion*/
@@ -87,7 +86,16 @@ main.register form {
   border-radius: 12px;
   box-shadow: 5px 5px 3px #aaaaaa62;
 }
-
+.form-control {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2%;
+}
 main.register form label {
   display: flex;
   justify-content: center;

@@ -39,6 +39,19 @@ main {
 
 /* LOGIN */
 
+div.container-errors{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+  color: #e74c3c;
+  width: 80%;
+}
+#errores{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: .5em;
+}
 
 
 main.login{
