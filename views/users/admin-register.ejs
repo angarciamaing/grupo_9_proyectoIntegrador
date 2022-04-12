@@ -16,19 +16,31 @@
 
     <main class="register">
         
-        <% if(locals.errors) { %>
-            <% errors.forEach(error => { %>
-                
-                <i class="fa-regular fa-circle-x"></i><p class="feedback"><%= error.msg%> </p>
-                
-        <%})%>
-
-        <%
-            }
-         %> 
         
-        <form method="POST" action="/user/admin-register" enctype="multipart/form-data">
+        <form id="form-register"  method="POST" action="/user/admin-register" enctype="multipart/form-data">
             <h1>Crear Cuenta Admin</h1>
+
+            <% if(locals.errors ) { %>
+                <% errors.forEach(error => { %>
+                    
+                    <div class="container-errors">
+                        <ul id="errores">
+                            <li> <%= error.msg%></li>
+                            <li> <%= error.email.msg%> </li>
+                        </ul>
+                    </div>
+                    
+                    
+            <%})%>
+            
+    
+            <%}%> 
+
+            <div class="container-errors">
+                <ul id="errores">
+                    
+                </ul>
+            </div>
             <label for="full_name"><span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25" data-height="25"></span> 
                 <input type="text" placeholder="Nombre completo"  name="full_name" id="full_name" value="<%= locals.old && old.full_name ? old.full_name : '' %>">
             </label>
@@ -52,7 +64,7 @@
                 <input type="password" placeholder="Constraseña"  name="password" id="password">
             </label>
             <label for="re_password"><span class="iconify" data-icon="bxs:lock" data-width="20" data-height="20"></span>
-                <input type="password" placeholder="Repite tu contraseña"  name="re_password">
+                <input type="password" placeholder="Repite tu contraseña"  name="re_password" id="password2">
             </label>       
             
             <div class="buttons">
@@ -63,6 +75,7 @@
     
     <!-- FOOTER-->
    <%- include('../partials/footer') %>
+   <script src="/js/scriptUsers.js"></script>
     
 </body>
 </html>

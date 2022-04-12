@@ -10,6 +10,8 @@ const session = require('express-session');
 const User = db.User
 const CategoryUser = db.CategoryUser
 
+
+
 const userController = {
 
 //ARMIN REGISTER
@@ -36,7 +38,8 @@ const userController = {
             res.render('./users/admin-register',{
                 errors: [{ email :{msg: 'Este correo electrónico ya existe'}}],
                 old: req.body,
-                users  
+                userLogged
+                 
             })
         }
 
@@ -57,8 +60,8 @@ const userController = {
        } else  {
         const users = await CategoryUser.findAll()
            res.render('./users/admin-register',{
-               errors: resultValidation.array(),
-               old: req.body,
+            errors: errors.array(),
+            oldData: req.body,
                userLogged
            })
        }
@@ -80,7 +83,7 @@ const userController = {
         return res.render('./users/register',{userLogged});
     },
     processRegister: async (req,res) =>{
-
+        let userLogged = req.session.userId
        
         const resultValidation = validationResult(req);
         let emailExits = req.body.email
@@ -95,7 +98,7 @@ const userController = {
             res.render('./users/register',{
                 errors: [{ email :{msg: 'Este correo electrónico ya existe'}}],
                 old: req.body,
-                users  
+                userLogged  
             })
         }
 
@@ -118,7 +121,7 @@ const userController = {
            res.render('./users/register',{
                errors: resultValidation.array(),
                old: req.body,
-               users
+               userLogged
            })
        }
        
