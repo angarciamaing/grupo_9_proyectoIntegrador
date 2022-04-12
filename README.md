@@ -39,3 +39,22 @@ Ofreciendo gran variedad de FUNKO POPS para todos los gustos, con el mejor servi
 
 Pagina de inicio, productos, detalle del producto, carrito de compras, registro y login.
 https://www.figma.com/community/file/1045882478658274168
+
+### Instrucciones
+Siga las siguientes instrucciones para iniciar la app
+1. git clone https://github.com/adrisanc/grupo_9_proyectoIntegrador.git
+2. abrir la terminal y ejecutar el comnado npm install
+3. importar la DB (funko_shop.sql) que se encuentra en la carpeta Database.
+4. configrar la conexión a la DB con el nombre de usuario y contraseña que tenga establecidos con Mysql
+5. En la termina ejecutar alguno de los siguientes opciones de comandos:
+	5.1 nodemon app.js
+	5.2 npx nodemon app.js
+	5.3 node app.js
+6 En el navegador digital la siguiente direccion: http://localhost:4000
+7 Registro de usuario Administrador:
+	en este perfil podra crea, editar y borrar productos
+	para regustrarse como usuatrio administrador realice el registro en la siguiente ruta http://localhost:4000/user/admin-register
+8 Registro de usario Customer:
+	Para registrarse como usuario customer o cliente ingrese al enlace llamado registrate que se encuentra en la barra de navegacion
+
+9 Para loguearse como usuario administrador o customer: dirijase al enlace llamado login e ingrese sus credenciales.

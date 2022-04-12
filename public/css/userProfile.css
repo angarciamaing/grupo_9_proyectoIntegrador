@@ -44,7 +44,26 @@ section.user-information{
     gap: 2rem;
     text-align: center;
 }
+div.button{
+    padding-bottom: .5rem;
+    margin-top: 1.5rem;
+}
 
+
+div.button a{
+    text-decoration: none;
+    color: var(--blanco);
+    background-color: var(--negro);
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+div.button a:hover{
+    color: var(--negro);
+    background-color: var(--blanco);
+    border: var(--negro) 2px solid;
+}
 section div.user-information-container{
     width: 90%;
     display: flex;

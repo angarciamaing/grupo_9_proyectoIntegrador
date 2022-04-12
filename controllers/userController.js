@@ -146,6 +146,7 @@ const userController = {
     saveEdition: async (req,res) =>{
 
         try {
+            
             const id = req.params.id
 
             const userImage = await User.findByPk(id)
@@ -162,7 +163,16 @@ const userController = {
                 email
             },{where: {id:id}})
             
-       return res.redirect("/user/profile")
+            let adminTologin = await  User.findOne({where:{
+                category_user_id:1
+                }
+            });
+            if(adminTologin) {
+                res.redirect("/user/admin-profile")
+            } else{
+                return res.redirect("/user/profile")
+            }
+       
             
         } catch (error) {
             console.log(error);
