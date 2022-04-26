@@ -24,9 +24,13 @@ app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el 
 //Rutas
 const mainRoutes = require('./routes/mainRoutes');
 const userRoutes = require('./routes/userRoutes');
-const productsRoutes = require('./routes/productsRoutes')
+const productsRoutes = require('./routes/productsRoutes');
+const productsApiRoutes = require('./routes/api/productsApiRoutes');
 
 const publicPath = path.resolve(__dirname, "./public");
+
+//Rutas API
+app.use('/api/products', require('./routes/api/productsApiRoutes'));
 
 //Template Engine
 app.set('view engine', 'ejs');
