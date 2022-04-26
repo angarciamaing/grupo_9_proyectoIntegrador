@@ -13,11 +13,9 @@ const validations = {
 						.trim()
 						.withMessage('El nombre de usuario no debe contener espacios, ni caracteres especiales y debe contener minimo 6 caracteres'),
 		//Email en formato correcto
-		body('user_name').notEmpty().withMessage('Debe contener un nombre de usuario')
-						.isAlphanumeric().withMessage('El usuario debe ser alfanumerico')
-						.isLength({min: 6,max:10}).withMessage('Debe contener Minimo 6 caracteres y Maximo 10')
-						.trim()
-						.withMessage('El nombre de usuario no debe contener espacios, ni caracteres especiales y debe contener minimo 6 caracteres'),
+		body('email').notEmpty().bail()
+						.isEmail().bail()
+						.withMessage('Ingresar un email válido'),
 		
 
 		//password con mas de 8 caracteres

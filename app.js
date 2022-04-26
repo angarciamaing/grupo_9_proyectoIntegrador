@@ -31,11 +31,17 @@ const publicPath = path.resolve(__dirname, "./public");
 //Template Engine
 app.set('view engine', 'ejs');
 
+app.use(express.json());//permite procesar los datos de JSON para API
 app.use(express.urlencoded({ extended: false }));//permite procesar formularios
 app.use(express.static(publicPath));
 app.use(mainRoutes);
+
+// Routes
 app.use('/user', userRoutes);
 app.use('/products', productsRoutes);
+
+//Api Rotes
+app.use('/api/user', require('./routes/ApiRoutes/userApiRoute'));
 
  app.listen(4000, () => console.log("Servidor corriendo en el puerto: 4000"));
 
