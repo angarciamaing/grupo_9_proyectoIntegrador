@@ -1,24 +1,34 @@
 const db = require('../../database/models')
+const path = require('path');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+const moment = require('moment');
+
+
 
 const Product = db.Product
 const CategoryProduct = db.CategoryProduct
 
 
 const productsApiController = {
-
+    
     'products': async (req, res) => {
         try {
-            const products = await db.Product.findAll();
-            const categoryProduct = await db.CategoryProduct.findAll();
+            const products = await db.Product.findAll({
+                include: ['category']
+            });
+            const categoryProduct = await db.CategoryProduct.findAll({
+                include: ['products']
+            });
             const data = {
-                count: products.length,
+                count: products.length,                
+                categories: categoryProduct,
                 //countByCategory → objeto literal con una propiedad por categoría con el total de productos.
-                countByCategory: categoryProduct,
+                //countByCategory: categoryProduct.length,
                 products: products.map(product => {
                 return{
                     products: product,
-                    //un array con principal relación de uno a muchos (ej:categories).
-                    category: product.name_category,
+                    //category: product.category,
                     url: 'http://localhost:4000/api/products/' + product.id
                 }
                 })
@@ -31,10 +41,12 @@ const productsApiController = {
 
     'detail': async (req, res) => {
         try {
-            const product = await db.Product.findByPk(req.params.id);
+            const product = await db.Product.findByPk(req.params.id, {
+                include: ['category']
+            });
             const data = {
                 product:product,
-                //un array por cada relación de uno a muchos (categories, colors,sizes, etc)
+                category: product.category,                
                 url: 'http://localhost:4000/img/productsImages/' + product.image,
             }
             res.json(data);
