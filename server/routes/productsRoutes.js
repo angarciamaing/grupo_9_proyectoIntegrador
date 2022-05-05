@@ -7,6 +7,8 @@ const path = require('path');
 const productsController = require('../controllers/productsController');
 
 const uploadFileProduct = require('../middlewares/multerMiddlewareProducts');
+const guesMiddleware = require('../middlewares/guesMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, path.join(__dirname, '../public/img/productsImages')),
@@ -15,24 +17,24 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
-router.get('/totalProducts', productsController.products);
+router.get('/totalProducts',authMiddleware, productsController.products);
 
-router.get('/create', productsController.create); 
+router.get('/create',authMiddleware,productsController.create); 
 
 // router.post('/create', productsController.createPost); 
-router.post('/create', upload.single('image'), productsController.createPost); 
+router.post('/create',authMiddleware, upload.single('image'), productsController.createPost); 
 
 
 // LISTADO PRODUCTOS
-router.get('/', productsController.listado); 
+router.get('/',authMiddleware, productsController.listado); 
 
 // DETALLE PRODUCTOS
 
 
- router.get("/:id", productsController.detalleProducto);
+ router.get("/:id",authMiddleware, productsController.detalleProducto);
 
 // EDICION PRODUCTO
-router.get("/edit/:id", productsController.edit);
+router.get("/edit/:id",authMiddleware, productsController.edit);
 router.post("/edit/:id",upload.single('image'), productsController.actualizar);
 
 //DELETE

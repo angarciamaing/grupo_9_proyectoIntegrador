@@ -28,13 +28,22 @@
                 <% if(userLogged){%>
                     <ul>
                         <li> 
-                            <a  href="/user/profile">
-                            
-                            <img id="profilePicture" src="/img/profilePictures/<%= userLogged.profile_picture%> "> 
+                            <% if(userLogged.category_user_id !== 1){%>
+                                <a  href="/user/profile">
+                                    <img id="profilePicture" src="/img/profilePictures/<%= userLogged.profile_picture%> "> 
                             Hola <%=userLogged.user_name%>
                         </a>
+                            <%} else {%>
+                                <a  href="/user/admin-profile">Hola <%=userLogged.user_name%>
+                                    <img id="profilePicture" src="/img/profilePictures/<%= userLogged.profile_picture%> ">
+                                </a>
+                                <%}%>
+                            
+                            
+                         
                         </li>
                         <li> <a href="/user/logout">Cerrar sesión</a></li>
+                        
                     </ul>
                     <% }else { %>
                     <li>

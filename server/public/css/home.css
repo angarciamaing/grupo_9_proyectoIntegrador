@@ -9,6 +9,15 @@
     margin-top: 10%;
 }
 
+button {
+	background-color: var(--main-orange);
+	outline: none;
+	border: none;
+	color: var(--blanco);
+	font-weight: 700;
+	font-size: var(--text-md);
+}
+
 /*BANNER*/
 section.banner{
     font-family: var(--lato);
@@ -169,6 +178,10 @@ div.button-view-details{
     width: 100%;
     background-color: var(--main-orange);
     padding: 1em 0;
+    display: flex;
+    gap: 3em;
+    justify-content: center;
+    
 }
 
 

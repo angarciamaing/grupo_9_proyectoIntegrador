@@ -121,7 +121,7 @@ module.exports = {
 			}
 		})
 
-		res.redirect("/products")
+		res.redirect("/")
 	}
 
 
