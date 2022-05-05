@@ -17,8 +17,7 @@ Ofreciendo gran variedad de FUNKO POPS para todos los gustos, con el mejor servi
 ### Integrantes del equipo 🏁
 
 - YASMIN ADRIANA ORJUELA SANCHEZ: Colombiana residente en Bogotá, estudiante de Ingeniería Multimedia.
-- ESTEBAN NAVAS VALENCIA
-- YULIÁN VARGAS
+- ESTEBAN NAVAS VALENCIA: Desarrollador web Fullstack, técnico en sistemas.
 - ANDERSON GARCIA MARTINEZ: Consultor SIG, estudiante de desarrollo web full stack
 
 ---
