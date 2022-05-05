@@ -1,62 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&family=Supermercado+One&display=swap');
+@import url("./partials/defaultStyles.css");
 
 
-/* NORMALIZACIÓN */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+.row {
+    justify-content: center;
+    }
 
-
-/* VARIABLES */  
-
-html {
-    font-size: 62.5%;
-    font-family:var(--lato);
-  }
-
-:root{
-     /* Colores ---- */  
-     --negro: #000000;
-     --blanco: #ffffff;
-     --gris: #f4f4f4;
-     --gris-medio: #e7e7e7;
-     --gris-oscuro: #aaaaaa;
-     --main-orange:#FFB978;
-     --card-backGround:#FFF6F199;
-     --dark-gray: #323231;
- 
- 
- 
-     /* Tamaños de fuentes ---- */
-     --text-sm: 1.2em;
-     --text-md: 1.6em;
-     --text-lg: 1.8em;
-     --title-md: 2.4em;
-     --big-tittle:4.8em;
- 
-     /* Familias de fuentes ---- */
-     --roboto: 'roboto';
-     --lato:'Lato';
-     --supermercado:'Supermercado One';
-}
-
-p,h1,h2,a{
-    font-family: var(--lato);
+.collection h2{
+    margin-top: 10%;
 }
 
 /*BANNER*/
 section.banner{
     font-family: var(--lato);
     display: flex;
-    padding-top: 7%;
+    margin-top: 54px;
     width: 100%;
 }
 
 section.banner div.container-items-banner{
-    background-image: url("/img/backgroundBanner.png");
+    background-image: url("../img/backgroundBanner.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
@@ -64,7 +26,7 @@ section.banner div.container-items-banner{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1em;
+    padding: 0 1em;
     gap: 2.2em;
     width: 100%;
 
@@ -75,7 +37,7 @@ div.banner-text{
     display: flex;
     flex-direction: column;
     width: 60%;
-    gap: 1em;
+    gap: .5em;
     justify-content: flex-start;
     align-content: flex-start;
     width: 40%;
@@ -94,11 +56,11 @@ div.banner-text{
 section.banner p{
     align-self: center;
     color: var(--blanco);
-    font-size: var(--text-sm);
     text-align: center;
 }
 
-.banner-text button{
+.banner-text a{
+    text-decoration: none;
     background-color: var(--main-orange);
     color: var(--blanco);
     outline: none;
@@ -118,8 +80,6 @@ section.banner img{
     height: auto;
     border-radius: 50%;
 }
-
-section.banner
 /*ENDS BANNER*/
 /* Recommendations section*/
 
@@ -134,7 +94,7 @@ section.recommendations-section{
     padding: 1rem;
 }
 
-div.col-12 h2{
+h2{
     font-size: var(--title-md);
     padding: 1rem;
     margin: .5rem;
@@ -150,7 +110,7 @@ section.recommendations-section div{
 div.container-recommendations {
     display: flex;
     padding: 3rem .5rem;
-    border-radius: 15% / 3%;
+    justify-content: center;
 }
 article.recommendation-product {
     display: flex;
@@ -214,6 +174,7 @@ div.button-view-details{
 
 div.button-view-details a{
     text-decoration: none;
+    text-decoration: no;
     color: var(--blanco);
     font-size: var(--text-md);
     font-weight: 800;
@@ -223,30 +184,69 @@ div.button-view-details a{
 
 /*MEDIA QUERIES*/
 
-@media screen and(min-width:550px) {
+@media screen and (min-width: 375px) {
+    
+
+    section.banner p {
+        font-size: var(--text-sm);
+        }
+}
+
+@media screen and (min-width: 550px) {
+
+ 
         /* banner */
-    section.banner div.container-items-banner{
+        section.banner div.container-items-banner{
         height: 30vh;
     }
     
 }
 
-@media screen and(min-width:768px) {
+@media screen and (min-width: 768px) {
     /* banner */
+
+    section.banner {
+        margin-top: 77px;
+    }
     section.banner div.container-items-banner{
+        padding: 2em;
         height: 40vh;
     }
+
 
     .banner-text h1{
         font-size: var(--big-tittle);
     }
 
+    section.banner p{
+        font-size: var(--text-md);
+    }
+    
+
 }
 
-@media screen and(min-width:1024px) {
+@media screen and (min-width:1024px) {
     /* banner */
-    section.banner div.container-items-banner{
-        height: 50vh;
+    section.banner {
+        margin-top: 92px;
     }
+    section.banner div.container-items-banner{
+        height: 60vh;
+        
+    }
+
+    div.banner-text {
+        gap: 3em;
+        }
+
+    section.banner p{
+        font-size: var(--title-md);
+    }
+
+    .banner-text a {
+        text-decoration: none;
+        font-size: var(--text-lg);
+        }
+
 
 }

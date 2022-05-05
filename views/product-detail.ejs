@@ -24,10 +24,6 @@
         <section class="detail-product-section">
             <article>
                 <div class="gallery-image">
-                    <picture class="order-reverse">
-                        <img src="/img/productsImages/<%= products.image%>" alt="<%= products.product_name %> ">
-                        <img src="/img/caja-deadpool.jpg" alt="<%= products.productName%>">
-                    </picture>
                     <picture class="main-image-product">
                         <img src="/img/productsImages/<%= products.image%>" alt="<%= products.product_ame %> ">
                     </picture>
@@ -36,7 +32,7 @@
                     <h1><%=products.product_name%></h1>
 
                     <p>$<%=toThousand(products.price)%></p>
-                    <p><%= products.decription%> </p>
+                    <p><%= products.product_description%> </p>
                     <div class="select-button-pair">
                         <select>
                             <option value="1">1</option>

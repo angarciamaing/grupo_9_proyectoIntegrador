@@ -1,39 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
-
-
-/* NORMALIZACIÓN */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-
-/* VARIABLES */  
-
-html {
-    font-size: 62.5%;
-    font-family:var(--roboto);
-  }
-
-:root{
-    /* Colores ---- */  
-    --negro: #000000;
-    --blanco: #ffffff;
-    --gris: #f4f4f4;
-    --gris-medio: #e7e7e7;
-    --gris-oscuro: #aaaaaa;
-
-    /* Tamaños de fuentes ---- */
-    --text-sm: 1.2em;
-    --text-md: 1.6em;
-    --text-lg: 1.8em;
-    --title-md: 2.4em;
-
-    /* Familias de fuentes ---- */
-    --roboto: "roboto";
-}
-
+@import url("./partials/defaultStyles.css");
 /* User Information*/
 section.user-information{
     width: 100vw;
@@ -53,16 +18,18 @@ div.button{
 div.button a{
     text-decoration: none;
     color: var(--blanco);
-    background-color: var(--negro);
+    font-weight: 800;
+    font-size: var(--text-sm);
+    background-color: var(--main-orange);
     margin-top: 2rem;
     padding: 1rem;
     border-radius: 12px;
 }
 
 div.button a:hover{
-    color: var(--negro);
+    color: var(--main-orange);
     background-color: var(--blanco);
-    border: var(--negro) 2px solid;
+    border: var(--main-orange) 2px solid;
 }
 section div.user-information-container{
     width: 90%;
@@ -72,7 +39,7 @@ section div.user-information-container{
     align-items: center;
     gap: 2rem;
     margin-top: 3rem;
-    background-color: var(--gris);
+    background-color: var(--card-backGround);
     margin-top: 150px;
     margin-bottom: 4rem;
     border-radius: 20px;

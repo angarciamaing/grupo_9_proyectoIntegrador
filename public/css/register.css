@@ -1,41 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
-
-/* NORMALIZACIÓN */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* VARIABLES */
-
-html {
-  font-size: 62.5%;
-  font-family: var(--roboto);
-}
-
-html,
-main {
-  font-size: 12px;
-}
-
-:root {
-  /* Colores ---- */
-  --negro: #000000;
-  --blanco: #ffffff;
-  --gris: #f4f4f4;
-  --gris-medio: #e7e7e7;
-  --gris-oscuro: #aaaaaa;
-
-  /* Tamaños de fuentes ---- */
-  --text-sm: 1.2em;
-  --text-md: 1.6em;
-  --text-lg: 1.8em;
-  --title-md: 2.4em;
-
-  /* Familias de fuentes ---- */
-  --roboto: "roboto";
-}
+@import url("./partials/defaultStyles.css");
 
 /*ENDS HEADER*/
 /*MAIN*/
@@ -55,18 +18,21 @@ div.container-errors{
   gap: .5em;
 }
 
+#form-register {
+  color: var(--main-orange);
+  }
 
 main.register {
   display: flex; /* para que quede centrado los errores de validacion*/
   flex-direction: column; /* para que quede centrado los errores de validacion*/
   justify-content: center; /* para que quede centrado los errores de validacion*/
   align-items: center; /* para que quede centrado los errores de validacion*/
-  background-color: var(--gris-medio);
+  background-color: var(--card-backGround);
 }
 
 main.register form h1 {
   font-size: var(--text-lg);
-  font-weight: 500;
+  font-weight: 800;
   padding: 1rem;
   text-align: center;
   margin-top: 2rem;
@@ -84,7 +50,7 @@ main.register form {
   background-color: var(--blanco);
   padding: 1rem;
   border-radius: 12px;
-  box-shadow: 5px 5px 3px #aaaaaa62;
+  border: 2px solid;
 }
 .form-control {
   width: 100%;
@@ -105,7 +71,7 @@ main.register form label {
 }
 
 .file-upload {
-  border: 1px solid var(--gris-oscuro);
+  border: 1px solid var(--main-orange);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -118,7 +84,8 @@ main.register form label {
 
 .file-upload p {
   text-align: center;
-  font-weight: 500;
+  font-weight: 800;
+  font-size: var(--text-sm)
 }
 
 input[type="file"] {
@@ -130,15 +97,23 @@ main.register form input {
   border-radius: 5px;
   margin: 0.7rem;
   width: 80%;
-  border: 1px solid var(--gris-oscuro);
+  border: 1px solid var(--main-orange);
+  background-color: (--blanco);
+  outline: none;
 }
 
 .buttons input {
+  width: 80%;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 30%;
+  background-color: var(--main-orange);
+  color: var(--blanco);
+  font-weight: 800;
+  text-align: center;
 }
 
 @media screen and (min-width: 425px) {

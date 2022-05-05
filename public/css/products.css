@@ -1,41 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
-
-/* NORMALIZACIÓN */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* VARIABLES */
-
-html {
-  font-size: 62.5%;
-  font-family: var(--roboto);
-}
-main {
-  background-color: var(--blanco);
-}
-body {
-  margin-top: 80px;
-}
-:root {
-  /* Colores ---- */
-  --negro: #000000;
-  --blanco: #ffffff;
-  --gris: #f4f4f4;
-  --gris-medio: #e7e7e7;
-  --gris-oscuro: #aaaaaa;
-
-  /* Tamaños de fuentes ---- */
-  --text-sm: 1.2em;
-  --text-md: 1.6em;
-  --text-lg: 1.8em;
-  --title-md: 2.4em;
-
-  /* Familias de fuentes ---- */
-  --roboto: "roboto";
-}
+@import url("./partials/defaultStyles.css");
 
 h1{
   font-size: var(--title-md);
