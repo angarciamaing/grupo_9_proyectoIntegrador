@@ -16,9 +16,18 @@
 
 
     <section class="banner">
-        <div>
-        <img src="/img/banner harry.PNG" alt="">
+        <div class="container-items-banner">
+            <div class="banner-text">
+                <h1>Revive tu Infancia</h1>
+                <p>Recuerda tus mejores momentos con los funkos de las series que viste de pequeño</p>
+                <button>Ver Collecion</button>
+            </div>
+            <div class="banner-funko">
+                <img src="/img/General-producto/Anng avatar maestro del aire.PNG" alt="">
+            </div>            
+            
         </div>
+        
     </section>
 
 
@@ -27,7 +36,7 @@
     <div class="container container-sm container-md container-recommendations">
 		<div class="row">
 			<div class="col-12">
-				<h2>Nuevos Lanzamientos</h2>
+				<h2>Productos</h2>
 			</div>
 			<!-- Show the "visited" products -->
 			<% products.forEach(product => { 
@@ -38,6 +47,7 @@
                     <img src="img/productsImages/<%= product.image%>" alt="imagen del producto">
                     <div class="product-price">
                         <h3><%=product.product_name%></h3>
+                        <p><%= product.product_description%> </p>
                         <p>$<%=toThousand(product.price)%></p>
                         <div class="button-view-details">
                            <a href="/products/product-detail/<%= product.id%>">VER DETALLES</a>
