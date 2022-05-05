@@ -12,7 +12,7 @@
 
         <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
        
-       <title><%= product.product_name%> </title>
+       <title><%= products.product_name%> </title>
     </head>
 <body>
 
@@ -24,19 +24,15 @@
         <section class="detail-product-section">
             <article>
                 <div class="gallery-image">
-                    <picture class="order-reverse">
-                        <img src="/img/productsImages/<%= product.image%>" alt="<%= product.product_name %> ">
-                        <img src="/img/caja-deadpool.jpg" alt="<%= product.productName%>">
-                    </picture>
                     <picture class="main-image-product">
-                        <img src="/img/productsImages/<%= product.image%>" alt="<%= product.product_ame %> ">
+                        <img src="/img/productsImages/<%= products.image%>" alt="<%= products.product_ame %> ">
                     </picture>
                 </div>
                 <div class="description-product">
-                    <h1><%=product.product_name%></h1>
+                    <h1><%=products.product_name%></h1>
 
-                    <p>$<%=toThousand(product.price)%></p>
-                    <p><%= product.decription%> </p>
+                    <p>$<%=toThousand(products.price)%></p>
+                    <p><%= products.product_description%> </p>
                     <div class="select-button-pair">
                         <select>
                             <option value="1">1</option>
@@ -56,35 +52,7 @@
             </article>
         </section>
         
-        <!--Recomendation section-->
-        <% const { funkos, condition}= carousel %> 
-        <section recommendations-section>      
-            <div class="container">
-                <h1>Recomendados</h1>
-                <div class="slider">
-                    <div class="slide-track">
-                      <ul class="slider-products">
-                        <% funkos.forEach(product => { %>
-                        <li class="card">
-                            <article class="recommendation-product">
-                        
-                                <img src="/img/productsImages/<%= product.image%>"  alt="<%= product.product_name %> ">
-                                <div class="product-price">
-                                    <h3><%=product.product_name%></h3>
-                                    <p>$<%=toThousand(product.price)%></p>
-                                    <div class="button-view-details">
-                                      <a href="/product-detail/<%= product.id%>">VER DETALLES</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <%}); %>
-                      </ul>
-                    </div>
-                  </div>
-            </div>       
-      
-        </section>
+        
         
              
     </main>

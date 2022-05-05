@@ -44,12 +44,12 @@ module.exports = (sequelize , dataTypes) => {
     let config = {
         timestamps: false,
         tableName: "users",
-        hooks:{
-            beforeCreate: async (user) =>{
-                const salt = await bcrypt.genSalt(10);
-                user.password = await bcrypt.hash(user.password, salt);
-            },
-        }
+        // hooks:{
+        //     beforeCreate: async (user) =>{
+        //         const salt = await bcrypt.genSalt(10);
+        //         user.password = await bcrypt.hash(user.password, salt);
+        //     },
+        // }
     }
 
     const User = sequelize.define(alias, cols, config);
@@ -70,9 +70,9 @@ module.exports = (sequelize , dataTypes) => {
             timestamps: false
     });
 
-    User.prototype.validPassword = async function (password) {
-        return await bcrypt.compare(password, this.password);
-    }
+    // User.prototype.validPassword = async function (password) {
+    //     return await bcrypt.compare(password, this.password);
+    // }
         
     }
 

@@ -14,39 +14,17 @@
 <body>   <!-- HEADER-->
   <%- include('partials/header') %>
 
-
-    <section class="banner">
-        <div class="container-items-banner">
-            <div class="banner-text">
-                <h1>Revive tu Infancia</h1>
-                <p>Recuerda tus mejores momentos con los funkos de las series que viste de pequeño</p>
-                <a href="/coleccion">Ver Collecion</a>
-            </div>
-            <div class="banner-funko">
-                <img src="/img/General-producto/Anng avatar maestro del aire.PNG" alt="">
-            </div>            
-            
-        </div>
-        
-    </section>
-
-
-    <!--Nuevos Lanxamientos-->
+    <!--Productos-->
     <section>
         <div class="container container-sm container-md container-recommendations">
             <div class="row">
-                <div class="col-12">
-                    <h2>Productos</h2>
+                <div class="col-12 collection">
+                    <h2>Funkos Series infantiles</h2>
                 </div>
                 <!-- Productos -->
                 <%- include("./partials/product-card.ejs") %> 
-            </div>
         </div>
-    </section>  
-
-    
-
-
+    </section>    
 
     <!--FOOTER-->
     <%- include("./partials/footer.ejs")%>

@@ -1,51 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
-
-
-/* NORMALIZACIÓN */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-
-/* VARIABLES */  
-
-html {
-    font-size: 62.5%;
-    font-family:var(--roboto);
-  }
-
-:root{
-    /* Colores ---- */  
-    --negro: #000000;
-    --blanco: #ffffff;
-    --gris: #f4f4f4;
-    --gris-medio: #e7e7e7;
-    --gris-oscuro: #aaaaaa;
-
-    /* Tamaños de fuentes ---- */
-    --text-sm: 1.2em;
-    --text-md: 1.6em;
-    --text-lg: 1.8em;
-    --title-md: 2.4em;
-
-    /* Familias de fuentes ---- */
-    --roboto: "roboto";
-}
+@import url("./defaultStyles.css");
 
 /* Footer*/
 footer{
-    background-color: var(--negro);
+    background-color: var(--dark-gray);
     display: flex;
     flex-direction: column;
+}
+p{
+    margin-bottom: 0;
 }
 nav.nav-footer{
     display: flex;
     width: 100%;
     justify-content: space-between;
     padding: 1rem;
-
+    padding: 1.5rem;
+    border-top: 2px solid var(--main-orange);
+  
 }
 nav.nav-footer ul{
     display: flex;
@@ -57,8 +28,14 @@ nav.nav-footer ul{
     font-size: var(--text-md);
 }
 
+/* .fab.fa-facebook,
+.fab.fa-instagram,
+{
+	
+} */
+
 nav.nav-footer ul li a{
-    color: var(--blanco);
+    color: var(--main-orange);
 }
 picture.logo-footer{
     width: 50%;
@@ -70,7 +47,7 @@ picture.logo-footer img{
 }
 
 footer div.copy{
-    color: var(--blanco);
+    color: var(--main-orange);
     display: flex;
     justify-content: center;
     gap: 1rem;

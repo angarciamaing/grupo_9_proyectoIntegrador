@@ -1,37 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+@import url("./defaultStyles.css");
 
+dl, ol, ul{
+    margin-bottom: 0;
+    padding-left: 0;
+}
 
-/* NORMALIZACIÓN */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-
-/* VARIABLES */  
-
-html {
-    font-size: 62.5%;
-    font-family:var(--roboto);
-  }
-
-:root{
-    /* Colores ---- */  
-    --negro: #000000;
-    --blanco: #ffffff;
-    --gris: #f4f4f4;
-    --gris-medio: #e7e7e7;
-    --gris-oscuro: #aaaaaa;
-
-    /* Tamaños de fuentes ---- */
-    --text-sm: 1.2em;
-    --text-md: 1.6em;
-    --text-lg: 1.8em;
-    --title-md: 2.4em;
-
-    /* Familias de fuentes ---- */
-    --roboto: "roboto";
+a{
+    gap: .5em;
 }
 
 /* HEADER*/
@@ -43,25 +18,24 @@ header{
     justify-content: center;
     align-items: center;
     position: absolute;
+    color: var(--main-orange);
 }
 
-picture.logo a{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: .5rem;
-}
+
 
 picture.logo img{
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 60%;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    padding: 1em;
 
 }
-
+.iconify.iconify--charm{
+    font-size: 2em;
+    margin: .5em;
+}
 nav.sticky-nav{
     display: flex;
     justify-content: space-between;
@@ -69,8 +43,9 @@ nav.sticky-nav{
     position: fixed;
     top: 0;
     width: 100%;
-    flex-direction: column;
-    background-color: var(--negro);
+    background-color: var(--dark-gray);
+    border-bottom: 2px var(--main-orange) solid;
+
    
 }
 nav.sticky-nav ul{
@@ -80,33 +55,54 @@ nav.sticky-nav ul{
     gap: 1.2rem;
     margin-bottom: 1rem;
     list-style: none;
-    padding: .5rem  ;
+    padding: .5rem;
+    font-family: 'Lato';
+}
+.menu{
+    display: none;
+}
+
+div.menu.show{
+    position: absolute;
+    background-color: var(--dark-gray);
+    width: 100%;
+    top: 80%;
+    left: 0;
+    padding: 1em;
+    border-bottom: 2px solid var(--main-orange);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+div.menu.show li{
+    list-style: none;
 }
 
 nav.sticky-nav ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    color: var(--blanco);
+    text-decoration: none;    
+    color: var(--main-orange);
     font-size: var(--text-md);
-    font-family: var(--roboto);
+    font-family: var(--lato);
     text-align: center;
 }
-nav.sticky-nav ul li i{
-    text-decoration: none;
-    color: var(--white);
-    margin-right: .5rem;
-}
+
 nav.sticky-nav input{
     border: none;
     padding-left:.5rem ;
     width: 100%;
     height: 2rem;
 }
+nav.sticky-nav input:focus{
+    outline: none;
+}
 
 div.search-bar-container {
-    width: 75%;
+    width: 100%;
 }
 
 li.search-bar{
@@ -116,7 +112,7 @@ li.search-bar{
     align-items: center;
     background-color: var(--blanco);
     padding: .5rem;
-    border-radius: 12px;
+    border-radius: 6px;
     width: 100%;
     height: 2.5rem;
 }
@@ -134,14 +130,15 @@ div.nav-text-container  ul li a{
     align-items: center;
     gap: .3rem;
 }
-
-ul.links-container{
-    padding-right: .5rem;
+.links-container {
+    gap: 1em;
+display: flex;
+flex-direction: column;
 }
-
 ul.links-container ul{
     align-items: center;
     justify-content: flex-start;
+    list-style: none;
 }
 .fa-user:before{
     color: var(--blanco);
@@ -153,13 +150,7 @@ img#profilePicture{
     margin-right: 10px;
     object-fit: cover;
 }
-li.login-bar{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    
-}
+
 
 a.login-text {
     display: none;
@@ -184,6 +175,7 @@ a.login-text {
         margin-bottom: 0;
     }
     div.nav-bar-header{
+        position: relative;
         display: flex;
         align-items: center;
     }
@@ -226,6 +218,16 @@ a.login-text {
 @media screen and (min-width: 1024px)  {
 
     /*HEADER*/
+    
+    .menu{
+        display: block;
+    }
+    .menu.show{
+        display: none;
+    }
+    .burger-menu{
+        display: none;
+    }
 
     picture.logo img {
         width: 70%;
@@ -233,6 +235,7 @@ a.login-text {
 
     nav.sticky-nav ul{
         gap: 2rem;
+        justify-content: space-evenly;
     }
     div.nav-bar-header{
         width: 50%;
@@ -251,6 +254,33 @@ a.login-text {
 
     ul.nav-user-logged{display: flex;
         justify-content: flex-start;
+    }
+    
+
+    div.menu.show{
+        position:relative;
+        top: 0;
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        border: none;
+        font-size: var(--text-sm);
+
+    }
+    nav.sticky-nav input{
+        font-size: var(--text-sm);
+        height: 2em;
+    }
+    div.menu.show li{
+        height: 3em;
+    }
+
+    .links-container{
+        flex-direction: row;
+    }
+
+    .burger-menu{
+        display: none;
     }
 
 }

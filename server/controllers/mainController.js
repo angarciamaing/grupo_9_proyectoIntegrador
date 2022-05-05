@@ -24,8 +24,22 @@ module.exports = {
         })
     },
 
-    
+    collecion: async (req,res) =>{
+        try {
+            let userLogged = req.session.userId
+            const products = await db.Product.findAll({
+                where:{
+                    category_id: 1
+                }
+            });
 
+            res.render('coleccion.ejs',{products,toThousand,userLogged})
+        } catch (error) {
+            console.log("Hubo un error",error)
+        }
+        
+    },
+     
 
     shoppingCart: (req, res) => {
         //permite guardar la informacion del usuario logueado para mostrarla en la barra de navegacion
