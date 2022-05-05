@@ -58,3 +58,7 @@ Siga las siguientes instrucciones para iniciar la app
 	Para registrarse como usuario customer o cliente ingrese al enlace llamado registrate que se encuentra en la barra de navegacion
 
 9. Para loguearse como usuario administrador o customer: dirijase al enlace llamado login e ingrese sus credenciales.
+
+10. REACT: 
+	. Ejecutar npm i
+	. Ejecutar npm start  
