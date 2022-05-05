@@ -63,7 +63,7 @@ module.exports = {
 		let userLogged = req.session.userId
 		db.Product.findAll()
 			.then(function(products){
-				res.render('listado-productos', {products: products, userLogged});
+				res.render('listado-productos', {products: products, userLogged, toThousand});
 			})
 		
 
@@ -75,7 +75,7 @@ module.exports = {
 		let userLogged = req.session.userId
 		db.Product.findByPk(req.params.id)
 			.then( function(products){
-				res.render('product-detail.ejs', {products: products, userLogged,toThousand});
+				res.render('detalle-producto.ejs', {products: products, userLogged,toThousand});
 			})
 
 	},

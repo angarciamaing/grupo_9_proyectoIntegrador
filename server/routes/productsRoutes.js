@@ -27,7 +27,9 @@ router.post('/create', upload.single('image'), productsController.createPost);
 router.get('/', productsController.listado); 
 
 // DETALLE PRODUCTOS
-router.get("/product-detail/:id", productsController.detalleProducto);
+
+
+ router.get("/:id", productsController.detalleProducto);
 
 // EDICION PRODUCTO
 router.get("/edit/:id", productsController.edit);

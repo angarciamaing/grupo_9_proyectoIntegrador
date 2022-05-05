@@ -16,9 +16,7 @@ module.exports = {
     home: (req, res) => {
         //permite guardar la informacion del usuario logueado para mostrarla en la barra de navegacion
         let userLogged = req.session.userId
-        db.Product.findAll({
-            limit: 8
-        })
+        db.Product.findAll()
         .then((products) => {
             res.render('home',{products,toThousand,userLogged})
         })
@@ -46,6 +44,16 @@ module.exports = {
         let userLogged = req.session.userId
         res.render('shopping-cart',{userLogged});
     },
+
+    detalleProducto: (req, res) => {
+				
+		let userLogged = req.session.userId
+		db.Product.findByPk(req.params.id)
+			.then( function(products){
+				res.render('product-detail.ejs', {products: products, userLogged,toThousand});
+			})
+
+	},
    
 };
 
