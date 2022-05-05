@@ -42,7 +42,7 @@ https://www.figma.com/community/file/1045882478658274168
 ### Instrucciones
 Siga las siguientes instrucciones para iniciar la app
 1. git clone https://github.com/angarciamaing/grupo_9_proyectoIntegrador.git en la consola de git bash
-2. abrir la terminal y ejecutar el comnado npm install
+2. abrir la terminal y ejecutar el comnado npm install dentro de carpeta SERVER
 3. importar la DB (funko_shop.sql) que se encuentra en la carpeta Database.
 4. configrar la conexión a la DB con el nombre de usuario y contraseña que tenga establecidos con Mysql
 5. En la terminal ejecutar alguno de los siguientes opciones de comandos:
@@ -54,10 +54,15 @@ Siga las siguientes instrucciones para iniciar la app
 	En este perfil podra crear, editar y borrar productos
 	Para regustrarse como usuatrio administrador realice el registro en la siguiente ruta http://localhost:4000/user/admin-register
 8. Registro de usario Customer:
-	Para registrarse como usuario customer o cliente ingrese al enlace llamado registrate que se encuentra en la barra de navegacion
+	Para registrarse como usuario customer o cliente ingrese al enlace llamado "registrate" que se encuentra en la barra de navegacion
 
-9. Para loguearse como usuario administrador o customer: dirijase al enlace llamado login e ingrese sus credenciales.
+9. Para loguearse como usuario administrador o customer: dirijase al enlace llamado "login" e ingrese sus credenciales.
 
 10. REACT: 
+	. clonar repositorio https://github.com/EstebanNavas/Dashboard-react-grupo9
 	. Ejecutar npm i
 	. Ejecutar npm start  
+	. En el navegador digitar la siguiente direccion: http://localhost:3000
+
+
+NOTA: Ejecutar las dos aplicaciones (SERVER Y REACT) al tiempo para ser integradas correctamente 

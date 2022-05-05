@@ -29,7 +29,10 @@ const productsApiController = {
                 return{
                     products: product,
                     //category: product.category,
-                    url: 'http://localhost:4000/api/products/' + product.id
+                    url: 'http://localhost:4000/api/products/' + product.id,
+                    urlImage: 'http://localhost:4000/img/productsImages/' + product.image
+
+
                 }
                 })
             }
