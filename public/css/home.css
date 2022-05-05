@@ -170,6 +170,10 @@ div.product-price {
     gap: 1rem;
 }
 article.recommendation-product div h3 {
+    max-width: 290px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: var(--text-lg);
     padding: .5em 1em;
     text-transform: uppercase;
@@ -178,6 +182,7 @@ article.recommendation-product div h3 {
 }
 
 article.recommendation-product div p{
+    max-width: 290px;
     font-size: var(--text-md);
     padding: 0 1em;
 }
@@ -198,7 +203,7 @@ div.button-view-details{
 div.button-view-details a{
     text-decoration: none;
     color: var(--blanco);
-    background-color: var(--main-orange);
+    font-size: var(--text-md);
     font-weight: 800;
     
 }
