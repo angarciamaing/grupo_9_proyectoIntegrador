@@ -70,12 +70,12 @@ module.exports = {
 	},
 
 
-	detalleProducto: async (req, res) => {
-		
+	detalleProducto: (req, res) => {
+				
 		let userLogged = req.session.userId
 		db.Product.findByPk(req.params.id)
 			.then( function(products){
-				res.render('detalle-producto.ejs', {products: products, userLogged});
+				res.render('product-detail.ejs', {products: products, userLogged,toThousand});
 			})
 
 	},

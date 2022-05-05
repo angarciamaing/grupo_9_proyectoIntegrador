@@ -23,15 +23,11 @@ router.get('/create', productsController.create);
 router.post('/create', upload.single('image'), productsController.createPost); 
 
 
-// router. get("/product-detail/:id", productsController.detalleProducto);
-
-// router. get("/product-detail/:id", productsController.productDetail);
-
 // LISTADO PRODUCTOS
 router.get('/', productsController.listado); 
 
 // DETALLE PRODUCTOS
-router.get("/:id", productsController.detalleProducto);
+router.get("/product-detail/:id", productsController.detalleProducto);
 
 // EDICION PRODUCTO
 router.get("/edit/:id", productsController.edit);
