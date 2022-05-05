@@ -253,39 +253,6 @@ const userController = {
                 userLogged
             });
         }
-
-        if(adminTologin){
-            let isOkthePassword = bcryptjs.compareSync(req.body.password, adminTologin.password);
-            if(isOkthePassword){
-                delete adminTologin.password;
-                req.session.userId = adminTologin;
-
-                if(req.body.remember_user) {
-                    res.cookie(adminTologin, { maxAge: (1000 * 60 ) * 2});
-                }
-
-                 return res.redirect("/user/profile")
-
-            }
-
-            return res.render('login', {
-                errors: {
-                    email: {
-                        msg: 'Las credenciales son invalidas'
-                    }
-                },
-                userLogged
-            });
-        }
-
-        return res.render('login', {
-            errors: {
-                email: {
-                    msg: 'No te encuentras registrado'
-                }
-            },
-            userLogged
-        });
     },
 
    profile: (req,res) => {
