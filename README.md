@@ -17,8 +17,7 @@ Ofreciendo gran variedad de FUNKO POPS para todos los gustos, con el mejor servi
 ### Integrantes del equipo 🏁
 
 - YASMIN ADRIANA ORJUELA SANCHEZ: Colombiana residente en Bogotá, estudiante de Ingeniería Multimedia.
-- ESTEBAN NAVAS VALENCIA
-- YULIÁN VARGAS
+- ESTEBAN NAVAS VALENCIA: Desarrollador web Fullstack, técnico en sistemas.
 - ANDERSON GARCIA MARTINEZ: Consultor SIG, estudiante de desarrollo web full stack
 
 ---
@@ -58,3 +57,7 @@ Siga las siguientes instrucciones para iniciar la app
 	Para registrarse como usuario customer o cliente ingrese al enlace llamado registrate que se encuentra en la barra de navegacion
 
 9. Para loguearse como usuario administrador o customer: dirijase al enlace llamado login e ingrese sus credenciales.
+
+10. REACT: 
+	. Ejecutar npm i
+	. Ejecutar npm start  
