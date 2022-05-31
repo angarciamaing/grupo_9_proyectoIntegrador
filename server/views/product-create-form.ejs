@@ -25,24 +25,31 @@
 			<div class="image-container">
 				<img src="/img/logoFace.png" alt="">
 			</div>
-			<h1 class="products-title">Crear producto</h1>
-			<ul id="erroresList"></ul>			
+			<h1 class="products-title">Crear producto</h1>			
+			
 			<label for="name">
 				<input type="text" id="name" name="product_name" placeholder="Nombre del producto" class="form-input" >
+				<div id="nameFront"></div>
+				<% if (locals.errors && errors.name) { %>
+                    <div class="text-danger">
+                        <%= errors.name.msg %> 
+                    </div>
+                <% } %>
 			</label>
+
 			<label for="description">
 					<textarea name="product_description" id="description" placeholder="Descipción del producto" class="form-input" ></textarea>
+					<div id="descriptionFront"></div>
 			</label>
-			<!--<div  class="file-upload"> 
-				<label>Imagen del producto:</label>
-				<input  type="file" name="image" id="image" accept=".jpg" >
-			</div>-->
+			
 			<label for="image">
 				<div  class="file-upload"> 
 					<p>Imagen del producto</p>
 					<input  type="file" name="image" id="image" accept=".jpg" > 
 				</div>					
+				<div id="imageFront"></div>
 			</label>
+
 			<label for="category"></label>
 			<select name="category" id="category" class="form-input">
 				<% allProduct.forEach (productCategory => { %>
@@ -51,9 +58,12 @@
 
 			<% }); %>			
 				</select>
+
 			<label for="price">
 				<input type="text" id="price" name="price" placeholder="Precio del producto" class="form-input">
-			</label>					
+				<div id="priceFront"></div>
+			</label>
+								
 			<div class="buttons">
                 <input type="submit" value="Crear producto" class="btn">
             </div>
